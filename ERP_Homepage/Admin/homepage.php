@@ -71,7 +71,7 @@ include('../../Connection/connection.php');
               <div class="menu-section-content">
                 <div class="restaurant-card background-image" style="background-image: url(&quot;https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60&quot;);">
                   <div class="restaurant-card-content">
-                    <a href="http://localhost/collegeERP/Modules/collegeMS/login/login.php"><div class="restaurant-card-content-items"><span class="restaurant-card-title">Library</span><span class="restaurant-card-desc">The best burgers in town</span></div></a>
+                    <a href="http://localhost/FYP_ERP/Modules/collegeMS/login/login.php"><div class="restaurant-card-content-items"><span class="restaurant-card-title">Library</span><span class="restaurant-card-desc">The best burgers in town</span></div></a>
                   </div>
                 </div>
                 <div class="restaurant-card background-image" style="background-image: url(&quot;https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aWNlJTIwY3JlYW18ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60&quot;);">

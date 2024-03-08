@@ -409,12 +409,12 @@
         {
           id: 4,
           name: "Examination",
-          url: "http://localhost/collegeERP/Modules/Exam/adminpanel/admin/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Exam/adminpanel/admin/home.php"
         },
         {
           id: 5,
           name: "Placement",
-          url: "http://localhost/collegeERP/Modules/Placement/admin/index.php"
+          url: "http://localhost/FYP_ERP/Modules/Placement/admin/index.php"
         },
         {
           id: 6,
@@ -610,7 +610,7 @@
           image:
             "",
           title: "Library",
-          url: "http://localhost/collegeERP/Modules/Library/Librarian/book.php"
+          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/book.php"
         },
         {
           desc: "",
@@ -618,7 +618,7 @@
           image:
             "",
           title: "Hostel",
-          url: "http://localhost/collegeERP/Modules/Hostel/admin/dashboard.php"
+          url: "http://localhost/FYP_ERP/Modules/Hostel/admin/dashboard.php"
         },
         {
           desc: "",
@@ -626,7 +626,7 @@
           image:
             "",
           title: "Cafe",
-          url: "http://localhost/collegeERP/Modules/Cafe/admin/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Cafe/admin/home.php"
         },
         {
           desc: "",
