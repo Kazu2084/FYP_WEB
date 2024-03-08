@@ -1,0 +1,57 @@
+- Cloud Computing
+  - Definition
+    - Delivery of computing services over the internet
+    - On-demand access to resources
+  - Key Characteristics
+    - On-Demand Self-Service
+    - Broad Network Access
+    - Resource Pooling
+    - Rapid Elasticity
+    - Measured Service
+  - Service Models
+    - Infrastructure as a Service (IaaS)
+    - Platform as a Service (PaaS)
+    - Software as a Service (SaaS)
+  - Deployment Models
+    - Public Cloud
+    - Private Cloud
+    - Hybrid Cloud
+    - Community Cloud
+  - Benefits
+    - Cost Efficiency
+    - Scalability
+    - Flexibility
+    - Reliability
+    - Security
+  - Challenges
+    - Security Concerns
+    - Compliance Issues
+    - Downtime
+    - Limited Customization
+  - Components
+    - Virtualization
+    - Networking
+    - Storage
+    - Servers
+  - Key Technologies
+    - Virtual Machines
+    - Containers
+    - Serverless Computing
+  - Examples
+    - Amazon Web Services (AWS)
+    - Microsoft Azure
+    - Google Cloud Platform (GCP)
+  - Use Cases
+    - Data Storage and Backup
+    - Web Hosting
+    - Development and Testing
+    - Big Data Analytics
+    - Internet of Things (IoT)
+  - Future Trends
+    - Edge Computing
+    - AI Integration
+    - Quantum Computing and Cloud
+  - Security in Cloud Computing
+    - Encryption
+    - Identity and Access Management (IAM)
+    - Compliance Standards
