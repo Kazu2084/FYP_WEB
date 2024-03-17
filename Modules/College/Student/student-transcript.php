@@ -1,13 +1,11 @@
-<!---------------- Session starts form here ----------------------->
-<?php  
-	session_start();
-	if (!$_SESSION["LoginStudent"])
-	{
-		header('location:../login/login.php');
-	}
-		require_once "../connection/connection.php";
+<?php
+session_start();
+if (!$_SESSION["LoginStudent"]) {
+	header('location:../../../Login/index.html');
+}
+require_once "../../../Connection/connection.php";
 ?>
-<!---------------- Session Ends form here ------------------------>
+
 <?php
     function grade($obtain_marks, $assign_date) {
 

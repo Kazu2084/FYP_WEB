@@ -1,17 +1,23 @@
-<!---------------- Session starts form here ----------------------->
+<?php
+session_start();
+if (!$_SESSION["LoginStudent"]) {
+	header('location:../../../Login/index.html');
+}
+require_once "../../../Connection/connection.php";
+?>
  <?php  
-	session_start();
-	if (!$_SESSION["LoginStudent"])
-	{
-		header('location:../login/login.php');
-	}
-	if($_SESSION['LoginStudent']){
-		$_SESSION['LoginAdmin'] = "";
-	}
-		require_once "../connection/connection.php";
+	// session_start();
+	// if (!$_SESSION["LoginStudent"])
+	// {
+	// 	header('location:../login/login.php');
+	// }
+	// if($_SESSION['LoginStudent']){
+	// 	$_SESSION['LoginAdmin'] = "";
+	// }
+	// 	require_once "../connection/connection.php";
 		
 	?>
-<!---------------- Session Ends form here ------------------------>
+
 
 
 <!doctype html>

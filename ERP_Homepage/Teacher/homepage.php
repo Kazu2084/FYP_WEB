@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <title>Staff</title>
+  <title>Teacher</title>
 </head>
 <body>
   <div id="root">
@@ -173,6 +173,6 @@
       <div id="app-loading-icon"><i class="fa-solid fa-spinner-third"></i></div>
     </div>
   </div>
-  <script src="staff.js"></script>
+  <script src="teacher.js"></script>
 </body>
 </html>

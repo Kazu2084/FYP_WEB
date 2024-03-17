@@ -1,4 +1,4 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php  
 	session_start();
 	if (!$_SESSION["LoginAdmin"])
@@ -8,7 +8,7 @@
 		require_once "../connection/connection.php";
 		$_SESSION['LoginTeacher']="";
 	?>
-<!---------------- Session Ends form here ------------------------>
+
 
 <!--*********************** PHP code starts from here for data insertion into database ******************************* -->
 <?php  

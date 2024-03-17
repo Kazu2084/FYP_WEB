@@ -1,4 +1,4 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php  
 	session_start();
 	if (!$_SESSION["LoginAdmin"])
@@ -8,7 +8,7 @@
 		require_once "../connection/connection.php";
 		$_SESSION["LoginStudent"]="";
 	?>
-<!---------------- Session Ends form here ------------------------>
+
 
 <?php  
  	if (isset($_POST['btn_save'])) {

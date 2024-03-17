@@ -7,6 +7,7 @@
                     </div>
                 </div>
             </div>         -->
+            
 
 <body>
     <? include('../../../Common/teacher-sidenav-header.php'); ?>
@@ -38,7 +39,7 @@
                             <div class="product-cell"><span>
                                     <?php
                                     $courseId = $selExamRow['cou_id'];
-                                    $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$courseId' ");
+                                    $selCourse = $conn->query("SELECT * FROM courses WHERE cou_id='$courseId' ");
                                     while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) {
                                         echo $selCourseRow['cou_name'];
                                     }

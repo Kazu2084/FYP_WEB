@@ -173,12 +173,6 @@
         "div",
         { className: "reminder-icon" },
         React.createElement("i", { className: "fa-regular fa-bell" })
-      ),
-      React.createElement(
-        "span",
-        { className: "reminder-text" },
-        "Extra cool people meeting ",
-        React.createElement("span", { className: "reminder-time" }, "10AM")
       )
     );
   };
@@ -259,7 +253,7 @@
       ref.current.focus();
     };
     const handleOnCancel = () => {
-      setUserStatusTo(UserStatus.LoggedOut);
+      setUserStatusTo(UserStatus.LoggedIn);
     };
     const handleOnChange = (e) => {
       if (e.target.value.length <= 4) {
@@ -318,7 +312,7 @@
       ),
       React.createElement(
         "h3",
-        { id: "app-pin-label" },
+        { },
         "Enter PIN (0001) ",
         getErrorText(),
         " ",
@@ -394,12 +388,12 @@
      // getItems()
     );
   };
-  const Weather = () => {
-    const getDays = () => {
+  const Row = () => {
+    const getCards = () => {
       return [
         {
           id: 1,
-          name: "Student Information",
+          name: "Complaint",
           url: "#"
         },
         {
@@ -409,23 +403,23 @@
         },
         {
           id: 3,
-          name: "Attendance",
+          name: "",
           url: "#"
         },
         {
           id: 4,
-          name: "Examination",
-          url: "http://localhost/FYP_ERP/Modules/EMS_New/adminpanel/admin/home.php"
+          name: "Salary",
+          url: ""
         },
         {
           id: 5,
-          name: "Placement",
-          url: "#"
+          name: "Leave",
+          url: ""
         },
         {
           id: 6,
-          name: "Courses",
-          url: "#",
+          name: "Calendar",
+          url: "",
           tag: "<br>"
         },
       
@@ -456,77 +450,16 @@
         scrollable: true,
         title: "Modules"
       },
-      getDays(),
+      getCards(),
     
     );
   
   };
 
-  const Weather1 = () => {
-    const getDays1 = () => {
-      return [
-        {
-          id: 7,
-          name: "Fees",
-          url: "#"
-        },
-        {
-          id: 8,
-          name: "Result",
-          url: "#"
-        },
-        {
-          id: 9,
-          name: "Counseling",
-          url: "#"
-        },
-        {
-          id: 10,
-          name: "Feedback",
-          url: "#"
-        },
-        {
-          id: 11,
-          name: "Timetable",
-          url: "#"
-        },
-        {
-          id: 12,
-          name: "Notices",
-          url: "#"
-        }
-      
-        
-      ].map((day) => 
-      {
-        return React.createElement(
-          "a",
-          { key: day.id, className: "day-card", href: day.url, },
-          React.createElement(
-            "div",
-            { className: "day-card-content" },
-            
-            
-            React.createElement("span", { className: "day-name" }, day.name),
-            
-          )
-          
-        );
-      }
-      );
-    };
-    return React.createElement(
-      MenuSection,
-      {
-        icon: "fa-solid fa-sun",
-        id: "weather-section",
-        scrollable: true,
-      },
-      getDays1(),
-    
-    );
   
-  };
+
+  
+
   const Tools = () => {
     return React.createElement(
       MenuSection,
@@ -549,15 +482,15 @@
           image:
             "",
           title: "Library",
-          url: "http://localhost/FYP_ERP/Modules/LMS/Librarian/book.php"
+          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/book.php"
         },
         {
           desc: "",
           id: 2,
           image:
             "",
-          title: "Hostel",
-          url: "http://localhost/FYP_ERP/Modules/Hostel/admin/dashboard.php"
+          title: "Merch",
+          url: ""
         },
         {
           desc: "",
@@ -745,13 +678,13 @@
               React.createElement(UserStatusButton, {
                 icon: "fa-solid fa-arrow-right-from-arc",
                 id: "sign-out-button",
-                userStatus: UserStatus.LoggedOut
+                userStatus: UserStatus.LoggedIn
               })
             )
           ),
           React.createElement(QuickNav, null),
-          React.createElement(Weather, null),
-          React.createElement(Weather1, null),
+          React.createElement(Row, null),
+          
           React.createElement(Restaurants, null),
           React.createElement(Tools, null),
           React.createElement(Movies, null)
@@ -762,9 +695,9 @@
   const Background = () => {
     const { userStatus, setUserStatusTo } = React.useContext(AppContext);
     const handleOnClick = () => {
-      if (userStatus === UserStatus.LoggedOut) {
-        setUserStatusTo(UserStatus.LoggingIn);
-      }
+      // if (userStatus === UserStatus.Logged) {
+      //   setUserStatusTo(UserStatus.LoggingIn);
+      // }
     };
     return React.createElement(
       "div",
@@ -784,7 +717,7 @@
   };
   const AppContext = React.createContext(null);
   const App = () => {
-    const [userStatus, setUserStatusTo] = React.useState(UserStatus.LoggedOut);
+    const [userStatus, setUserStatusTo] = React.useState(UserStatus.LoggedIn);
     const getStatusClass = () => {
       return userStatus.replace(/\s+/g, "-").toLowerCase();
     };

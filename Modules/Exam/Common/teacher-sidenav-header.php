@@ -19,7 +19,14 @@
 //        $last_name = $row['last_name'];
 //     }
 // }?>
-
+<?php
+session_start();
+if (!$_SESSION['LoginAdmin'])
+{
+  header('location:../../../../Login/index.html');
+}
+include('../../../../Connection/connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

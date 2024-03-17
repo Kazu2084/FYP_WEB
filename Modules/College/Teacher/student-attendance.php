@@ -1,4 +1,4 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php
 session_start();
 if (!$_SESSION["LoginTeacher"]) {
@@ -6,7 +6,7 @@ if (!$_SESSION["LoginTeacher"]) {
 }
 require_once "../connection/connection.php";
 ?>
-<!---------------- Session Ends form here ------------------------>
+
 
 <?php
 if (isset($_POST['sub'])) {

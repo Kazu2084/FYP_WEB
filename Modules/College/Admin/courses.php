@@ -1,15 +1,13 @@
-<!---------------- Session starts form here ----------------------->
-<?php  
-	session_start();
-	if (!$_SESSION["LoginAdmin"])
-	{
-		header('location:../login/login.php');
-	}
-		require_once "../connection/connection.php";
-	?>
-<!---------------- Session Ends form here ------------------------>
 
-<!-- --------------------------------add courses------------------------------------- -->
+<?php
+session_start();
+if (!$_SESSION["LoginAdmin"]) {
+	header('location:../../../Login/index.html');
+}
+require_once "../../../Connection/connection.php";
+?>
+
+
 <?php  
 	if (isset($_POST['sub'])) {
 		$course_code=$_POST['course_code'];
@@ -37,8 +35,7 @@
 		<title>Admin - Courses</title>
 	</head>
 	<body>
-		<?php include('../common/common-header.php') ?>
-		<?php include('../common/admin-sidebar.php') ?>  
+	<?php include('../Common/admin-sidenav-header.php') ?>
 
 		<main role="main" class="col-xl-10 col-lg-9 col-md-8 ml-sm-auto px-md-4 mb-2 w-100">
 			<div class="sub-main">

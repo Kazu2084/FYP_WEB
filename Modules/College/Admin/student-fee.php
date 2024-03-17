@@ -1,12 +1,12 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php
 session_start();
 if (!$_SESSION["LoginAdmin"]) {
-	header('location:../login/login.php');
+	header('location:../../../Login/index.html');
 }
-require_once "../connection/connection.php";
+require_once "../../../Connection/connection.php";
 ?>
-<!---------------- Session Ends form here ------------------------>
+
 
 <?php
 if (isset($_POST['sub'])) {

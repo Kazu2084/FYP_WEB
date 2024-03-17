@@ -1,13 +1,4 @@
-<?php  
-// session_start();
-// echo $_SESSION['LoginStaff'];
 
-// if (!$_SESSION["LoginStaff"])
-// {
-//   header('location:../../Login/Index.html');
-// }
-//   require_once "../../Connection/connection.php";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +8,7 @@
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <title>Staff</title>
+  <title>Studnet</title>
 </head>
 <body>
   <div id="root">
@@ -88,7 +79,7 @@
                 </div>
                 <div class="restaurant-card background-image" style="background-image: url(&quot;https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmFyYmVxdWV8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60&quot;);">
                   <div class="restaurant-card-content">
-                    <div class="restaurant-card-content-items"><span class="restaurant-card-title">Library</span><span class="restaurant-card-desc">BBQ ain't need no rhyme</span></div>
+                    <div class="restaurant-card-content-items"><span class="restaurant-card-title">Fees</span><span class="restaurant-card-desc">BBQ ain't need no rhyme</span></div>
                   </div>
                 </div>
               </div>
@@ -173,6 +164,6 @@
       <div id="app-loading-icon"><i class="fa-solid fa-spinner-third"></i></div>
     </div>
   </div>
-  <script src="staff.js"></script>
+  <script src="student.js"></script>
 </body>
 </html>

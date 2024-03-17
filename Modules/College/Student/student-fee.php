@@ -1,12 +1,12 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php
 session_start();
 if (!$_SESSION["LoginStudent"]) {
-	header('location:../login/login.php');
+	header('location:../../../Login/index.html');
 }
-require_once "../connection/connection.php";
+require_once "../../../Connection/connection.php";
 ?>
-<!---------------- Session Ends form here ------------------------>
+
 
 
 <!doctype html>

@@ -1,4 +1,4 @@
-<!---------------- Session starts form here ----------------------->
+
 <?php  
 	session_start();
 	
@@ -16,7 +16,7 @@
 	}
 	require_once "../connection/connection.php";
 	?>
-<!---------------- Session Ends form here ------------------------>
+
 
 
 <!doctype html>
