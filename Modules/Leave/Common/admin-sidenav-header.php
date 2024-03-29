@@ -10,15 +10,15 @@
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../Styles/script.js"></script>
-  <script src="../../../Styles/body.js"></script>
+  <script src="../Style/script.js"></script>
+  <script src="../Style/body.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../Styles/style1.css">
-  <link rel="stylesheet" href="../../../Styles/style.css">
+  <link rel="stylesheet" href="../Style/style1.css">
+  <link rel="stylesheet" href="../Style/style.css">
 </head>
 
 <body>
@@ -76,19 +76,23 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../student/student-fee.php">
+                <a class="nav-link" href="department.php">
                   <i class="far fa-calendar-check" style="font-size: 20px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Fees</span>
+                  <span style="font-size: 18px;" class="ms-2">Departments</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../student/student-result.php">
+                <a class="nav-link" href="leave-section.php">
                   <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Result</span>
+                  <span style="font-size: 18px;" class="ms-2">Leave Types</span>
                 </a>
               </li>
-              
-            
+              <li class="nav-item">
+                <a class="nav-link" href="manage-leave.php">
+                  <i class="far fa-file-alt" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Manage Leave</span>
+                </a>
+              </li>
              
               <!-- <li class="nav-item">
                 <a class="nav-link" href="../Logout/logout.php">

@@ -1,5 +1,5 @@
 <?php
-    include ('../Connection/connection.php');
+    include ('../../../Connection/connection.php');
 						$query = mysqli_query($con,"SELECT * FROM `barcode` ORDER BY mid_barcode DESC ") or die (mysqli_error());
 						$fetch = mysqli_fetch_array($query);
 						$mid_barcode = $fetch['mid_barcode'];
@@ -148,7 +148,7 @@ include('../Common/librarian-sidenav-header.php');
 									<div class="col-md-3">
                                         <select name="category_id" class="select2_single form-control" tabindex="-1" required="required">
 										<?php
-										$result= mysqli_query($con,"select * from category") or die (mysqli_error());
+										$result= mysqli_query($con,"select * from book_category") or die (mysqli_error());
 										while ($row= mysqli_fetch_array ($result) ){
 										$id=$row['category_id'];
 										?>
@@ -175,7 +175,7 @@ include('../Common/librarian-sidenav-header.php');
 							
             <?php
 
-			include ('../Connection/connection.php');
+			include ('../../../Connection/connection.php');
 			if (!isset($_FILES['image']['tmp_name'])) {
 			echo "";
 			}else{

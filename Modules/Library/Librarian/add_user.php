@@ -136,7 +136,7 @@ include('../Common/librarian-sidenav-header.php');
                             </form>
 							
 							<?php	
-							include ('../Connection/connection.php');
+							include ('../../../Connection/connection.php');
                 if (isset($_POST['submit'])){
 							
 		//					if (!isset($_FILES['image']['tmp_name'])) {

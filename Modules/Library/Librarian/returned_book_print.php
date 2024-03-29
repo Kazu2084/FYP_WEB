@@ -1,4 +1,4 @@
-<?php include ('../Connection/connection.php');
+<?php include ('../../../Connection/connection.php');
 
 ?>
 <html>
@@ -69,7 +69,7 @@ function printPage() {
 	} ?>
 		<br/>
 <?php 
-include ('../Connection/connection.php');
+include ('../../../Connection/connection.php');
 							$return_query= mysqli_query($con,"select * from return_book 
 							LEFT JOIN book ON return_book.book_id = book.book_id 
 							LEFT JOIN user ON return_book.user_id = user.user_id 
@@ -165,7 +165,7 @@ include ('../Connection/connection.php');
 <br />
 <br />
 							<?php
-								// include('../Connection/connection.php');
+								// include('../../../Connection/connection.php');
 								// $user_query=mysqli_query($con,"select * from admin where admin_id='$id_session'");
 								// $row=mysqli_fetch_array($user_query); {
 							?>        

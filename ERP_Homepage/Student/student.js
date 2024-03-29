@@ -409,7 +409,7 @@
         {
           id: 4,
           name: "Examination",
-          url: "http://localhost/FYP_ERP/Modules/Exam/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Exam/dashboard.php"
         },
         {
           id: 5,
@@ -468,12 +468,12 @@
         {
           id: 8,
           name: "Result",
-          url: "http://localhost/FYP_ERP/Modules/College/Studnet/meow.php"
+          url: "http://localhost/FYP_ERP/Modules/College/Student/student-result.php"
         },
         {
           id: 9,
           name: "Counseling",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Student/student-result.php"
         },
         {
           id: 10,
@@ -586,7 +586,7 @@
           image:
             "",
           title: "Library",
-          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/book.php"
+          url: "http://localhost/FYP_ERP/Modules/Library/Users/book.php"
         },
         {
           desc: "",
@@ -594,7 +594,7 @@
           image:
             "",
           title: "Hostel",
-          url: "http://localhost/FYP_ERP/Modules/Hostel/admin/dashboard.php"
+          url: "http://localhost/FYP_ERP/Modules/Hostel/student/book-hostel.php"
         },
         {
           desc: "",
@@ -653,8 +653,7 @@
       {
         icon: "fa-regular fa-pot-food",
         id: "restaurants-section",
-        title: "Get it delivered!"
-      },
+        title: "Common Modules"      },
       getRestaurants()
     );
   };

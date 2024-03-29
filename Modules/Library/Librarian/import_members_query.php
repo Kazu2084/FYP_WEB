@@ -1,4 +1,4 @@
-<?php include('../Connection/connection.php');
+<?php include('../../../Connection/connection.php');
 if (isset($_POST['submit'])) 
 {
 // add if needed to preview

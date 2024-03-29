@@ -1,11 +1,11 @@
 <?php 
- include("../../../conn.php");
+ include("../../../../../Connection/connection.php");
 
 
 extract($_POST);
 
-$selExamineeFullname = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_fullname='$fullname' ");
-$selExamineeEmail = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_email='$email' ");
+$selExamineeFullname = $con->query("SELECT * FROM student_info WHERE exmne_fullname='$fullname' ");
+$selExamineeEmail = $con->query("SELECT * FROM student_info WHERE exmne_email='$email' ");
 
 
 if($gender == "0")
@@ -30,7 +30,7 @@ else if($selExamineeEmail->rowCount() > 0)
 }
 else
 {
-	$insData = $conn->query("INSERT INTO examinee_tbl(exmne_fullname,exmne_course,exmne_gender,exmne_birthdate,exmne_year_level,exmne_email,exmne_password) VALUES('$fullname','$course','$gender','$bdate','$year_level','$email','$password')  ");
+	$insData = $con->query("INSERT INTO student_info(exmne_fullname,exmne_course,exmne_gender,exmne_birthdate,exmne_year_level,exmne_email,exmne_password) VALUES('$fullname','$course','$gender','$bdate','$year_level','$email','$password')  ");
 	if($insData)
 	{
 		$res = array("res" => "success", "msg" => $email);

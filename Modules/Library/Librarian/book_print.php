@@ -1,5 +1,5 @@
 <?php
-include('../Connection/connection.php');
+include('../../../Connection/connection.php');
 //include('../Common/header.php');
 ?>
 <html>
@@ -71,7 +71,7 @@ include('../Connection/connection.php');
             <br />
             <?php
             $result = mysqli_query($con, "select * from book 
-							LEFT JOIN category ON book.category_id = category.category_id 
+							LEFT JOIN book_category ON book.category_id = book_category.category_id 
 							order by book.book_id DESC ") or die(mysqli_error());
             ?>
            <p style="font-size:14pt; font-weight:bold;" class="m-2 float-start">Book
@@ -144,7 +144,7 @@ include('../Connection/connection.php');
             <br />
             <br />
             <?php
-            // include('../Connection/connection.php');
+            // include('../../../Connection/connection.php');
             // include('session.php');
             // $user_query = mysqli_query($con, "select * from admin where admin_id='$id_session'") or die(mysqli_error());
             // $row = mysqli_fetch_array($user_query); {

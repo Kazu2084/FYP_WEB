@@ -1,4 +1,4 @@
-<?php include ('../Connection/connection.php');
+<?php include ('../../../Connection/connection.php');
 
 ?>
 <html>
@@ -66,7 +66,7 @@ function printPage() {
 		<br/>
     <?php include('session.php'); ?>
 <?php 
-include ('../Connection/connection.php');
+include ('../../../Connection/connection.php');
 								$borrow_query = mysqli_query($con,"SELECT * FROM borrow_book
 									LEFT JOIN book ON borrow_book.book_id = book.book_id 
 									LEFT JOIN user ON borrow_book.user_id = user.user_id 

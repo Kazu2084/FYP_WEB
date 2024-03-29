@@ -1,6 +1,6 @@
 <?php 
 
-include('../Connection/connection.php');
+include('../../../Connection/connection.php');
 
 $get_id=$_GET['user_id'];
 

@@ -65,18 +65,18 @@ include('../Common/user-sidenav-header.php');
 						</form>
 
 <?php
-	include ('../Connection/connection.php');
+	
 
 	if (isset($_POST['submit'])) {
 
 	$school_number = $_POST['school_number'];
 
-	$sql = mysqli_query($con,"SELECT * FROM user WHERE school_number = '$school_number' ");
+	$sql = mysqli_query($con,"SELECT * FROM student_info WHERE roll_no= '$school_number' ");
 	$count = mysqli_num_rows($sql);
 	$row = mysqli_fetch_array($sql);
 
 		if($count <= 0){
-			echo "<div class='alert alert-success'>".'No match found for the School ID Number'."</div>";
+			echo "<div class='alert alert-success'>".'No match found for the College ID Number'."</div>";
 		}else{
 			$school_number = $_POST['school_number'];
 			echo ('<script> location.href="borrow_book.php?school_number='.$school_number.'";</script');

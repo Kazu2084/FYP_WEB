@@ -1,7 +1,13 @@
 <?php 
 session_start();
-if (!isset($_SESSION['id'])){
-//header('location:book.php');
+if ($_SESSION['LoginAdmin']){
+    $id_session=$_SESSION['LoginAdmin'];
 }
-$id_session=$_SESSION['id'];
+else if ($_SESSION['LoginLibrarian']){
+    
+    $id_session=$_SESSION['LoginLibrarian'];
+}
+else{
+    header('location:book.php');
+}
 ?>

@@ -1,4 +1,12 @@
+<?php
+require_once "../../../Connection/connection.php";
 
+session_start();
+if (isset($_SESSION["Loginstudent"])) {
+  $current_session = $_SESSION['LoginStudent'];
+} 
+	
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,15 +20,15 @@
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="Style/script.js"></script>
-  <script src="Style/body.js"></script>
+  <script src="../../../Styles/script.js"></script>
+  <script src="../../../Styles/body.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="Style/style1.css">
-  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="../../../Styles/style1.css">
+  <link rel="stylesheet" href="../../../Styles/style.css">
 </head>
 
 <body>
@@ -43,6 +51,7 @@
           </div>
         </div>
         <div class="app-header-right">
+        <div><?php echo $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -150,7 +159,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+                <a class="nav-link" href="../../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>

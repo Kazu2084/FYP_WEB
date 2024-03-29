@@ -9,7 +9,7 @@
                 </div>
             </div>         -->
             <body>
-<? include('../../../Common/teacher-sidenav-header.php');?>
+<? include('../../../Common/admin-sidenav-header.php');?>
             <div class="app-content">
     <div class="app-content-header">
       <h1 class="app-content-headerText">Report</h1>
@@ -26,15 +26,15 @@
                     <div class="product-cell"><span>Ratings</span></div>
                       </div>
                               <?php 
-                                $selExmne = $conn->query("SELECT * FROM examinee_tbl et INNER JOIN exam_attempt ea ON et.exmne_id = ea.exmne_id ORDER BY ea.examat_id DESC ");
+                                $selExmne = $conn->query("SELECT * FROM student_info et INNER JOIN exam_attempt ea ON et.roll_no = ea.exmne_id ORDER BY ea.examat_id DESC ");
                                 if($selExmne->rowCount() > 0)
                                 {
                                     while ($selExmneRow = $selExmne->fetch(PDO::FETCH_ASSOC)) { ?>
                                        <div class="products-row">
-                                        <div class="product-cell"><span><?php echo $selExmneRow['exmne_fullname']; ?></span></div>
+                                        <div class="product-cell"><span><?php echo $selExmneRow['firstname']; ?></span></div>
                                         <div class="product-cell"><span>
                                              <?php 
-                                                $eid = $selExmneRow['exmne_id'];
+                                                $eid = $selExmneRow['roll_no'];
                                                 $selExName = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id=ea.exam_id WHERE  ea.exmne_id='$eid' ")->fetch(PDO::FETCH_ASSOC);
                                                 $exam_id = $selExName['ex_id'];
                                                 echo $selExName['ex_title'];

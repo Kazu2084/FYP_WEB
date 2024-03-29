@@ -482,7 +482,7 @@
           image:
             "",
           title: "Library",
-          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/book.php"
+          url: "http://localhost/FYP_ERP/Modules/Library/Users/book.php"
         },
         {
           desc: "",
@@ -549,8 +549,7 @@
       {
         icon: "fa-regular fa-pot-food",
         id: "restaurants-section",
-        title: "Get it delivered!"
-      },
+        title: "Common Modules"      },
       getRestaurants()
     );
   };

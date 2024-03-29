@@ -1,4 +1,4 @@
-<?php include ('../Connection/connection.php');
+<?php include ('../../../Connection/connection.php');
 $ID=$_GET['user_id'];
  ?>
 <?php 

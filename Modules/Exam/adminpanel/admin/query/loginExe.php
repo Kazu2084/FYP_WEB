@@ -1,11 +1,11 @@
 <?php 
 session_start();
- include("../../../conn.php");
+include("../../../../../Connection/connection.php");
  
 
 extract($_POST);
 
-$selAcc = $conn->query("SELECT * FROM admin_acc WHERE admin_user='$username' AND admin_pass='$pass'  ");
+$selAcc = $con->query("SELECT * FROM admin_acc WHERE admin_user='$username' AND admin_pass='$pass'  ");
 $selAccRow = $selAcc->fetch(PDO::FETCH_ASSOC);
 
 

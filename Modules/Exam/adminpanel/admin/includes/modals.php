@@ -74,11 +74,11 @@
             <select class="form-control" name="courseSelected">
               <option value="0">Select Course</option>
               <?php 
-                $selCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC");
+                $selCourse = $conn->query("SELECT * FROM courses ORDER BY course_code DESC");
                 if($selCourse->rowCount() > 0)
                 {
                   while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                     <option value="<?php echo $selCourseRow['cou_id']; ?>"><?php echo $selCourseRow['cou_name']; ?></option>
+                     <option value="<?php echo $selCourseRow['course_code']; ?>"><?php echo $selCourseRow['course_name']; ?></option>
                   <?php }
                 }
                 else

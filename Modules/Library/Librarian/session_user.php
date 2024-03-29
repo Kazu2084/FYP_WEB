@@ -7,10 +7,23 @@
 //		exit();
 //	}
 
-session_start();
-if (!isset($_SESSION['id'])){
-header('location:index.php');
-}
-$user_session=$_SESSION['id'];
+// session_start();
+// if (!isset($_SESSION['id'])){
+// //header('location:index.php');
+// }
+// $user_session=$_SESSION['id'];
 
+?>
+<?php 
+session_start();
+if ($_SESSION['LoginAdmin']){
+    $id_session=$_SESSION['LoginAdmin'];
+}
+else if ($_SESSION['LoginLibrarian']){
+    
+    $id_session=$_SESSION['LoginLibrarian'];
+}
+else{
+    header('location:book.php');
+}
 ?>

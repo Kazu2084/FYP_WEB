@@ -1,12 +1,10 @@
 <?php
 session_start();
-error_reporting(0);
-include('../includes/dbconn.php');
+//error_reporting(0);
+include('../includes/connection.php');
 include "../Common/admin-sidenav-header.php";
 
-if (strlen($_SESSION['alogin']) == 0) {
-    header('location:index.php');
-} else {
+
     if (isset($_GET['del'])) {
         $id = $_GET['del'];
         $sql = "DELETE from  tblleavetype  WHERE id=:id";
@@ -98,4 +96,3 @@ if (strlen($_SESSION['alogin']) == 0) {
 
     </html>
 
-<?php } ?>

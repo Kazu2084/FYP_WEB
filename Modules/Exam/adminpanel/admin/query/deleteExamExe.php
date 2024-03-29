@@ -1,8 +1,8 @@
 <?php 
- include("../../../conn.php");
+ include("../../../../../Connection/connection.php");
 extract($_POST);
 
-$delExam = $conn->query("DELETE  FROM exam_tbl WHERE ex_id='$id'  ");
+$delExam = $con->query("DELETE  FROM exam_tbl WHERE ex_id='$id'  ");
 if($delExam)
 {
 	$res = array("res" => "success");

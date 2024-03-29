@@ -1,12 +1,10 @@
 <?php
     session_start();
     error_reporting(0);
-    include('../includes/dbconn.php');
+    include('../includes/connection.php');
 include "../Common/admin-sidenav-header.php";
 
-    if(strlen($_SESSION['alogin'])==0){   
-    header('location:index.php');
-    } else {
+   
     if(isset($_POST['update'])){
     $lid=intval($_GET['lid']);
     $leavetype=$_POST['leavetype'];
@@ -101,5 +99,3 @@ include "../Common/admin-sidenav-header.php";
 </body>
 
 </html>
-
-<?php } ?>

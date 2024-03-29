@@ -1,22 +1,21 @@
 <?php
-session_start();
+// session_start();
 
-if (!isset($_SESSION['admin']['adminnakalogin']) == true)
-  header("manage-exam.php");
-  else{
-    header("manage-exam.php");} 
+// if (!isset($_SESSION['admin']['adminnakalogin']) == true)
+//   header("manage-exam.php");
+//   else{
+//     header("manage-exam.php");} 
 
 ?>
-<?php include("../../conn.php"); ?>
 
-<?php //include("includes/header.php"); ?>
+<?php //include("includes/header.php");  ?>
 
-<?php //include("includes/ui-theme.php"); ?>
+<?php //include("includes/ui-theme.php");  ?>
 
 <!-- <div class="app-main"> -->
 
-<?php //include("includes/sidebar.php"); ?>
-<? include('../../Common/teacher-sidenav-header.php'); ?>
+<?php //include("includes/sidebar.php");  ?>
+<? include ('../../Common/admin-sidenav-header.php'); ?>
 
 
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
         <div class="app-header-left">
           <div class="p app-icon" id="aside-toggle-btn">
           </div>
-          <p class="app-name">Teacher Dashboard</p>
+          <p class="app-name">Admin Dashboard</p>
           <div class="search-wrapper">
             <input class="search-input" type="text" placeholder="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
@@ -99,9 +98,9 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
           // // WHERE t2.stud_id = '$stud_id'";
           
           //   if (mysqli_num_rows($result1)>0) {
-          //       while ($row=mysqli_fetch_array($result1)) {?>
+          //       while ($row=mysqli_fetch_array($result1)) { ?>
           <span>
-            <?php //echo $row['first_name']; ?>
+            <?php //echo $row['first_name'];  ?>
           </span>
           <?php
           //       }
@@ -111,7 +110,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
           //       while ($row=mysqli_fetch_array($result2)) {
           //          $last_name = $row['last_name'];
           //       }
-          //   }?>
+          //   } ?>
 
           </button>
         </div>
@@ -160,12 +159,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
                   <span style="font-size: 18px;" class="ms-2">Exam</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="home.php?page=manage-examinee">
-                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Examinee</span>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="home.php?page=ranking-exam">
                   <i class="far fa-file-alt" style="font-size: 20px;"></i>
@@ -186,7 +180,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+                <a class="nav-link" href="../../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>
@@ -198,14 +192,16 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
         <main class="w-100 d-flex flex-column" id="main">
           <section class="container-fluid">
             <?php
+            require_once "../../../../Connection/connection.php";
             $exId = $_GET['id'];
 
-            $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$exId' ");
-            $selExamRow = $selExam->fetch(PDO::FETCH_ASSOC);
-
+            $selExam = $con->query("SELECT * FROM exam_tbl WHERE ex_id='$exId' ");
+            $selExamRow = $selExam->fetch_assoc(); 
+            
             $courseId = $selExamRow['cou_id'];
-            $selCourse = $conn->query("SELECT cou_name as courseName FROM course_tbl WHERE cou_id='$courseId' ")->fetch(PDO::FETCH_ASSOC);
+            $selCourse = $con->query("SELECT course_name as courseName FROM courses WHERE course_code='$courseId' ")->fetch_assoc(); // Using fetch_assoc() here too
             ?>
+
             <!-- 
 
 <div class="app-main__outer">
@@ -217,7 +213,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
             <div class="app-content">
               <div class="app-content-header">
                 <h1 class="app-content-headerText">Manage Exam</h1>
-               
+
               </div>
 
 
@@ -239,10 +235,10 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
                                     <?php echo $selCourse['courseName']; ?>
                                   </option>
                                   <?php
-                                  $selAllCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC");
-                                  while ($selAllCourseRow = $selAllCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                                    <option value="<?php echo $selAllCourseRow['cou_id']; ?>">
-                                      <?php echo $selAllCourseRow['cou_name']; ?>
+                                  $selAllCourse = $con->query("SELECT * FROM courses ORDER BY course_code DESC");
+                                  while ($selAllCourseRow = $selAllCourse->fetch_assoc()) { ?>
+                                    <option value="<?php echo $selAllCourseRow['course_code']; ?>">
+                                      <?php echo $selAllCourseRow['course_name']; ?>
                                     </option>
                                   <?php }
                                   ?>
@@ -293,13 +289,13 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
                       </div>
                       <div class="col-md-6">
                         <?php
-                        $selQuest = $conn->query("SELECT * FROM exam_question_tbl WHERE exam_id='$exId' ORDER BY eqt_id desc");
+                        $selQuest = $con->query("SELECT * FROM exam_question_tbl WHERE exam_id='$exId' ORDER BY eqt_id desc");
                         ?>
                         <div class="main-card mb-3 card">
                           <div class="card-header"><i class="header-icon lnr-license icon-gradient bg-plum-plate">
                             </i>Exam Question's
                             <span class="badge badge-pill badge-primary ml-2">
-                              <?php echo $selQuest->rowCount(); ?>
+                              <?php echo $selQuest->num_rows; ?>
                             </span>
                             <div class="btn-actions-pane-right">
                               <button class="btn btn-sm btn-primary " data-toggle="modal"
@@ -313,7 +309,7 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
 
                                 <?php
 
-                                if ($selQuest->rowCount() > 0) { ?>
+                                if ($selQuest->num_rows > 0) { ?>
                                   <div class="table-responsive">
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover"
                                       id="tableList">
@@ -326,9 +322,9 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
                                       <tbody>
                                         <?php
 
-                                        if ($selQuest->rowCount() > 0) {
+                                        if ($selQuest->num_rows > 0) {
                                           $i = 1;
-                                          while ($selQuestionRow = $selQuest->fetch(PDO::FETCH_ASSOC)) { ?>
+                                          while ($selQuestionRow = $selQuest->fetch_assoc()) { ?>
                                             <tr>
                                               <td>
                                                 <b>
@@ -426,6 +422,6 @@ if (!isset($_SESSION['admin']['adminnakalogin']) == true)
 
 
 
-              <?php include("includes/footer.php"); ?>
+              <?php include ("includes/footer.php"); ?>
 
-              <?php include("includes/modals.php"); ?>
+              <?php include ("includes/modals.php"); ?>

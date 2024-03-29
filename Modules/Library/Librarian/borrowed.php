@@ -110,7 +110,7 @@ include('../Common/librarian-sidenav-header.php');
 
 		$return_query = mysqli_query($con, "SELECT * from borrow_book 
 							LEFT JOIN book ON borrow_book.book_id = book.book_id 
-							LEFT JOIN user ON borrow_book.user_id = user.user_id 
+							LEFT JOIN login ON borrow_book.user_id = login.ID
 							where borrow_book.borrowed_status = 'borrowed' $where order by borrow_book.borrow_book_id DESC") or die(mysqli_error());
 		$return_count = mysqli_num_rows($return_query);
 

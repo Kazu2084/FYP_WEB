@@ -5,7 +5,7 @@ include('../Common/user-sidenav-header.php');
 if (isset($_GET['book_id']))
     $id = $_GET['book_id'];
 $result1 = mysqli_query($con, "SELECT * FROM book 
-               LEFT JOIN category on book.category_id = category.category_id 
+               LEFT JOIN book_category on book.category_id = book_category.category_id 
                WHERE book_id='$id'");
 while ($row = mysqli_fetch_array($result1)) {
     ?>

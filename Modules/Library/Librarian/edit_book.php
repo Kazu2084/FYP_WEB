@@ -1,5 +1,5 @@
 <?php 
-    include ('../Connection/connection.php');
+    include ('../../../Connection/connection.php');
     $ID=$_GET['book_id'];
  ?>
 <?php 
@@ -42,7 +42,7 @@ include('../Common/librarian-sidenav-header.php');
                         <!-- content starts here -->
 <?php
   $query1=mysqli_query($con,"select * from book 
-  LEFT JOIN category ON book.category_id = category.category_id
+  LEFT JOIN book_category ON book.category_id = book_category.category_id
   where book_id='$ID'")or die(mysqli_error());
 $row=mysqli_fetch_assoc($query1);
   ?>
@@ -162,7 +162,7 @@ $row=mysqli_fetch_assoc($query1);
                                         <select name="category_id" class="select2_single form-control" tabindex="-1" >
                                             <option value="<?php echo $row['category_id']; ?>"><?php echo $row['classname']; ?></option>
 										<?php
-										$result= mysqli_query($con,"select * from category") or die (mysqli_error());
+										$result= mysqli_query($con,"select * from book_category") or die (mysqli_error());
 										while ($row= mysqli_fetch_array ($result) ){
 										$id=$row['category_id'];
 										?>

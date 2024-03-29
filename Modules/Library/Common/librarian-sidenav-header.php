@@ -1,15 +1,14 @@
 
 <?php
-require_once "../Connection/connection.php";
+require_once "../../../Connection/connection.php";
 
-	session_start();
-	if (!$_SESSION["LoginLibrarian"])
-	{
-		//header('location:../Login/index.html');
-    $_SESSION['LoginLibrarian']=1;
-    header('Location: ../Librarian/book.php');
-	}
-		require_once "../Connection/connection.php";
+session_start();
+if (isset($_SESSION["LoginAdmin"])) {
+  $current_session = $_SESSION['LoginAdmin'];
+} elseif (isset($_SESSION["LoginLibrarian"])) {
+  $current_session = $_SESSION['LoginLibrarian'];
+}
+
 	?>
 
 
@@ -57,6 +56,8 @@ require_once "../Connection/connection.php";
           </div>
         </div>
         <div class="app-header-right">
+          <div><?php echo $current_session;?></div>
+          
           <button class="mode-switch" title="Switch Theme" id="color-scheme-selector">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -135,12 +136,12 @@ require_once "../Connection/connection.php";
                   <span style="font-size: 18px;" class="ms-2">Settings</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 18px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
             <!-- /aside nav ul list -->
           </div>

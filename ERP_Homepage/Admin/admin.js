@@ -404,7 +404,7 @@
         {
           id: 3,
           name: "Attendance",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/student-attendance.php"
         },
         {
           id: 4,
@@ -462,7 +462,7 @@
         {
           id: 7,
           name: "Fees",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/student-fee.php"
         },
         {
           id: 8,
@@ -533,7 +533,7 @@
         {
           id: 14,
           name: "Student",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/display-student.php"
         },
         {
           id: 15,
@@ -552,8 +552,8 @@
         },
         {
           id: 18,
-          name: "",
-          url: "#"
+          name: "Leave",
+          url: "http://localhost/FYP_ERP/Modules/Leave/admin/dashboard.php"
         }
       
         
@@ -677,7 +677,7 @@
       {
         icon: "fa-regular fa-pot-food",
         id: "restaurants-section",
-        title: "Get it delivered!"
+        title: "Common Modules"
       },
       getRestaurants()
     );

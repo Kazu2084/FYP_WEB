@@ -1,11 +1,11 @@
 <?php 
-	include ('../Connection/connection.php');
+include ('../../../Connection/connection.php');
 	
 	if (isset($_POST['submit'])) {
 	
 	$school_number = $_POST['school_number'];
 	
-	$sql = mysqli_query($con,"SELECT * FROM user WHERE school_number = '$school_number' ");
+	$sql = mysqli_query($con,"SELECT * FROM student_info WHERE roll_no= '$school_number'");
 	$count = mysqli_num_rows($sql);
 	$row = mysqli_fetch_array($sql);
 	

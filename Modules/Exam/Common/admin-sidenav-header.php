@@ -1,15 +1,14 @@
-<?php include("../../conn.php"); ?>
-
 <?php
+require_once "../../../../Connection/connection.php";
 
-$id = $_GET['id'];
-
-$selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fetch(PDO::FETCH_ASSOC);
-
+session_start();
+if (isset($_SESSION["LoginAdmin"])) {
+  $current_session = $_SESSION['LoginAdmin'];
+} elseif (isset($_SESSION["LoginExaminer"])) {
+  $current_session = $_SESSION['LoginExaminer'];
+}   
+	
 ?>
-<? include('../../Common/teacher-sidenav-header.php'); ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,15 +21,15 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../Style/script.js"></script>
-  <script src="../../Style/body.js"></script>
+  <script src="../../../../Styles/script.js"></script>
+  <script src="../../../../Styles/body.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../Style/style1.css">
-  <link rel="stylesheet" href="../../Style/style.css">
+  <link rel="stylesheet" href="../../../../Styles/style1.css">
+  <link rel="stylesheet" href="../../../../Styles/style.css">
 </head>
 
 <body>
@@ -40,7 +39,7 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
         <div class="app-header-left">
           <div class="p app-icon" id="aside-toggle-btn">
           </div>
-          <p class="app-name">Teacher Dashboard</p>
+          <p class="app-name">Admin Dashboard</p>
           <div class="search-wrapper">
             <input class="search-input" type="text" placeholder="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
@@ -53,6 +52,7 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
           </div>
         </div>
         <div class="app-header-right">
+        <div><?php echo $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme" id="color-scheme-selector">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -151,12 +151,7 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
                   <span style="font-size: 18px;" class="ms-2">Exam</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="home.php?page=manage-examinee">
-                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Examinee</span>
-                </a>
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link" href="home.php?page=ranking-exam">
                   <i class="far fa-file-alt" style="font-size: 20px;"></i>
@@ -177,7 +172,7 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+                <a class="nav-link" href="../../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>
@@ -188,88 +183,3 @@ $selExmne = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$id' ")->fe
         </aside>
         <main class="w-100 d-flex flex-column" id="main">
           <section class="container-fluid">
-<div class="app-content">
-      <div class="app-content-header">
-         <h1 class="app-content-headerText">Update Examinee</h1>
-      </div>
-
-
-      <div class="app-content-actions">
-         <div>
-
-            <form method="post" id="updateExamineeFrm">
-               <div class="form-group">
-                  <legend>Fullname</legend>
-                  <input type="hidden" name="exmne_id" value="<?php echo $id; ?>">
-                  <input type="" name="exFullname" class="form-control" required=""
-                     value="<?php echo $selExmne['exmne_fullname']; ?>">
-               </div>
-
-               <div class="form-group">
-                  <legend>Gender</legend>
-                  <select class="form-control" name="exGender">
-                     <option value="<?php echo $selExmne['exmne_gender']; ?>">
-                        <?php echo $selExmne['exmne_gender']; ?>
-                     </option>
-                     <option value="male">Male</option>
-                     <option value="female">Female</option>
-                  </select>
-               </div>
-
-               <div class="form-group">
-                  <legend>Birthdate</legend>
-                  <input type="date" name="exBdate" class="form-control" required=""
-                     value="<?php echo date('Y-m-d', strtotime($selExmne["exmne_birthdate"])) ?>" />
-               </div>
-
-               <div class="form-group">
-                  <legend>Course</legend>
-                  <?php
-                  $exmneCourse = $selExmne['exmne_course'];
-                  $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$exmneCourse' ")->fetch(PDO::FETCH_ASSOC);
-                  ?>
-                  <select class="form-control" name="exCourse">
-                     <option value="<?php echo $exmneCourse; ?>">
-                        <?php echo $selCourse['cou_name']; ?>
-                     </option>
-                     <?php
-                     $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id!='$exmneCourse' ");
-                     while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <option value="<?php echo $selCourseRow['cou_id']; ?>">
-                           <?php echo $selCourseRow['cou_name']; ?>
-                        </option>
-                     <?php }
-                     ?>
-                  </select>
-               </div>
-
-               <div class="form-group">
-                  <legend>Year level</legend>
-                  <input type="" name="exYrlvl" class="form-control" required=""
-                     value="<?php echo $selExmne['exmne_year_level']; ?>">
-               </div>
-
-               <div class="form-group">
-                  <legend>Email</legend>
-                  <input type="" name="exEmail" class="form-control" required=""
-                     value="<?php echo $selExmne['exmne_email']; ?>">
-               </div>
-
-               <div class="form-group">
-                  <legend>Password</legend>
-                  <input type="" name="exPass" class="form-control" required=""
-                     value="<?php echo $selExmne['exmne_password']; ?>">
-               </div>
-
-               <div class="form-group">
-                  <legend>Status</legend>
-                  <input type="hidden" name="course_id" value="<?php echo $id; ?>">
-                  <input type="" name="newCourseName" class="form-control" required=""
-                     value="<?php echo $selExmne['exmne_status']; ?>">
-               </div>
-               <div class="form-group" align="right">
-                  <button type="submit" class="btn btn-sm btn-primary">Update Now</button>
-               </div>
-            </form>
-         </div>
-      </div>

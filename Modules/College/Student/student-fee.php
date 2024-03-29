@@ -1,18 +1,7 @@
-
-<?php
-session_start();
-if (!$_SESSION["LoginStudent"]) {
-	header('location:../../../Login/index.html');
-}
-require_once "../../../Connection/connection.php";
-?>
-
-
-
 <!doctype html>
 <html lang="en">
 
-<?php include('../Common/student-sidenav-header.php') ?>
+<?php include('../Common/student-sidenav-header-fee.php') ?>
 
 <div class="app-content">
 	<div class="app-content-header">

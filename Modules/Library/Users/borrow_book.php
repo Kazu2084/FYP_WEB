@@ -8,7 +8,7 @@ include('../Common/user-sidenav-header.php');
 <?php
 $school_number = $_GET['school_number'];
 
-$user_query = mysqli_query($con, "SELECT * FROM user WHERE school_number = '$school_number' ");
+$user_query = mysqli_query($con, "SELECT * FROM student_info WHERE roll_no= '$school_number'");
 $user_row = mysqli_fetch_array($user_query);
 ?>
 <!--        
@@ -25,7 +25,7 @@ $user_row = mysqli_fetch_array($user_query);
 
 
 	<?php
-	$sql = mysqli_query($con, "SELECT * FROM user WHERE school_number = '$school_number' ");
+	$sql = mysqli_query($con, "SELECT * FROM student_info WHERE roll_no= '$school_number'");
 	$row = mysqli_fetch_array($sql);
 	?>
 	<div class="products-area-wrapper tableView">
@@ -43,7 +43,7 @@ $user_row = mysqli_fetch_array($user_query);
 			<?php
 			$borrow_query = mysqli_query($con, "SELECT * FROM borrow_book
 									LEFT JOIN book ON borrow_book.book_id = book.book_id
-									WHERE user_id = '" . $user_row['user_id'] . "' && borrowed_status = 'borrowed' ORDER BY borrow_book_id DESC");
+									WHERE user_id = '" . $user_row['roll_no'] . "' && borrowed_status = 'borrowed' ORDER BY borrow_book_id DESC");
 			$borrow_count = mysqli_num_rows($borrow_query);
 			while ($borrow_row = mysqli_fetch_array($borrow_query)) {
 				$due_date = $borrow_row['due_date'];
@@ -246,7 +246,7 @@ $user_row = mysqli_fetch_array($user_query);
 					} else {
 						?>
 						<div class="products-row">
-							<input type="hidden" name="user_id" value="<?php echo $user_row['user_id'] ?>">
+							<input type="hidden" name="user_id" value="<?php echo $user_row['roll_no'] ?>">
 							<input type="hidden" name="book_id" value="<?php echo $book_row['book_id'] ?>">
 
 							<div class='product-cell'><span>

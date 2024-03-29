@@ -28,8 +28,8 @@ include('../Common/user-sidenav-header.php');
                     $where = "";
 
 
-                    $return_query = mysqli_query($con, "SELECT * from book, borrow_book, login, user
-							WHERE borrow_book.user_id = login.ID AND login.ID = user.user_id
+                    $return_query = mysqli_query($con, "SELECT * from book, borrow_book, login
+							WHERE borrow_book.user_id = login.ID
 							AND borrow_book.borrowed_status = 'borrowed'") or die(mysqli_error());
                     $return_count = mysqli_num_rows($return_query);
 

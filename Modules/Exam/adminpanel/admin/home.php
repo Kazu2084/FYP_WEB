@@ -5,13 +5,12 @@
 
 
  ?>
-<?php include("../../conn.php"); ?>
 <?php //include("includes/header.php"); ?>      
 
 <?php //include("includes/ui-theme.php"); ?>
 
 <!-- <div class="app-main"> -->
-<?php include("../../Common/teacher-sidenav-header.php");?>
+<?php include("../../Common/admin-sidenav-header.php");?>
 <?php //include("includes/sidebar.php"); ?>
 
 <?php 

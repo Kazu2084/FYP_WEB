@@ -1,11 +1,9 @@
 <?php
 session_start();
 error_reporting(0);
-include('../includes/dbconn.php');
+include('../includes/connection.php');
 include "../Common/admin-sidenav-header.php";
-if (strlen($_SESSION['alogin']) == 0) {
-    header('location:index.php');
-} else {
+
     if (isset($_POST['add'])) {
         $leavetype = $_POST['leavetype'];
         $description = $_POST['description'];
@@ -84,5 +82,3 @@ if (strlen($_SESSION['alogin']) == 0) {
     </body>
 
     </html>
-
-<?php } ?>

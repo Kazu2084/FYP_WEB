@@ -2,9 +2,9 @@
 session_start();
 if (!$_SESSION["LoginAdmin"])
 {
-	header('location:../login/login.php');
+	header('location:../../../Login/index.html');
 }
-	require_once "../connection/connection.php";
+require_once "../../../Connection/connection.php";
 ?>
 	<?php 
 	if (isset($_GET['roll_no'])) {
@@ -15,7 +15,7 @@ if (!$_SESSION["LoginAdmin"])
 			header('Location: student.php');
 		}
 		else{
-			echo "Record not deleted. Frist of all delete record  from the child table then you can delete from here ";
+			echo "Record not deleted";
 			header('Refresh: 5; url=student.php');
 		}
 	}

@@ -16,11 +16,11 @@ include('../Common/librarian-sidenav-header.php');
     <div class="app-content">
         <div class="app-content-header">
             <h1 class="app-content-headerText">Books</h1>
-            <a href="add_book.php" style="background:none; position:relative; left:375px">
-                <button class="btn btn-primary"><i class="fa fa-plus"></i> Add Book</button>
+            <a href="add_book.php" style="background:none; position:relative; left:480px">
+                <button class="btn btn-primary"> Add Book</button>
             </a>
             <a href="book_print.php" target="_blank" style="background:none;">
-                <button class="btn btn-danger pull-right"><i class="fa fa-print"></i> Print Books List</button>
+                <button class="btn btn-danger pull-right"> Print Books List</button>
             </a>
         </div>
 
@@ -65,7 +65,7 @@ include('../Common/librarian-sidenav-header.php');
                 $id = $row['book_id'];
                 $category_id = $row['category_id'];
 
-                $cat_query = mysqli_query($con, "select * from category where category_id = '$category_id'");
+                $cat_query = mysqli_query($con, "select * from book_category where category_id = '$category_id'");
                 $cat_row = mysqli_fetch_array($cat_query);
                 ?>
                 <div class="products-row m-2">

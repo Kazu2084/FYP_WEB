@@ -2,7 +2,7 @@
         <div class="app-main__inner"> -->
 
 <body>
-  <? include('../../../Common/teacher-sidenav-header.php'); ?>
+  <? include('../../../Common/admin-sidenav-header.php'); ?>
   <div class="app-content">
     <div class="app-content-header">
       <h1 class="app-content-headerText">Ranking</h1>
@@ -24,7 +24,7 @@
 
 
 
-    $selExmne = $conn->query("SELECT * FROM examinee_tbl et  WHERE exmne_course='$exam_course'  ");
+    $selExmne = $conn->query("SELECT * FROM student_info et  WHERE exmne_course='$exam_course'  ");
 
 
     ?>
@@ -154,7 +154,7 @@
                     <div class="product-cell"><span>
                       <?php
                       $courseId = $selExamRow['cou_id'];
-                      $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$courseId' ");
+                      $selCourse = $conn->query("SELECT * FROM courses WHERE course_code='$courseId' ");
                       while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) {
                         echo $selCourseRow['cou_name'];
                       }

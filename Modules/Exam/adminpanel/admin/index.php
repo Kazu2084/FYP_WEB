@@ -1,12 +1,12 @@
 <?php 
-session_start();
-if(isset($_SESSION['admin']['adminnakalogin']) == true) header("location:home.php");
-// else if($page == "manage-exam")
-//      {
-//       include("manage-exam.php");
-//      }
-else{
-    header("manage-exam.php");} 
+// session_start();
+// if(isset($_SESSION['admin']['adminnakalogin']) == true) header("location:home.php");
+// // else if($page == "manage-exam")
+// //      {
+// //       include("manage-exam.php");
+// //      }
+// else{
+//     header("manage-exam.php");} 
 
 
  ?>

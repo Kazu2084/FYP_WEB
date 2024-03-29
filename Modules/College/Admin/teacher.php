@@ -3,10 +3,10 @@
 	session_start();
 	if (!$_SESSION["LoginAdmin"])
 	{
-		header('location:../login/login.php');
+		header('location:../../../Login/index.html');
 	}
-		require_once "../connection/connection.php";
-		$_SESSION['LoginTeacher']="";
+	require_once "../../../Connection/connection.php";
+	$_SESSION['LoginTeacher']="";
 	?>
 
 

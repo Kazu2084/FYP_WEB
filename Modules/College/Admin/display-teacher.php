@@ -13,10 +13,10 @@
 	else{ ?>
 		<script> alert("Your Are Not Autorize Person For This link");</script>
 	<?php
-		header('location:../login/login.php');
+		header('location:../../../Login/index.html');
 	}
-	require_once "../connection/connection.php";
-?>
+	require_once "../../../Connection/connection.php";
+	?>
 
 
 

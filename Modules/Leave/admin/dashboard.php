@@ -1,11 +1,8 @@
 <?php
 session_start();
 error_reporting(0);
-include('../includes/dbconn.php');
+include('../includes/connection.php');
 include "../Common/admin-sidenav-header.php";
-if (strlen($_SESSION['alogin']) == 0) {
-    header('location:index.php');
-} else {
     ?>
     <!doctype html>
     <html class="no-js" lang="en">
@@ -43,5 +40,3 @@ if (strlen($_SESSION['alogin']) == 0) {
     </body>
 
     </html>
-
-<?php } ?>

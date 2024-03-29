@@ -1,6 +1,12 @@
 <?php
-include("conn.php");
+include("../../Connection/connection.php");
 include("query/selectData.php");
+
+session_start();
+if (isset($_SESSION["LoginStudent"])) {
+  $current_session = $_SESSION['LoginStudent'];
+  $student_id =  $_SESSION['student_id'];
+} 
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +20,13 @@ include("query/selectData.php");
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="Style/script.js"></script>
-  <script src="Style/body.js"></script>
+  <script src="../../Styles/script.js"></script>
+  <script src="../../Styles/body.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="Style/style1.css">
-  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="../../Styles/style1.css">
+  <link rel="stylesheet" href="../../Styles/style.css">
 </head>
 
 <body>
@@ -84,7 +90,7 @@ include("query/selectData.php");
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
                                             <?php
-                                            echo strtoupper($selExmneeData['exmne_fullname']);
+                                           // echo strtoupper($selExmneeData['exmne_fullname']);
                                             ?>
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
@@ -159,7 +165,7 @@ include("query/selectData.php");
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+                <a class="nav-link" href="../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>

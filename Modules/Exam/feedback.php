@@ -15,7 +15,7 @@
           <div class="form-group">
             <label>Feedback as</label><br>
             <?php 
-            $query = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$exmneId' ");
+            $query = $conn->query("SELECT * FROM student_info WHERE exmne_id='$exmneId' ");
                $selMe = mysqli_fetch_array($query);
              ?>
             <input type="radio" name="asMe" value="<?php echo $selMe['exmne_fullname']; ?>"> <?php echo $selMe['exmne_fullname']; ?> <br>
@@ -43,8 +43,8 @@
  extract($_POST);
 
 
-$exmneSess = $_SESSION['examineeSession']['exmne_id'];
-
+// $exmneSess = $_SESSION['examineeSession']['exmne_id'];
+$exmneSess = $_SESSION['student_id'];
  $selMyFeedbacks = $conn->query("SELECT * FROM feedbacks_tbl WHERE exmne_id='$exmneSess' ");
 
  if($selMyFeedbacks->rowCount() >= 3)

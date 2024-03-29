@@ -1,6 +1,6 @@
 <?php
 //include('session.php');
-include('../Connection/connection.php');
+include('../../../Connection/connection.php');
 
 ?>
 <html>
@@ -194,7 +194,7 @@ include('../Connection/connection.php');
 				<br />
 				<br />
 				<?php
-				// include('../Connection/connection.php');
+				// include('../../../Connection/connection.php');
 				// $user_query=mysqli_query($con,"select * from admin where admin_id='$id_session'")or die(mysqli_error());
 				// $row=mysqli_fetch_array($user_query); {
 				?>

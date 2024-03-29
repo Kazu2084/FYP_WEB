@@ -1,28 +1,30 @@
 <?php
     session_start();
-    include('../includes/dbconn.php');
-include "../Common/admin-sidenav-header.php";
-    if(isset($_POST['signin'])){
+    require_once "../../../Connection/connection.php";
+    include "../Common/admin-sidenav-header.php";
+   // $_SESSION['alogin']= 3;
 
-    $uname=$_POST['username'];
-    $password=md5($_POST['password']);
-    $sql ="SELECT UserName,Password FROM admin WHERE UserName=:uname and Password=:password";
-    $query= $dbh -> prepare($sql);
-    $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-    $query-> bindParam(':password', $password, PDO::PARAM_STR);
-    $query-> execute();
-    $results=$query->fetchAll(PDO::FETCH_OBJ);
+//     if(isset($_POST['signin'])){
 
-    if($query->rowCount() > 0)
-    {
-    $_SESSION['alogin']=$_POST['username'];
-        echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-    } else {
-        echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-        //echo "<script>alert('Invalid Details');</script>";
-    }
+//     $uname=$_POST['username'];
+//     $password=md5($_POST['password']);
+//     $sql ="SELECT UserName,Password FROM admin WHERE UserName=:uname and Password=:password";
+//     $query= $dbh -> prepare($sql);
+//     $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
+//     $query-> bindParam(':password', $password, PDO::PARAM_STR);
+//     $query-> execute();
+//     $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-}
+//     if($query->rowCount() > 0)
+//     {
+//     $_SESSION['alogin']=$_POST['username'];
+//         echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+//     } else {
+//         echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+//         //echo "<script>alert('Invalid Details');</script>";
+//     }
+
+// }
 
 ?>
 

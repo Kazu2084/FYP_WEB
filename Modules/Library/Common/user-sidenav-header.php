@@ -1,21 +1,18 @@
 
 <?php
-require_once "../Connection/connection.php";
+require_once "../../../Connection/connection.php";
 
-	session_start();
-	if (!$_SESSION["LoginStudent"])
-	{
-		header('location:../Login/index.html');
-	}
-  else if(!$_SESSION["LoginTeacher"])
-  {
-    header('location:../Login/index.html');
-  }
-		require_once "../Connection/connection.php";
+session_start();
+if (isset($_SESSION["LoginStudent"])) {
+  $current_session = $_SESSION['LoginStudent'];
+  $student_id =  $_SESSION['student_id'];
+} elseif (isset($_SESSION["LoginTeacher"])) {
+  $current_session = $_SESSION['LoginTeacher'];
+} elseif (isset($_SESSION["LoginStaff"])) {
+  $current_session = $_SESSION['LoginStaff'];
+}
+  
 	?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,17 +25,17 @@ require_once "../Connection/connection.php";
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../Style/script.js"></script>
-  <script src="../Style/body.js"></script>
-  <script src="../Styles/table1.js"></script>
+  <script src="../../../Styles/script.js"></script>
+  <script src="../../../Styles/body.js"></script>
+  <script src="../../../Styles/table1.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../Styles/style1.css">
-  <link rel="stylesheet" href="../Styles/style.css">
-  <link rel="stylesheet" href="../Styles/style2.css">
+  <link rel="stylesheet" href="../../../Styles/style1.css">
+  <link rel="stylesheet" href="../../../Styles/style.css">
+  <link rel="stylesheet" href="../../../Styles/style2.css">
 
 </head>
 
@@ -62,6 +59,9 @@ require_once "../Connection/connection.php";
           </div>
         </div>
         <div class="app-header-right">
+        <div><?php echo $current_session; ?></div>
+
+
           <button class="mode-switch" title="Switch Theme" id="color-scheme-selector">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ require_once "../Connection/connection.php";
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+                <a class="nav-link" href="../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 18px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>

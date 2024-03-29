@@ -63,7 +63,7 @@ include('../Common/user-sidenav-header.php');
                 $id = $row['book_id'];
                 $category_id = $row['category_id'];
 
-                $cat_query = mysqli_query($con, "select * from category where category_id = '$category_id'");
+                $cat_query = mysqli_query($con, "select * from book_category where category_id = '$category_id'");
                 $cat_row = mysqli_fetch_array($cat_query);
                 ?>
                 <div class="products-row">

@@ -20,12 +20,14 @@ session_start();
                 }
                 else if ($row["role"]=="teacher")
                 {
-                    $_SESSION['LoginTeacher']=$row["user_id"];
+                    $_SESSION['LoginTeacher']=$row["username"];
                     header('Location: ../ERP_Homepage/Teacher/homepage.php');
                 }
                 else if ($row["role"]=="student")
                 {
-                    $_SESSION['LoginStudent']=$row['ID'];
+                    $_SESSION['LoginStudent']=$row['username'];
+                    $_SESSION['student_id']=$row['ID'];
+
                     header('Location: ../ERP_Homepage/Student/homepage.php');
                 }
                 else if ($row["role"]=="staff")
@@ -35,27 +37,27 @@ session_start();
                 }
                 else if ($row["role"]=="librarian")
                 {
-                    $_SESSION['LoginStudent']=$row['user_id'];
-                    header('Location: ../student/student-index.php');
+                    $_SESSION['LoginLibrarian']=$row['username'];
+                    header('Location: ../Modules/Library/Librarian/book.php');
                 }
                 else if ($row["role"]=="placement")
                 {
-                    $_SESSION['LoginStudent']=$row['user_id'];
+                    $_SESSION['LoginPlacement']=$row['username'];
                     header('Location: ../student/student-index.php');
                 }
                 else if ($row["role"]=="examiner")
                 {
-                    $_SESSION['LoginStudent']=$row['user_id'];
-                    header('Location: ../student/student-index.php');
+                    $_SESSION['LoginExaminer']=$row['username'];
+                    header('Location: http://localhost/FYP_ERP/Modules/Exam/adminpanel/admin/home.php');
                 }
                 else if ($row["role"]=="chef")
                 {
-                    $_SESSION['LoginStudent']=$row['user_id'];
+                    $_SESSION['LoginChef']=$row['username'];
                     header('Location: ../student/student-index.php');
                 }
                 else if ($row["role"]=="warden")
                 {
-                    $_SESSION['LoginStudent']=$row['user_id'];
+                    $_SESSION['LoginWarden']=$row['username'];
                     header('Location: ../student/student-index.php');
                 }
             }
