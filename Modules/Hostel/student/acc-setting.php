@@ -12,14 +12,14 @@
     $np=$_POST['newpassword'];
     $np=md5($np);
     $udate=date('d-m-Y h:i:s', time());;
-        $sql="SELECT password FROM userregistration where password=?";
+        $sql="SELECT password FROM roomregistration where password=?";
         $chngpwd = $mysqli->prepare($sql);
         $chngpwd->bind_param('s',$op);
         $chngpwd->execute();
         $chngpwd->store_result(); 
         $row_cnt=$chngpwd->num_rows;;
         if($row_cnt>0){
-            $con="update userregistration set password=?,passUdateDate=?  where id=?";
+            $con="update roomregistration set password=?,passUdateDate=?  where id=?";
             $chngpwd1 = $mysqli->prepare($con);
             $chngpwd1->bind_param('ssi',$np,$udate,$ai);
             $chngpwd1->execute();
@@ -35,7 +35,7 @@
 <html dir="ltr" lang="en">
 
 <head>
-<!-- By CodeAstro - codeastro.com -->
+
     
     <link href="../dist/css/style.min.css" rel="stylesheet">
 
@@ -54,12 +54,7 @@
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -67,7 +62,7 @@
         <header class="topbar" data-navbarbg="skin6">
             <?php include '../includes/student-navigation.php'?>
         </header>
-        <!-- By CodeAstro - codeastro.com -->
+        
         
         <aside class="left-sidebar" data-sidebarbg="skin6">
             
@@ -90,7 +85,7 @@
 
                 <div class="row">
 
-                <?php $result ="SELECT passUdateDate FROM userregistration WHERE id=?";
+                <?php $result ="SELECT passUdateDate FROM roomregistration WHERE id=?";
                 $stmt = $mysqli->prepare($result);
                 $stmt->bind_param('i',$ai);
                 $stmt->execute();
@@ -172,7 +167,7 @@
 
             </div>
             
-            <?php include '../includes/footer.php' ?>
+      
            
         </div>
         

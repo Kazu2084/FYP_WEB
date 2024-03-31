@@ -16,7 +16,7 @@ require_once "../../../Connection/connection.php";
 	if(isset($_POST["btnSearch"]))
     {
 		$userId = $_POST['search'];
-        $query="select * from login where user_id='$userId' ";
+        $query="select * from login where ID='$userId' ";
         $result=mysqli_query($con,$query);
         if (mysqli_num_rows($result)>0) {
             while ($row=mysqli_fetch_array($result)) {

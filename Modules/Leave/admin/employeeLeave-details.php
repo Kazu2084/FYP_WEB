@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    error_reporting(0);
+    // session_start();
+    // error_reporting(0);
     include('../includes/connection.php');
     include "../Common/admin-sidenav-header.php";
   
@@ -60,7 +60,7 @@
 
                                             <?php 
                                             $lid=intval($_GET['leaveid']);
-                                            $sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblemployees.Gender,tblemployees.Phonenumber,tblemployees.EmailId,tblleaves.LeaveType,tblleaves.ToDate,tblleaves.FromDate,tblleaves.Description,tblleaves.PostingDate,tblleaves.Status,tblleaves.AdminRemark,tblleaves.AdminRemarkDate from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.id=:lid";
+                                            $sql = "SELECT tblleaves.id as lid,teacher_info.first_name,teacher_info.last_name,teacher_info.teacher_id,teacher_info.gender,teacher_info.phone_no,teacher_info.email,tblleaves.LeaveType,tblleaves.ToDate,tblleaves.FromDate,tblleaves.Description,tblleaves.PostingDate,tblleaves.Status,tblleaves.AdminRemark,tblleaves.AdminRemarkDate from tblleaves join teacher_info on tblleaves.empid=teacher_info.teacher_id where tblleaves.id=:lid";
                                             $query = $dbh -> prepare($sql);
                                             $query->bindParam(':lid',$lid,PDO::PARAM_STR);
                                             $query->execute();
@@ -75,20 +75,20 @@
                                                 <tr>
 
                                                 <td ><b>Staff ID:</b></span></div>
-                                              <td colspan="1"><?php echo htmlentities($result->EmpId);?></span></div>
+                                              <td colspan="1"><?php echo htmlentities($result->teacher_id);?></span></div>
                                             <div class="product-cell"><span> <b>Staff Name:</b></span></div>
                                               <td colspan="1"><a href="update-employee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank">
-                                                <?php echo htmlentities($result->FirstName." ".$result->LastName);?></a></span></div>
+                                                <?php echo htmlentities($result->first_name." ".$result->last_name);?></a></span></div>
 
                                               <td ><b>Gender :</b></span></div>
-                                              <td colspan="1"><?php echo htmlentities($result->Gender);?></span></div>
+                                              <td colspan="1"><?php echo htmlentities($result->gender);?></span></div>
                                           </div>
 
                                           <tr>
                                              <td ><b>Staff Email:</b></span></div>
-                                            <td colspan="1"><?php echo htmlentities($result->EmailId);?></span></div>
+                                            <td colspan="1"><?php echo htmlentities($result->email);?></span></div>
                                              <td ><b>Staff Contact:</b></span></div>
-                                            <td colspan="1"><?php echo htmlentities($result->Phonenumber);?></span></div>
+                                            <td colspan="1"><?php echo htmlentities($result->phone_no);?></span></div>
 
                                             <td ><b>Leave Type:</b></span></div>
                                             <td colspan="1"><?php echo htmlentities($result->LeaveType);?></span></div>

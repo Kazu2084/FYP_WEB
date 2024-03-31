@@ -1,3 +1,13 @@
+<?php
+require_once "../../../Connection/connection.php";
+
+session_start();
+if (isset($_SESSION["LoginAdmin"])) {
+  $current_session = $_SESSION['LoginAdmin'];
+} elseif (isset($_SESSION["LoginChef"])) {
+  $current_session = $_SESSION['LoginChef'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +39,7 @@
         <div class="app-header-left">
           <div class="p app-icon" id="aside-toggle-btn">
           </div>
-          <p class="app-name">Admin Dashboard</p>
+          <p class="app-name">Chef Dashboard</p>
           <div class="search-wrapper">
             <input class="search-input" type="text" placeholder="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
@@ -42,6 +52,8 @@
           </div>
         </div>
         <div class="app-header-right">
+          <div><?php echo $current_session; ?></div>
+          <div><?php $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme" id="color-scheme-selector">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -128,12 +140,12 @@
               </li>
               
               
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="partials/_logout.php">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </div>
         </aside>

@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION["LoginStudent"])) {
+  $current_session = $_SESSION['LoginStudent'];
+  $student_id =  $_SESSION['student_id'];
+}
+
+?>
 <nav class="navbar top-navbar navbar-expand-md">
                 <div class="navbar-header" data-logobg="skin6">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -54,7 +61,7 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-right">
-                        
+                        <div><?php echo $current_session; ?></div>
                         <!-- ============================================================== -->
                         <!-- User profile -->
                         <!-- ============================================================== -->
@@ -66,7 +73,7 @@
                                 
                                     <?php	
                                     $aid=$_SESSION['id'];
-                                        $ret="select * from userregistration where id=?";
+                                        $ret="select * from roomregistration where id=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('i',$aid);
                                         $stmt->execute();

@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $emailid = $_POST['email'];
     $password = $_POST['password'];
     $password = md5($password);
-    $query = "INSERT into userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
+    $query = "INSERT into roomRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('sssssiss', $regno, $fname, $mname, $lname, $gender, $contactno, $emailid, $password);
     $stmt->execute();

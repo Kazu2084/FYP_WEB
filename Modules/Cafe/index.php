@@ -23,7 +23,7 @@
     <div class="row">
       <!-- Fetch all the categories and use a loop to iterate through categories -->
       <?php 
-        $sql = "SELECT * FROM `categories`"; 
+        $sql = "SELECT * FROM `cafe_categories`"; 
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)){
           $id = $row['categorieId'];

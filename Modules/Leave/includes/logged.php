@@ -1,8 +1,15 @@
 <?php
-    include '../includes/dbconn.php';
-    
-    $eid=$_SESSION['eid'];
-    $sql = "SELECT FirstName,LastName,EmpId from  tblemployees where id=:eid";
+    include '../includes/connection.php';
+
+    if (isset($_SESSION["LoginTeacher"])) {
+        $current_session = $_SESSION['LoginTeacher'];
+        $eid =  $_SESSION['teacher_id'];
+      }elseif (isset($_SESSION["LoginStaff"])) {
+        $current_session = $_SESSION['LoginStaff'];
+        $eid =  $_SESSION['staff_id'];
+      }
+    //$eid=$_SESSION['eid'];
+    $sql = "SELECT first_name,last_name, teacher_id from  teacher_info where teacher_id=:eid";
     $query = $dbh -> prepare($sql);
     $query->bindParam(':eid',$eid,PDO::PARAM_STR);
     $query->execute();
@@ -12,8 +19,8 @@
     if($query->rowCount() > 0){
         foreach($results as $result)
     {    ?>
-        <p style="color:white;"><?php echo htmlentities($result->FirstName." ".$result->LastName);?></p>
-        <span><?php echo htmlentities($result->EmpId)?></span>
+        <p style="color:white;"><?php echo htmlentities($result->first_name." ".$result->last_name);?></p>
+        <span><?php echo htmlentities($result->teacher_id)?></span>
 <?php }
     } 
 ?>

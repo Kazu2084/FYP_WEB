@@ -19,7 +19,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </div>
    </form>
@@ -54,7 +54,6 @@
      </form>
     </div>
   </div>
-
 
 <!-- Modal For Add Exam -->
 <div class="modal fade" id="modalForExam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,7 +121,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </div>
    </form>
@@ -193,7 +192,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </div>
    </form>
@@ -253,7 +252,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Add Now</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
       </form>
     </div>

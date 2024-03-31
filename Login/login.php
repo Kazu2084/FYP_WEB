@@ -21,18 +21,19 @@ session_start();
                 else if ($row["role"]=="teacher")
                 {
                     $_SESSION['LoginTeacher']=$row["username"];
+                    $_SESSION['teacher_id']=$row['ID'];
                     header('Location: ../ERP_Homepage/Teacher/homepage.php');
                 }
                 else if ($row["role"]=="student")
                 {
                     $_SESSION['LoginStudent']=$row['username'];
                     $_SESSION['student_id']=$row['ID'];
-
                     header('Location: ../ERP_Homepage/Student/homepage.php');
                 }
                 else if ($row["role"]=="staff")
                 {
                     $_SESSION['LoginStaff']=$row['username'];
+                    $_SESSION['staff_id']=$row['ID'];
                     header('Location: ../ERP_Homepage/Staff/homepage.php');
                 }
                 else if ($row["role"]=="librarian")
@@ -43,7 +44,7 @@ session_start();
                 else if ($row["role"]=="placement")
                 {
                     $_SESSION['LoginPlacement']=$row['username'];
-                    header('Location: ../student/student-index.php');
+                    header('Location: ../Modules/PMS/admin/dashboard.php');
                 }
                 else if ($row["role"]=="examiner")
                 {
@@ -53,12 +54,12 @@ session_start();
                 else if ($row["role"]=="chef")
                 {
                     $_SESSION['LoginChef']=$row['username'];
-                    header('Location: ../student/student-index.php');
+                    header('Location: ../Modules/Cafe/admin/home.php');
                 }
                 else if ($row["role"]=="warden")
                 {
                     $_SESSION['LoginWarden']=$row['username'];
-                    header('Location: ../student/student-index.php');
+                    header('Location: ../Modules/Hostel/admin/dashboard.php');
                 }
             }
         }

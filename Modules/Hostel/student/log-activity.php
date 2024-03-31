@@ -7,7 +7,7 @@
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<!-- By CodeAstro - codeastro.com -->
+
 <head>
     
     <link href="../dist/css/style.min.css" rel="stylesheet">
@@ -16,12 +16,7 @@
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -51,7 +46,7 @@
                         <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">My Log Activities</h4>
                 </div>
 
-<!-- By CodeAstro - codeastro.com -->
+
                 <div class="col-12">
                         <div class="card">
                             
@@ -102,7 +97,7 @@
 
             </div>
             
-            <?php include '../includes/footer.php' ?>
+         
            
         </div>
         

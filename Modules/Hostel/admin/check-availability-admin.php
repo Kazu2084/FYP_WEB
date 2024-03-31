@@ -6,7 +6,7 @@
 
             echo "error : You did not enter a valid email.";
         } else {
-            $result ="SELECT count(*) FROM userRegistration WHERE email=?";
+            $result ="SELECT count(*) FROM roomRegistration WHERE email=?";
             $stmt = $mysqli->prepare($result);
             $stmt->bind_param('s',$email);
             $stmt->execute();

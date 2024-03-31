@@ -6,7 +6,7 @@
 
     if(isset($_GET['del'])) {
         $id=intval($_GET['del']);
-        $adn="DELETE from userregistration where id=?";
+        $adn="DELETE from roomregistration where id=?";
             $stmt= $mysqli->prepare($adn);
             $stmt->bind_param('i',$id);
             $stmt->execute();
@@ -38,12 +38,7 @@
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -99,7 +94,7 @@
                                         <tbody>
                                         <?php	
                                         $aid=$_SESSION['id'];
-                                        $ret="SELECT * from userregistration";
+                                        $ret="SELECT * from roomregistration";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->execute() ;//ok
                                         $res=$stmt->get_result();

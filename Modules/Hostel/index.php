@@ -6,7 +6,7 @@
     $email=$_POST['email'];
     $password=$_POST['password'];
     $password = md5($password);
-    $stmt=$mysqli->prepare("SELECT email,password,id FROM userregistration WHERE email=? and password=? ");
+    $stmt=$mysqli->prepare("SELECT email,password,id FROM roomregistration WHERE email=? and password=? ");
         $stmt->bind_param('ss',$email,$password);
         $stmt->execute();
         $stmt -> bind_result($email,$password,$id);
@@ -34,7 +34,7 @@
                }
    }
 ?>
-<!-- By CodeAstro - codeastro.com -->
+
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -64,7 +64,7 @@
 
 </head>
 
-<!-- By CodeAstro - codeastro.com -->
+
 
 <body>
     <div class="main-wrapper">
@@ -80,7 +80,7 @@
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
-        <!-- By CodeAstro - codeastro.com -->
+        
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <!-- By CodeAstro - codeastro.com -->
+        
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->

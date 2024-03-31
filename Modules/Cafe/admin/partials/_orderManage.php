@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $orderId = $_POST['orderId'];
         $status = $_POST['status'];
 
-        $sql = "UPDATE `orders` SET `orderStatus`='$status' WHERE `orderId`='$orderId'";   
+        $sql = "UPDATE `cafe_orders` SET `orderStatus`='$status' WHERE `orderId`='$orderId'";   
         $result = mysqli_query($conn, $sql);
         if ($result){
             echo "<script>alert('update successfully');

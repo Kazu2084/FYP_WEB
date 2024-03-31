@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../style.css">
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <title>Studnet</title>
+  <title>Student</title>
 </head>
 <body>
   <div id="root">

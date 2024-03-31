@@ -14,7 +14,7 @@
     $gender=$_POST['gender'];
     $contactno=$_POST['contact'];
     $udate = date('d-m-Y h:i:s', time());
-    $query="UPDATE  userRegistration set firstName=?,middleName=?,lastName=?,gender=?,contactNo=?,updationDate=? where id=?";
+    $query="UPDATE  roomRegistration set firstName=?,middleName=?,lastName=?,gender=?,contactNo=?,updationDate=? where id=?";
     $stmt = $mysqli->prepare($query);
     $rc=$stmt->bind_param('ssssisi',$fname,$mname,$lname,$gender,$contactno,$udate,$aid);
     $stmt->execute();
@@ -24,7 +24,7 @@
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<!-- By CodeAstro - codeastro.com -->
+
 <head>
     
     <link href="../dist/css/style.min.css" rel="stylesheet">
@@ -43,12 +43,7 @@
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -66,7 +61,7 @@
         </aside>
         
         <div class="page-wrapper">
-            <!-- By CodeAstro - codeastro.com -->
+            
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -81,7 +76,7 @@
 
                     <?php	
                     $aid=$_SESSION['id'];
-                        $ret="select * from userregistration where id=?";
+                        $ret="select * from roomregistration where id=?";
                             $stmt= $mysqli->prepare($ret) ;
                         $stmt->bind_param('i',$aid);
                         $stmt->execute() ;//ok
@@ -103,7 +98,7 @@
                             </div>
                         </div>
 
-<!-- By CodeAstro - codeastro.com -->
+
 
                         <div class="col-md-6">
                             <div class="card">
@@ -193,7 +188,7 @@
                             </div>
                         </div>
 
-<!-- By CodeAstro - codeastro.com -->
+
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
@@ -222,7 +217,6 @@
 
             </div>
             
-            <?php include '../includes/footer.php' ?>
            
         </div>
         
@@ -231,7 +225,7 @@
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps --><!-- By CodeAstro - codeastro.com -->
+    <!-- apps -->
     <!-- apps -->
     <script src="../dist/js/app-style-switcher.js"></script>
     <script src="../dist/js/feather.min.js"></script>

@@ -1,5 +1,5 @@
 <?php 
-    $itemModalSql = "SELECT * FROM `orders`";
+    $itemModalSql = "SELECT * FROM `cafe_orders`";
     $itemModalResult = mysqli_query($conn, $itemModalSql);
     while($itemModalRow = mysqli_fetch_assoc($itemModalResult)){
         $orderid = $itemModalRow['orderId'];

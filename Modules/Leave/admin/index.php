@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     require_once "../../../Connection/connection.php";
     include "../Common/admin-sidenav-header.php";
    // $_SESSION['alogin']= 3;
@@ -66,9 +66,7 @@
 
             <div class="app-content-actions">
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     <!-- login area start -->
     <div class="login-area">

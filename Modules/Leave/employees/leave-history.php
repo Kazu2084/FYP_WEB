@@ -1,12 +1,16 @@
 <?php
-    
-    session_start();
-    error_reporting(0);
-    include('includes/dbconn.php');
+        error_reporting(0);
 
-    if(strlen($_SESSION['emplogin'])==0){   
-    header('location:../index.php');
-    }   else    {
+    session_start();
+    include('../includes/connection.php');
+    if (isset($_SESSION["LoginTeacher"])) {
+        $current_session = $_SESSION['LoginTeacher'];
+        $eid =  $_SESSION['teacher_id'];
+      }elseif (isset($_SESSION["LoginStaff"])) {
+        $current_session = $_SESSION['LoginStaff'];
+        $eid =  $_SESSION['staff_id'];
+      }
+   
 
  ?>
 
@@ -43,9 +47,7 @@
 
 <body>
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">
@@ -108,6 +110,7 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
+                        <div style="left:250px;"><?php echo $current_session;?></div>
                             <h4 class="page-title pull-left">My Leave History</h4>  
                         </div>
                     </div>
@@ -124,17 +127,17 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Leave History Table</h4>
-                                <?php if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php echo htmlentities($error); ?>
+                                <!-- <?php //if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php// echo htmlentities($error); ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             
-                             </div><?php } 
-                                 else if($msg){?><div class="alert alert-success alert-dismissible fade show"><strong>Info: </strong><?php echo htmlentities($msg); ?> 
+                             </div><?php //} 
+                                 //else if($msg){?><div class="alert alert-success alert-dismissible fade show"><strong>Info: </strong><?php //echo htmlentities($msg); ?> 
                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                 </div><?php }?>
+                                 </div><?php// }?> -->
                                 <div class="data-tables">
                                     <table id="dataTable" class="table table-hover progress-table text-center">
                                         <thead class="bg-light text-capitalize">
@@ -151,7 +154,7 @@
                                         
                                         <tbody>
                                         <?php 
-                                        $eid=$_SESSION['eid'];
+                                     
                                         $sql = "SELECT LeaveType,ToDate,FromDate,Description,PostingDate,AdminRemarkDate,AdminRemark,Status from tblleaves where empid=:eid";
                                         $query = $dbh -> prepare($sql);
                                         $query->bindParam(':eid',$eid,PDO::PARAM_STR);
@@ -243,5 +246,3 @@
 </body>
 
 </html>
-
-<?php } ?> 

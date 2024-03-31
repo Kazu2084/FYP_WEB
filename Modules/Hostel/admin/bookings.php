@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $paddress = $_POST['paddress'];
     $pcity = $_POST['pcity'];
     $ppincode = $_POST['ppincode'];
-    $query = "INSERT into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "INSERT into  roomregistration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $mysqli->prepare($query);
     $rc = $stmt->bind_param('iiiisissssssisissississi', $roomno, $seater, $feespm, $foodstatus, $stayfrom, $duration, $course, $regno, $fname, $mname, $lname, $gender, $contactno, $emailid, $emcntno, $gurname, $gurrelation, $gurcntno, $caddress, $ccity, $cpincode, $paddress, $pcity, $ppincode);
     $stmt->execute();
@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
             <form method="POST" class="row g-3">
 
                 <?php
-                $stmt = $mysqli->prepare("SELECT emailid FROM registration WHERE emailid=? ");
+                $stmt = $mysqli->prepare("SELECT emailid FROM roomregistration WHERE emailid=? ");
                 $stmt->bind_param('s', $uid);
                 $stmt->execute();
                 $stmt->bind_result($email);

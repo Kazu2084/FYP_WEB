@@ -1,3 +1,20 @@
+<?php
+require_once "../../Connection/connection.php";
+
+if (isset($_SESSION["LoginStudent"])) {
+  $username = $_SESSION['LoginStudent'];
+  $userId =  $_SESSION['student_id'];
+  $loggedin= true;
+} elseif (isset($_SESSION["LoginTeacher"])) {
+  $username = $_SESSION['LoginTeacher'];
+  $userId =  $_SESSION['teacher_id'];
+  $loggedin= true;
+} elseif (isset($_SESSION["LoginStaff"])) {
+  $username = $_SESSION['LoginStaff'];
+  $userId =  $_SESSION['staff_id'];
+  $loggedin= true;
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,25 +61,25 @@
                                 <th scope="col">
                                     <form action="partials/_manageCart.php" method="POST">
                                         <button name="removeAllItem" class="btn btn-sm btn-outline-danger">Remove All</button>
-                                        <input type="hidden" name="userId" value="<?php $userId = $_SESSION['userId']; echo $userId ?>">
+                                        <input type="hidden" name="userId" value="<?php echo $userId ?>">
                                     </form>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $sql = "SELECT * FROM `viewcart` WHERE `userId`= $userId";
+                                $sql = "SELECT * FROM viewcart WHERE userId= $userId";
                                 $result = mysqli_query($conn, $sql);
                                 $counter = 0;
                                 $totalPrice = 0;
                                 while($row = mysqli_fetch_assoc($result)){
-                                    $pizzaId = $row['pizzaId'];
+                                    $pizzaId = $row['productId'];
                                     $Quantity = $row['itemQuantity'];
-                                    $mysql = "SELECT * FROM `pizza` WHERE pizzaId = $pizzaId";
+                                    $mysql = "SELECT * FROM `cafe_product` WHERE productId = $pizzaId";
                                     $myresult = mysqli_query($conn, $mysql);
                                     $myrow = mysqli_fetch_assoc($myresult);
-                                    $pizzaName = $myrow['pizzaName'];
-                                    $pizzaPrice = $myrow['pizzaPrice'];
+                                    $pizzaName = $myrow['productName'];
+                                    $pizzaPrice = $myrow['productPrice'];
                                     $total = $pizzaPrice * $Quantity;
                                     $counter++;
                                     $totalPrice = $totalPrice + $total;

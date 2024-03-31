@@ -24,7 +24,7 @@
 
 
 
-    $selExmne = $conn->query("SELECT * FROM student_info et  WHERE exmne_course='$exam_course'  ");
+    $selExmne = $conn->query("SELECT * FROM student_info et  WHERE course_code='$exam_course'  ");
 
 
     ?>

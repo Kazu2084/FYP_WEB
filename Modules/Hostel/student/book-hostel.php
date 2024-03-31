@@ -28,7 +28,7 @@
         $paddress=$_POST['paddress'];
         $pcity=$_POST['pcity'];
         $ppincode=$_POST['ppincode'];
-        $query="INSERT into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $query="INSERT into  roomregistration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $mysqli->prepare($query);
         $rc=$stmt->bind_param('iiiisissssssisissississi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cpincode,$paddress,$pcity,$ppincode);
         $stmt->execute();
@@ -38,7 +38,7 @@
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<!-- By CodeAstro - codeastro.com -->
+
 <head>
     
     <link href="../dist/css/style.min.css" rel="stylesheet">
@@ -66,17 +66,12 @@
         });
     }
     </script>
-    <!-- By CodeAstro - codeastro.com -->
+    
 </head>
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -103,8 +98,8 @@
                 <form method="POST">
                 
                 <?php
-                    $uid=$_SESSION['login'];
-                    $stmt=$mysqli->prepare("SELECT emailid FROM registration WHERE emailid=? ");
+                    $uid=$_SESSION['student_id'];
+                    $stmt=$mysqli->prepare("SELECT emailid FROM roomregistration WHERE emailid=? ");
                     $stmt->bind_param('s',$uid);
                     $stmt->execute();
                     $stmt -> bind_result($email);
@@ -157,7 +152,7 @@
                             </div>
                         </div>
                     </div>
-<!-- By CodeAstro - codeastro.com -->
+
                 
  
                     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -264,15 +259,16 @@
                 <div class="row">
 
                 <?php	
-                $aid=$_SESSION['id'];
-                    $ret="select * from userregistration where id=?";
-                        $stmt= $mysqli->prepare($ret) ;
-                    $stmt->bind_param('i',$aid);
-                    $stmt->execute();
-                    $res=$stmt->get_result();
+                // $aid=$_SESSION['student_id'];
+                //     $ret="select * from roomregistration where id=?";
+                //         $stmt= $mysqli->prepare($ret) ;
+                //     $stmt->bind_param('i',$aid);
+                //     $stmt->execute();
+                //     $res=$stmt->get_result();
 
-                    while($row=$res->fetch_object())
-                    {
+                //     while($row=$res->fetch_object())
+                //     {
+
                         ?>
                 
                     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -280,7 +276,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Registration Number</h4>
                                         <div class="form-group">
-                                            <input type="text" name="regno" id="regno" value="<?php echo $row->regNo;?>" class="form-control" readonly>
+                                            <input type="text" name="regno" id="regno" class="form-control">
                                         </div>
                                 </div>
                             </div>
@@ -292,7 +288,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">First Name</h4>
                                     <div class="form-group">
-                                        <input type="text" name="fname" id="fname" value="<?php echo $row->firstName;?>" class="form-control" readonly>
+                                        <input type="text" name="fname" id="fname" class="form-control">
                                     </div>
                             </div>
                         </div>
@@ -304,7 +300,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Middle Name</h4>
                                     <div class="form-group">
-                                        <input type="text" name="mname" id="mname" value="<?php echo $row->middleName;?>" class="form-control" readonly>
+                                        <input type="text" name="mname" id="mname" class="form-control">
                                     </div>
                             </div>
                         </div>
@@ -316,7 +312,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Last Name</h4>
                                     <div class="form-group">
-                                        <input type="text" name="lname" id="lname" value="<?php echo $row->lastName;?>" class="form-control" readonly>
+                                        <input type="text" name="lname" id="lname" class="form-control">
                                     </div>
                             </div>
                         </div>
@@ -328,7 +324,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Email</h4>
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" value="<?php echo $row->email;?>" class="form-control" readonly>
+                                        <input type="email" name="email" id="email" class="form-control">
                                     </div>
                             </div>
                         </div>
@@ -340,7 +336,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Gender</h4>
                                     <div class="form-group">
-                                        <input type="text" name="gender" id="gender" value="<?php echo $row->gender;?>" class="form-control" readonly>
+                                        <input type="text" name="gender" id="gender" class="form-control">
                                     </div>
                             </div>
                         </div>
@@ -352,13 +348,15 @@
                             <div class="card-body">
                                 <h4 class="card-title">Contact Number</h4>
                                     <div class="form-group">
-                                        <input type="number" name="contact" id="contact" value="<?php echo $row->contactNo;?>" class="form-control" readonly>
+                                        <input type="number" name="contact" id="contact" class="form-control">
                                     </div>
                             </div>
                         </div>
                     </div>
 
-                    <?php }?>
+                    <?php 
+                // }
+                ?>
 
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -386,7 +384,7 @@
                                                 while($row=$res->fetch_object())
                                                 {
                                             ?>
-                                            <option value="<?php echo $row->course_fn;?>"><?php echo $row->course_fn;?>&nbsp;&nbsp;(<?php echo $row->course_sn;?>)</option>
+                                            <option value="<?php echo $row->course_name;?>"><?php echo $row->course_name;?>&nbsp;&nbsp;(<?php echo $row->course_name;?>)</option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -561,7 +559,6 @@
 
             </div>
             
-            <?php include '../includes/footer.php' ?>
            
         </div>
         

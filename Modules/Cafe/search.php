@@ -27,7 +27,7 @@
         <?php 
             $noResult = true;
             $query = $_GET["search"];
-            $sql = "SELECT * FROM `categories` WHERE MATCH(categorieName, categorieDesc) against('$query')";
+            $sql = "SELECT * FROM `cafe_categories` WHERE MATCH(categorieName, categorieDesc) against('$query')";
  
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
@@ -57,16 +57,16 @@
         <div class="row">
         <?php 
             $query = $_GET["search"];
-            $sql = "SELECT * FROM `pizza` WHERE MATCH(pizzaName, pizzaDesc) against('$query')"; 
+            $sql = "SELECT * FROM `cafe_product` WHERE MATCH(productName, productDesc) against('$query')"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
                 ?><script> document.getElementById("iteam").innerHTML = "Items: ";</script> <?php
                 $noResult = false;
-                $pizzaId = $row['pizzaId'];
-                $pizzaName = $row['pizzaName'];
-                $pizzaPrice = $row['pizzaPrice'];
-                $pizzaDesc = $row['pizzaDesc'];
-                $pizzaCategorieId = $row['pizzaCategorieId'];
+                $pizzaId = $row['productId'];
+                $pizzaName = $row['productName'];
+                $pizzaPrice = $row['productPrice'];
+                $pizzaDesc = $row['productDesc'];
+                $pizzaCategorieId = $row['productCategorieId'];
                 
                 echo '<div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="card" style="width: 18rem;">
@@ -77,7 +77,7 @@
                             <p class="card-text">' . substr($pizzaDesc, 0, 29). '...</p>
                             <div class="row justify-content-center">';
                                 if($loggedin){
-                                    $quaSql = "SELECT `itemQuantity` FROM `viewcart` WHERE pizzaId = '$pizzaId' AND `userId`='$userId'";
+                                    $quaSql = "SELECT `itemQuantity` FROM `viewcart` WHERE productId = '$pizzaId' AND `userId`='$userId'";
                                     $quaresult = mysqli_query($conn, $quaSql);
                                     $quaExistRows = mysqli_num_rows($quaresult);
                                     if($quaExistRows == 0) {

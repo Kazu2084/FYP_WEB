@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     error_reporting(0);
     include('../includes/connection.php');
 include "../Common/admin-sidenav-header.php";

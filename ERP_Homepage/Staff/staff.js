@@ -498,7 +498,7 @@
           image:
             "",
           title: "Cafe",
-          url: "http://localhost/FYP_ERP/Modules/Cafe/admin/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Cafe/index.php"
         },
         {
           desc: "",

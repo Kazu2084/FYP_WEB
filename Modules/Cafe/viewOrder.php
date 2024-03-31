@@ -164,7 +164,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM `orders` WHERE `userId`= $userId";
+                        $sql = "SELECT * FROM `cafe_orders` WHERE `userId`= $userId";
                         $result = mysqli_query($conn, $sql);
                         $counter = 0;
                         while($row = mysqli_fetch_assoc($result)){

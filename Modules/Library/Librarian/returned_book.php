@@ -107,7 +107,7 @@ include('../Common/librarian-sidenav-header.php');
 		<?php
 		$return_query = mysqli_query($con, "select * from return_book 
 							LEFT JOIN book ON return_book.book_id = book.book_id 
-							LEFT JOIN user ON return_book.user_id = user.user_id 
+							LEFT JOIN student_info ON return_book.user_id = student_info.roll_no
 							where return_book.return_book_id order by return_book.return_book_id DESC") or die(mysqli_error());
 		$return_count = mysqli_num_rows($return_query);
 
@@ -149,7 +149,7 @@ include('../Common/librarian-sidenav-header.php');
 							<?php echo $return_row['book_barcode']; ?>
 						 </span></div>
 						<div class="product-cell" style="text-transform: capitalize">
-							<?php echo $return_row['firstname'] . " " . $return_row['lastname']; ?>
+							<?php echo $return_row['user_id'];?>
 						 </span></div>
 						<div class="product-cell" style="text-transform: capitalize">
 							<?php echo $return_row['book_title']; ?>

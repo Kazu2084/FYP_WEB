@@ -110,7 +110,7 @@ include('../Common/librarian-sidenav-header.php');
 
 		$return_query = mysqli_query($con, "SELECT * from borrow_book 
 							LEFT JOIN book ON borrow_book.book_id = book.book_id 
-							LEFT JOIN login ON borrow_book.user_id = login.ID
+							LEFT JOIN student_info ON borrow_book.user_id = student_info.roll_no
 							where borrow_book.borrowed_status = 'borrowed' $where order by borrow_book.borrow_book_id DESC") or die(mysqli_error());
 		$return_count = mysqli_num_rows($return_query);
 
@@ -125,7 +125,7 @@ include('../Common/librarian-sidenav-header.php');
 
 		<div class="products-header">
 			<div class="product-cell">Barcode</div>
-			<div class="product-cell">Borrower Name</div>
+			<div class="product-cell">Borrower ID</div>
 			<div class="product-cell">Title</div>
 			<!---	<div class="product-cell">Author</div>
 									<div class="product-cell">ISBN</div>	-->
@@ -143,11 +143,11 @@ include('../Common/librarian-sidenav-header.php');
 				<div class="product-cell"><span>
 						<?php echo $return_row['book_barcode']; ?>
 					</span></div>
-				<div class='product-cell' style="text-transform: capitalize">
-					<?php echo $return_row['firstname'] . " " . $return_row['lastname']; ?>
+				<div class='product-cell'>
+					<?php echo $return_row['user_id']; ?>
 					</span>
 				</div>
-				<div class='product-cell' style="text-transform: capitalize">
+				<div class='product-cell'>
 					<?php echo $return_row['book_title']; ?>
 					</span>
 				</div>

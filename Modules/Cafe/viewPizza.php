@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <title id=title>Pizza</title>
+    <title id=title>Product</title>
     <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon">
     <style>
     #cont {
@@ -24,13 +24,13 @@
         <div class="row jumbotron">
         <?php
             $pizzaId = $_GET['pizzaid'];
-            $sql = "SELECT * FROM `pizza` WHERE pizzaId = $pizzaId";
+            $sql = "SELECT * FROM `cafe_product` WHERE productId = $pizzaId";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
-            $pizzaName = $row['pizzaName'];
-            $pizzaPrice = $row['pizzaPrice'];
-            $pizzaDesc = $row['pizzaDesc'];
-            $pizzaCategorieId = $row['pizzaCategorieId'];
+            $pizzaName = $row['productName'];
+            $pizzaPrice = $row['productPrice'];
+            $pizzaDesc = $row['productDesc'];
+            $pizzaCategorieId = $row['productCategorieId'];
         ?>
         <script> document.getElementById("title").innerHTML = "<?php echo $pizzaName; ?>"; </script> 
         <?php
@@ -43,7 +43,7 @@
                 <p class="mb-0">' .$pizzaDesc .'</p>';
 
                 if($loggedin){
-                    $quaSql = "SELECT `itemQuantity` FROM `viewcart` WHERE pizzaId = '$pizzaId' AND `userId`='$userId'";
+                    $quaSql = "SELECT `itemQuantity` FROM `viewcart` WHERE productId = '$pizzaId' AND `userId`='$userId'";
                     $quaresult = mysqli_query($conn, $quaSql);
                     $quaExistRows = mysqli_num_rows($quaresult);
                     if($quaExistRows == 0) {

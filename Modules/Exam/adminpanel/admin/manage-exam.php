@@ -30,15 +30,15 @@
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../Style/script.js"></script>
-  <script src="../../Style/body.js"></script>
+  <script src="../../../../Styles/script.js"></script>
+  <script src="../../../../Styles/body.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../Style/style1.css">
-  <link rel="stylesheet" href="../../Style/style.css">
+  <link rel="stylesheet" href="../../../../Styles/style1.css">
+  <link rel="stylesheet" href="../../../../Styles/style.css">
 </head>
 
 <body>
@@ -199,7 +199,7 @@
             $selExamRow = $selExam->fetch_assoc(); 
             
             $courseId = $selExamRow['cou_id'];
-            $selCourse = $con->query("SELECT course_name as courseName FROM courses WHERE course_code='$courseId' ")->fetch_assoc(); // Using fetch_assoc() here too
+            $selCourse = $con->query("SELECT course_name FROM courses WHERE course_code='$courseId'")->fetch_assoc(); // Using fetch_assoc() here too
             ?>
 
             <!-- 
@@ -298,9 +298,7 @@
                               <?php echo $selQuest->num_rows; ?>
                             </span>
                             <div class="btn-actions-pane-right">
-                              <button class="btn btn-sm btn-primary " data-toggle="modal"
-                                data-target="#modalForAddQuestion">Add
-                                Question</button>
+                              <button class="btn btn-sm btn-primary " data-toggle="modal" data-target="#modalForAddQuestion">Add Question</button>
                             </div>
                           </div>
                           <div class="card-body">

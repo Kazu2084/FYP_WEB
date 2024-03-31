@@ -414,12 +414,12 @@
         {
           id: 5,
           name: "Placement",
-          url: "http://localhost/FYP_ERP/Modules/Placement/admin/index.php"
+          url: "http://localhost/FYP_ERP/Modules/PMS/admin/dashboard.php"
         },
         {
           id: 6,
           name: "Courses",
-          url: "#",
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/courses.php",
           tag: "<br>"
         },
       
@@ -467,7 +467,7 @@
         {
           id: 8,
           name: "Result",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/class-result.php"
         },
         {
           id: 9,
@@ -482,7 +482,7 @@
         {
           id: 11,
           name: "Timetable",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/time-table.php"
         },
         {
           id: 12,
@@ -533,12 +533,12 @@
         {
           id: 14,
           name: "Student",
-          url: "http://localhost/FYP_ERP/Modules/College/Admin/display-student.php"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/student.php"
         },
         {
           id: 15,
           name: "Teacher",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/teacher.php"
         },
         {
           id: 16,

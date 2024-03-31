@@ -1,23 +1,40 @@
 <?php 
+// session_start();
+// if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+//   $loggedin= true;
+//   $userId = $_SESSION['userId'];
+//   $username = $_SESSION['username'];
+// }
+// else{
+//   $loggedin = false;
+//   $userId = 0;
+// }
+
+require_once "../../Connection/connection.php";
+
 session_start();
-if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+if (isset($_SESSION["LoginStudent"])) {
+  $username = $_SESSION['LoginStudent'];
+  $userId =  $_SESSION['student_id'];
   $loggedin= true;
-  $userId = $_SESSION['userId'];
-  $username = $_SESSION['username'];
-}
-else{
-  $loggedin = false;
-  $userId = 0;
+} elseif (isset($_SESSION["LoginTeacher"])) {
+  $username = $_SESSION['LoginTeacher'];
+  $userId =  $_SESSION['teacher_id'];
+  $loggedin= true;
+} elseif (isset($_SESSION["LoginStaff"])) {
+  $username = $_SESSION['LoginStaff'];
+  $userId =  $_SESSION['staff_id'];
+  $loggedin= true;
 }
 
-$sql = "SELECT * FROM `sitedetail`";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+// $sql = "SELECT * FROM `sitedetail`";
+// $result = mysqli_query($conn, $sql);
+// $row = mysqli_fetch_assoc($result);
 
-$systemName = $row['systemName'];
+// $systemName = $row['systemName'];
 
 echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.php">'.$systemName.'</a>
+      <a class="navbar-brand" href="index.php"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,7 +49,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               Top Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
-            $sql = "SELECT categorieName, categorieId FROM `categories`"; 
+            $sql = "SELECT categorieName, categorieId FROM `cafe_categories`"; 
             $result = mysqli_query($conn, $sql);
             while($row = mysqli_fetch_assoc($result)){
               echo '<a class="dropdown-item" href="viewPizzaList.php?catid=' .$row['categorieId']. '">' .$row['categorieName']. '</a>';
@@ -76,6 +93,12 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="partials/_logout.php">Logout</a>
               </div>
+            </li>
+            <li>
+            <a class="nav-link" href="../../Login/logout.php">
+                  <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Logout</span>
+                </a>
             </li>
           </ul>
           <div class="text-center image-size-small position-relative">

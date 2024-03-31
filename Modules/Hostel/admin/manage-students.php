@@ -6,7 +6,7 @@ check_login();
 
 if (isset($_GET['del'])) {
     $id = intval($_GET['del']);
-    $adn = "DELETE from registration where id=?";
+    $adn = "DELETE from roomregistration where id=?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('i', $id);
     $stmt->execute();
@@ -36,12 +36,7 @@ if (isset($_GET['del'])) {
 <body>
     <?php include('../Common/admin-sidenav-header.php') ?>
 
-    <!-- <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    <!-- 
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -103,7 +98,7 @@ if (isset($_GET['del'])) {
 
                 <?php
                 $aid = $_SESSION['id'];
-                $ret = "SELECT * from registration";
+                $ret = "SELECT * from roomregistration";
                 $stmt = $mysqli->prepare($ret);
                 $stmt->execute(); //ok
                 $res = $stmt->get_result();
@@ -136,10 +131,12 @@ if (isset($_GET['del'])) {
                                 <?php echo $row->contactno; ?>
                             </span></div>
                         <div class="product-cell"><span>
-                                <a class="btn " style="background-color:#61DFFA;color:#FFFFFF" href="students-profile.php?id=<?php echo $row->id; ?>" title="View Full Details">Edit</a>
+                                <a class="btn " style="background-color:#61DFFA;color:#FFFFFF" href="students-profile.php?id=<?php echo $row->id; ?>" title="View Full Details">View</a>
                                </span>&thinsp;
-                               <span><a class="btn " style="background-color:#D66B6B;color:#FFFFFF;" href="manage-students.php?del=<?php echo $row->id; ?>" title="Delete Record"
-                                    onclick="return confirm(" Do you want to delete");">Delete</a></span></div>
+                               <span>
+        <a class="btn" style="background-color:#D66B6B;color:#FFFFFF;" href="manage-students.php?del=<?php echo $row->id; ?>" title="Delete Record"
+            onclick="return confirm('Do you want to delete?');">Delete</a>
+    </span></div>
                     </div>
                     <?php
                     $cnt = $cnt + 1;

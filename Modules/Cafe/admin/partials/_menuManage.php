@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $categoryId = $_POST["categoryId"];
         $price = $_POST["price"];
 
-        $sql = "INSERT INTO `pizza` (`pizzaName`, `pizzaPrice`, `pizzaDesc`, `pizzaCategorieId`, `pizzaPubDate`) VALUES ('$name', '$price', '$description', '$categoryId', current_timestamp())";   
+        $sql = "INSERT INTO `cafe_product` (`productName`, `productPrice`, `productDesc`, `productCategorieId`, `productPubDate`) VALUES ('$name', '$price', '$description', '$categoryId', current_timestamp())";   
         $result = mysqli_query($conn, $sql);
         $pizzaId = $conn->insert_id;
         if ($result){
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if(isset($_POST['removeItem'])) {
         $pizzaId = $_POST["pizzaId"];
-        $sql = "DELETE FROM `pizza` WHERE `pizzaId`='$pizzaId'";   
+        $sql = "DELETE FROM `cafe_product` WHERE `productId`='$pizzaId'";   
         $result = mysqli_query($conn, $sql);
         $filename = $_SERVER['DOCUMENT_ROOT']."/Cafe/img/pizza-".$pizzaId.".jpg";
         if ($result){
@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $pizzaPrice = $_POST["price"];
         $pizzaCategorieId = $_POST["catId"];
 
-        $sql = "UPDATE `pizza` SET `pizzaName`='$pizzaName', `pizzaPrice`='$pizzaPrice', `pizzaDesc`='$pizzaDesc', `pizzaCategorieId`='$pizzaCategorieId' WHERE `pizzaId`='$pizzaId'";   
+        $sql = "UPDATE cafe_product SET productName='$pizzaName', productPrice='$pizzaPrice', productDesc='$pizzaDesc', productCategorieId='$pizzaCategorieId' WHERE productId='$pizzaId' ";   
         $result = mysqli_query($conn, $sql);
         if ($result){
             echo "<script>alert('update');

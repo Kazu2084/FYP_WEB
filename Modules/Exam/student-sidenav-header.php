@@ -1,12 +1,14 @@
 <?php
 include("../../Connection/connection.php");
-include("query/selectData.php");
 
 session_start();
 if (isset($_SESSION["LoginStudent"])) {
   $current_session = $_SESSION['LoginStudent'];
   $student_id =  $_SESSION['student_id'];
 } 
+
+include("query/selectData.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +51,7 @@ if (isset($_SESSION["LoginStudent"])) {
           </div>
         </div>
         <div class="app-header-right">
+          <div><?php echo $current_session ?></div>
           <button class="mode-switch" title="Switch Theme">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">

@@ -112,9 +112,7 @@ include "../Common/admin-sidenav-header.php";
 
             <div class="app-content-actions">
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     
     <div class="page-container">

@@ -14,7 +14,7 @@
     $welcome_string="Good Evening,"; 
 
         $aid=$_SESSION['id'];
-        $ret="select * from userregistration where id=?";
+        $ret="select * from roomregistration where id=?";
          $stmt= $mysqli->prepare($ret) ;
          $stmt->bind_param('i',$aid);
          $stmt->execute();

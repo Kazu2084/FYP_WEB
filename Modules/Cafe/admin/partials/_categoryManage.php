@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $desc = $_POST["desc"];
 
-        $sql = "INSERT INTO `categories` (`categorieName`, `categorieDesc`, `categorieCreateDate`) VALUES ('$name', '$desc', current_timestamp())";   
+        $sql = "INSERT INTO `cafe_categories` (`categorieName`, `categorieDesc`, `categorieCreateDate`) VALUES ('$name', '$desc', current_timestamp())";   
         $result = mysqli_query($conn, $sql);
         $catId = $conn->insert_id;
         if($result) {
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['removeCategory'])) {
         $catId = $_POST["catId"];
         $filename = $_SERVER['DOCUMENT_ROOT']."/Cafe/img/card-".$catId.".jpg";
-        $sql = "DELETE FROM `categories` WHERE `categorieId`='$catId'";   
+        $sql = "DELETE FROM `cafe_categories` WHERE `categorieId`='$catId'";   
         $result = mysqli_query($conn, $sql);
         if ($result){
             if (file_exists($filename)) {
@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $catName = $_POST["name"];
         $catDesc = $_POST["desc"];
 
-        $sql = "UPDATE `categories` SET `categorieName`='$catName', `categorieDesc`='$catDesc' WHERE `categorieId`='$catId'";   
+        $sql = "UPDATE `cafe_categories` SET `categorieName`='$catName', `categorieDesc`='$catDesc' WHERE `categorieId`='$catId'";   
         $result = mysqli_query($conn, $sql);
         if ($result){
             echo "<script>alert('update');

@@ -2,6 +2,6 @@
     $dbuser="root";
     $dbpass="";
     $host="localhost";
-    $db="hostelmsphp";
+    $db="fyp";
     $mysqli =new mysqli($host,$dbuser, $dbpass, $db);
 ?>

@@ -29,7 +29,7 @@
                             <div class="product-cell">Action</div>
 </div>
                         <?php 
-                            $sql = "SELECT * FROM `categories`"; 
+                            $sql = "SELECT * FROM `cafe_categories`"; 
                             $result = mysqli_query($conn, $sql);
                             while($row = mysqli_fetch_assoc($result)){
                                 $catId = $row['categorieId'];
@@ -68,7 +68,7 @@
 
 
 <?php 
-    $catsql = "SELECT * FROM `categories`";
+    $catsql = "SELECT * FROM `cafe_categories`";
     $catResult = mysqli_query($conn, $catsql);
     while($catRow = mysqli_fetch_assoc($catResult)){
         $catId = $catRow['categorieId'];

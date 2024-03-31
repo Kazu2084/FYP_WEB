@@ -19,12 +19,9 @@
 
 
 			
-			<!-- FORM Panel -->
-
-			<!-- Table Panel -->
 			
 					<div class="products-area-wrapper tableView">
-                            <div class="products-header">
+                  <div class="products-header">
 								
 									<div class="product-cell">Cat. Id</div>
 									<div class="product-cell image">Img</div>
@@ -34,14 +31,14 @@
 							
 							
                             <?php
-                                $sql = "SELECT * FROM `pizza`";
+                                $sql = "SELECT * FROM `cafe_product`";
                                 $result = mysqli_query($conn, $sql);
                                 while($row = mysqli_fetch_assoc($result)){
-                                    $pizzaId = $row['pizzaId'];
-                                    $pizzaName = $row['pizzaName'];
-                                    $pizzaPrice = $row['pizzaPrice'];
-                                    $pizzaDesc = $row['pizzaDesc'];
-                                    $pizzaCategorieId = $row['pizzaCategorieId'];
+                                    $pizzaId = $row['productId'];
+                                    $pizzaName = $row['productName'];
+                                    $pizzaPrice = $row['productPrice'];
+                                    $pizzaDesc = $row['productDesc'];
+                                    $pizzaCategorieId = $row['productCategorieId'];
 
                                     echo '<div class="products-row">
                                             <div class="product-cell"><span>' .$pizzaCategorieId. '</span></div>
@@ -79,14 +76,14 @@
 </div>
 
 <?php 
-    $pizzasql = "SELECT * FROM `pizza`";
+    $pizzasql = "SELECT * FROM `cafe_product`";
     $pizzaResult = mysqli_query($conn, $pizzasql);
     while($pizzaRow = mysqli_fetch_assoc($pizzaResult)){
-        $pizzaId = $pizzaRow['pizzaId'];
-        $pizzaName = $pizzaRow['pizzaName'];
-        $pizzaPrice = $pizzaRow['pizzaPrice'];
-        $pizzaCategorieId = $pizzaRow['pizzaCategorieId'];
-        $pizzaDesc = $pizzaRow['pizzaDesc'];
+        $pizzaId = $pizzaRow['productId'];
+        $pizzaName = $pizzaRow['productName'];
+        $pizzaPrice = $pizzaRow['productPrice'];
+        $pizzaCategorieId = $pizzaRow['productCategorieId'];
+        $pizzaDesc = $pizzaRow['productDesc'];
 ?>
 
 <!-- Modal -->

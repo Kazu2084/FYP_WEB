@@ -1,15 +1,24 @@
 <?php
-    session_start();
     error_reporting(0);
-    include('../includes/dbconn.php');
-    if(strlen($_SESSION['emplogin'])==0)
-        {   
-    header('location:../index.php');
-    }   else    {
+        include('../includes/connection.php');
+    session_start();
+    if (isset($_SESSION["LoginTeacher"])) {
+        $current_session = $_SESSION['LoginTeacher'];
+        $eid =  $_SESSION['teacher_id'];
+      }elseif (isset($_SESSION["LoginStaff"])) {
+        $current_session = $_SESSION['LoginStaff'];
+        $eid =  $_SESSION['staff_id'];
+      }
+      
+
+    // if(strlen($_SESSION['emplogin'])==0)
+    //     {   
+    // header('location:../index.php');
+    // }   else    {
         if(isset($_POST['apply']))
         {
 
-        $empid=$_SESSION['eid'];
+        $empid=$eid;
         $leavetype=$_POST['leavetype'];
         $fromdate=$_POST['fromdate'];  
         $todate=$_POST['todate'];
@@ -70,9 +79,7 @@
 
 <body>
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">
@@ -141,7 +148,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix">
-                            
+                            <div style="left:250px;"><?php echo $current_session;?></div>
                             <?php include '../includes/employee-profile-section.php'?>
 
                     </div>
@@ -154,17 +161,17 @@
                         <div class="row">
                             <!-- Textual inputs start -->
                             <div class="col-12 mt-5">
-                            <?php if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php echo htmlentities($error); ?>
+                            <!-- <?php ///if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php //echo htmlentities($error); ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             
-                             </div><?php } 
-                                 else if($msg){?><div class="alert alert-success alert-dismissible fade show"><strong>Info: </strong><?php echo htmlentities($msg); ?> 
+                             </div><?php //} 
+                                 //else if($msg){?><div class="alert alert-success alert-dismissible fade show"><strong>Info: </strong><?php //echo htmlentities($msg); ?> 
                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                 </div><?php }?>
+                                 </div><?php/// }?> -->
                                 <div class="card">
                                 <form name="addemp" method="POST">
 
@@ -248,4 +255,4 @@
 
 </html>
 
-<?php } ?> 
+<?php ?> 

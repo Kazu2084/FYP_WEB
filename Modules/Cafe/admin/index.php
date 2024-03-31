@@ -1,15 +1,16 @@
 <?php 
-    session_start();
-    if(isset($_SESSION['adminloggedin']) && $_SESSION['adminloggedin']==true){
-        $adminloggedin= true;
-        $userId = $_SESSION['adminuserId'];
-    }
-    else{
-        $adminloggedin = true; //false
-        $userId = 1; //0
-    }
+    // session_start();
+    // if(isset($_SESSION['adminloggedin']) && $_SESSION['adminloggedin']==true){
+    //     $adminloggedin= true;
+    //     $userId = $_SESSION['adminuserId'];
+    // }
+    // else{
+    //     $adminloggedin = true; //false
+    //     $userId = 1; //0
+    // }
 
-    if($adminloggedin) {
+    // if($adminloggedin) {
+        
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,10 +22,10 @@
         require 'partials/_dbconnect.php';
         //require 'partials/_nav.php';
 
-        if(isset($_GET['loginsuccess']) && $_GET['loginsuccess']=="true"){
-            //echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="width:100%">
+        // if(isset($_GET['loginsuccess']) && $_GET['loginsuccess']=="true"){
+        //     //echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style="width:100%">
                    
-        }
+        // }
     ?>
 
     <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
@@ -42,8 +43,8 @@
 </html>
 
 <?php
-    }
-    else{
-        header("location: /Cafe/admin/login.php");
-    }
+    // }
+    // else{
+    //     header("location: /Cafe/admin/login.php");
+    // }
 ?>

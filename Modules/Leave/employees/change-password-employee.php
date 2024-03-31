@@ -1,7 +1,7 @@
 <?php
     session_start();
     error_reporting(0);
-    include('../includes/dbconn.php');
+    include('../includes/connection.php');
     if(strlen($_SESSION['emplogin'])==0){   
     header('location:../index.php');
     } else {
@@ -59,9 +59,7 @@
 
 <body>
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">

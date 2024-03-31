@@ -1,36 +1,43 @@
 <?php
     session_start();
-    error_reporting(0);
+    
     include('includes/dbconn.php');
-    if(isset($_POST['signin']))
-    {
-        $uname=$_POST['username'];
-        $password=md5($_POST['password']);
-        $sql ="SELECT EmailId,Password,Status,id FROM tblemployees WHERE EmailId=:uname and Password=:password";
-        $query= $dbh -> prepare($sql);
-        $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
-        $query-> bindParam(':password', $password, PDO::PARAM_STR);
-        $query-> execute();
-        $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-        if($query->rowCount() > 0)
-        {
-            foreach ($results as $result) {
-                $status=$result->Status;
-                $_SESSION['eid']=$result->id;
-        }
-            if($status==0)
-        {
-            $msg="In-Active Account. Please contact your administrator!";
-        } else  {
-            $_SESSION['emplogin']=$_POST['username'];
-            echo "<script type='text/javascript'> document.location = 'employees/leave.php'; </script>";
-        }
-            }   else  {
-                echo "<script>alert('Sorry, Invalid Details.');</script>";
-                }
+    if (isset($_SESSION["LoginTeacher"])) {
+        $current_session = $_SESSION['LoginTeacher'];
+      } elseif (isset($_SESSION["LoginStaff"])) {
+        $current_session = $_SESSION['LoginStaff'];
+      }
+      
+    // if(isset($_POST['signin']))
+    // {
+    //     $uname=$_POST['username'];
+    //     $password=md5($_POST['password']);
+    //     $sql ="SELECT EmailId,Password,Status,id FROM tblemployees WHERE EmailId=:uname and Password=:password";
+    //     $query= $dbh -> prepare($sql);
+    //     $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
+    //     $query-> bindParam(':password', $password, PDO::PARAM_STR);
+    //     $query-> execute();
+    //     $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-    }
+    //     if($query->rowCount() > 0)
+    //     {
+    //         foreach ($results as $result) {
+    //             $status=$result->Status;
+    //             $_SESSION['eid']=$result->id;
+    //     }
+    //         if($status==0)
+    //     {
+    //         $msg="In-Active Account. Please contact your administrator!";
+    //     } else  {
+    //         $_SESSION['emplogin']=$_POST['username'];
+    //         echo "<script type='text/javascript'> document.location = 'employees/leave.php'; </script>";
+    //     }
+    //         }   else  {
+    //             echo "<script>alert('Sorry, Invalid Details.');</script>";
+    //             }
+
+    // }
 
 ?>
 
@@ -62,9 +69,7 @@
 
 <body>
     
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    
     <!-- preloader area end -->
     <!-- login area start -->
     <div class="login-area login-s2">
@@ -74,7 +79,7 @@
                     <div class="login-form-head">
                         <h4>Employee Login Panel</h4>
                         <p> System</p>
-                        <?php if($msg){?><div class="errorWrap"><strong>Error</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
+                        <?php if($msg){?><div class="errorWrap"><strong>Error</strong> : <?php //echo htmlentities($msg); ?> </div><?php }?>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">

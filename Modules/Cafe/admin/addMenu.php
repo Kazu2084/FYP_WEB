@@ -9,13 +9,13 @@
 	<?php include('../Common/admin-sidenav-header.php') ?>
 
 	<?php
-	$sql = "SELECT * FROM `pizza`";
+	$sql = "SELECT * FROM `cafe_product`";
 	$result = mysqli_query($conn, $sql);
 
 	?>
 
 	<?php
-	$pizzasql = "SELECT * FROM `pizza`";
+	$pizzasql = "SELECT * FROM `cafe_product`";
 	$pizzaResult = mysqli_query($conn, $pizzasql);
 	?>
 	<div class="app-content">
@@ -45,7 +45,7 @@
 							<select name="categoryId" id="categoryId" class="custom-select browser-default" required>
 								<option hidden disabled selected value>None</option>
 								<?php
-								$catsql = "SELECT * FROM `categories`";
+								$catsql = "SELECT * FROM `cafe_categories`";
 								$catresult = mysqli_query($conn, $catsql);
 								while ($row = mysqli_fetch_assoc($catresult)) {
 									$catId = $row['categorieId'];

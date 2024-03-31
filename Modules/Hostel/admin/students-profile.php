@@ -34,7 +34,7 @@ check_login();
             <?php
 
             $id = $_GET['id'];
-            $ret = "SELECT * from registration where id=?";
+            $ret = "SELECT * from roomregistration where id=?";
             $stmt = $mysqli->prepare($ret);
             $stmt->bind_param('i', $id);
             $stmt->execute(); //ok

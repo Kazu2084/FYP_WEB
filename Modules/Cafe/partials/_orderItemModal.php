@@ -1,5 +1,5 @@
 <?php 
-    $itemModalSql = "SELECT * FROM `orders` WHERE `userId`= $userId";
+    $itemModalSql = "SELECT * FROM `cafe_orders` WHERE `userId`= $userId";
     $itemModalResult = mysqli_query($conn, $itemModalSql);
     while($itemModalRow = mysqli_fetch_assoc($itemModalResult)){
         $orderid = $itemModalRow['orderId'];
@@ -38,16 +38,16 @@
                                     $mysql = "SELECT * FROM `orderitems` WHERE orderId = $orderid";
                                     $myresult = mysqli_query($conn, $mysql);
                                     while($myrow = mysqli_fetch_assoc($myresult)){
-                                        $pizzaId = $myrow['pizzaId'];
+                                        $pizzaId = $myrow['productId'];
                                         $itemQuantity = $myrow['itemQuantity'];
                                         
-                                        $itemsql = "SELECT * FROM `pizza` WHERE pizzaId = $pizzaId";
+                                        $itemsql = "SELECT * FROM `cafe_product` WHERE productId = $pizzaId";
                                         $itemresult = mysqli_query($conn, $itemsql);
                                         $itemrow = mysqli_fetch_assoc($itemresult);
-                                        $pizzaName = $itemrow['pizzaName'];
-                                        $pizzaPrice = $itemrow['pizzaPrice'];
-                                        $pizzaDesc = $itemrow['pizzaDesc'];
-                                        $pizzaCategorieId = $itemrow['pizzaCategorieId'];
+                                        $pizzaName = $itemrow['productName'];
+                                        $pizzaPrice = $itemrow['productPrice'];
+                                        $pizzaDesc = $itemrow['productDesc'];
+                                        $pizzaCategorieId = $itemrow['productCategorieId'];
 
                                         echo '<tr>
                                                 <th scope="row">

@@ -7,7 +7,7 @@
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<!-- By CodeAstro - codeastro.com -->
+
 <head>
     
     <link href="../dist/css/style.min.css" rel="stylesheet">
@@ -16,12 +16,7 @@
 
 <body>
     
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+    
     
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -65,8 +60,8 @@
                                         <tbody>
 
                                         <?php	
-                                        $aid=$_SESSION['login'];
-                                        $ret="SELECT * from registration where emailid=?";
+                                        $aid=$_SESSION['student_id'];
+                                        $ret="SELECT * from roomregistration where ID=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('s',$aid);
                                         $stmt->execute() ;
@@ -91,7 +86,7 @@
 
                                             <td><b>Seater :</b></td>
                                             <td><?php echo $row->seater;?></td>
-                                            <!-- By CodeAstro - codeastro.com -->
+                                            
 
                                             </tr>
 
@@ -200,9 +195,9 @@
 
                 <!-- Table column end -->
 
-            </div><!-- By CodeAstro - codeastro.com -->
+            </div>
             
-            <?php include '../includes/footer.php' ?>
+          
            
         </div>
         

@@ -116,7 +116,7 @@
     
 </style>
 <?php 
-    $statusmodalsql = "SELECT * FROM `orders` WHERE `userId`= $userId";
+    $statusmodalsql = "SELECT * FROM `cafe_orders` WHERE `userId`= $userId";
     $statusmodalresult = mysqli_query($conn, $statusmodalsql);
     while($statusmodalrow = mysqli_fetch_assoc($statusmodalresult)){
         $orderid = $statusmodalrow['orderId'];

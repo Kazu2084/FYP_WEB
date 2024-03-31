@@ -6,7 +6,7 @@
 
             echo "error : You did not enter a valid email.";
         } else {
-            $result ="SELECT count(*) FROM userRegistration WHERE email=?";
+            $result ="SELECT count(*) FROM roomRegistration WHERE email=?";
             $stmt = $mysqli->prepare($result);
             $stmt->bind_param('s',$email);
             $stmt->execute();
@@ -23,7 +23,7 @@
 
     if(!empty($_POST["oldpassword"])) {
     $pass=$_POST["oldpassword"];
-    $result ="SELECT password FROM userregistration WHERE password=?";
+    $result ="SELECT password FROM roomregistration WHERE password=?";
     $stmt = $mysqli->prepare($result);
     $stmt->bind_param('s',$pass);
     $stmt->execute();
@@ -38,7 +38,7 @@
 
     if(!empty($_POST["roomno"])) {
     $roomno=$_POST["roomno"];
-    $result ="SELECT count(*) FROM registration WHERE roomno=?";
+    $result ="SELECT count(*) FROM roomregistration WHERE roomno=?";
     $stmt = $mysqli->prepare($result);
     $stmt->bind_param('i',$roomno);
     $stmt->execute();
