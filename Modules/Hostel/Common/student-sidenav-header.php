@@ -40,10 +40,7 @@
             </svg>
           </button>
 
-          <button class="profile-btn">
-            <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-            <span>Aybüke C.</span>
-          </button>
+          
         </div>
         
       </div>

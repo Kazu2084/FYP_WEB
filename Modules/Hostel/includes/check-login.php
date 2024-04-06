@@ -3,7 +3,7 @@ function check_login()
 {
 	if (isset($_SESSION["LoginStudent"])) {
 		$current_session = $_SESSION['LoginStudent'];
-		$student_id =  $_SESSION['student_id'];
+		//$student_id =  $_SESSION['student_id'];
 	  } 
 // if(strlen($_SESSION['id'])==0)
 // 	{	

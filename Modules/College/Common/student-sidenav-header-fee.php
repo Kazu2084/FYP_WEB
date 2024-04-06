@@ -50,9 +50,7 @@ if (isset($_SESSION["LoginStudent"])) {
           </button>
           
           
-          <button class="profile-btn">
-            <img src="https://assets.codepen.io/3306515/IMG_2025.jpg" />
-          </button>
+          
         </div>
       </div>
     </div>

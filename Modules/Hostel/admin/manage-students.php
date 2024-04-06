@@ -97,7 +97,7 @@ if (isset($_GET['del'])) {
                 </div>
 
                 <?php
-                $aid = $_SESSION['id'];
+                //$aid = $_SESSION['id'];
                 $ret = "SELECT * from roomregistration";
                 $stmt = $mysqli->prepare($ret);
                 $stmt->execute(); //ok

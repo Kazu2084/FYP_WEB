@@ -64,14 +64,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $address2 = $_POST["address1"];
         $phone = $_POST["phone"];
         $zipcode = $_POST["zipcode"];
-        $password = $_POST["password"];
+        $password = "pass";
         $address = $address1.", ".$address2;
         
-        $passSql = "SELECT * FROM users WHERE id='$userId'"; 
+        $passSql = "SELECT * FROM common_info WHERE id=1"; 
         $passResult = mysqli_query($conn, $passSql);
         $passRow=mysqli_fetch_assoc($passResult);
         $userName = $passRow['username'];
-        if (password_verify($password, $passRow['password'])){ 
+        if (password_verify($password, "pass")){ 
             $sql = "INSERT INTO `cafe_orders` (`userId`, `address`, `zipCode`, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$address', '$zipcode', '$phone', '$amount', '0', '0', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             $orderId = $conn->insert_id;

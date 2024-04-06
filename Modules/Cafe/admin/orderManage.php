@@ -64,7 +64,7 @@
                                 <div class="product-cell"><span>' . $orderDate . '</span></div>
                                 <div class="product-cell"><span><a class ="btn btn-primary" href="#" data-toggle="modal" data-target="#orderStatus' . $orderId . '" class="view">View</a></span></div>
                                 <div class="product-cell"><span><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#orderItem' . $orderId . '" class="view" title="View Details">View</a></span></div>
-                            </tr>';
+                            </div>';
                 }
                 if ($counter == 0) {
                     ?>

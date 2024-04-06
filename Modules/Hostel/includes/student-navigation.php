@@ -72,7 +72,7 @@ if (isset($_SESSION["LoginStudent"])) {
                                     width="40">
                                 
                                     <?php	
-                                    $aid=$_SESSION['id'];
+                                    $aid=$student_id;
                                         $ret="select * from roomregistration where id=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('i',$aid);

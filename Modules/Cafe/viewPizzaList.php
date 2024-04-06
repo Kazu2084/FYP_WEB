@@ -1,34 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title id="title">Category</title>
-    <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon">
-    <style>
+    <!-- <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon"> -->
+    <!-- <style>
     .jumbotron {
         padding: 2rem 1rem;
     }
     #cont {
         min-height : 570px;
     }
-    </style>
+    </style> -->
 </head>
 <body>
     <?php include 'partials/_dbconnect.php';?>
     <?php require 'partials/_nav.php' ?>
-
-    <div>&nbsp;
-        <a href="index.php" class="active text-dark">
-        <i class="fas fa-qrcode"></i>
-            <span>All Category</span>
-        </a>
-    </div>
 
     <?php
         $id = $_GET['catid'];
@@ -39,11 +30,15 @@
             $catdesc = $row['categorieDesc'];
         }
     ?>
-  
+   <a href="#to
+   p" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
     <!-- Pizza container starts here -->
     <div class="container my-3" id="cont">
-        <div class="col-lg-4 text-center bg-light my-3" style="margin:auto;border-top: 2px groove black;border-bottom: 2px groove black;">     
-            <h2 class="text-center"><span id="catTitle">Items</span></h2>
+        <div class="col-lg-4 text-left has-after" >     
+            <h2 class="text-left has-after"><span id="catTitle">Items</span></h2>
         </div>
         <div class="row">
         <?php
@@ -82,7 +77,6 @@
                                     echo '<button class="btn btn-primary mx-2" data-toggle="modal" data-target="#loginModal">Add to Cart</button>';
                                 }
                             echo '</form>                            
-                                <a href="viewPizza.php?pizzaid=' . $pizzaId . '" class="mx-2"><button class="btn btn-primary">Quick View</button></a> 
                                 </div>
                             </div>
                         </div>
@@ -100,8 +94,8 @@
         </div>
     </div>
 
+   
 
-    <?php require 'partials/_footer.php' ?>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -113,5 +107,12 @@
         document.getElementById("title").innerHTML = "<?php echo $catname; ?>"; 
         document.getElementById("catTitle").innerHTML = "<?php echo $catname; ?>"; 
     </script> 
+     
+ 
+    <script src="./assets1/js/script.js" defer></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>

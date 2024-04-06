@@ -94,7 +94,7 @@
 </div>
                                         
                                         <?php	
-                                            $aid=$_SESSION['id'];
+                                            //$aid=$_SESSION['id'];
                                             $ret="SELECT * from rooms";
                                             $stmt= $mysqli->prepare($ret) ;
                                             //$stmt->bind_param('i',$aid);
