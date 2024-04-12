@@ -229,7 +229,7 @@ function doLogin(){
          redirect(web_root."applicant/");
      
     }else{
-    	 echo "Account does not exist! Please contact Administrator."; 
+    	// echo "Account does not exist! Please contact Administrator."; 
     } 
 }
  

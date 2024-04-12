@@ -14,7 +14,7 @@ include "../Common/admin-sidenav-header.php";
 
     <div class="app-content">
         <div class="app-content-header">
-            <h1 class="app-content-headerText">Dashboard</h1>
+            <h1 class="app-content-headerText">Manage Leave</h1>
 
         </div>
 
@@ -34,7 +34,7 @@ include "../Common/admin-sidenav-header.php";
 
                 <?php
 
-                $sql = "SELECT tblleaves.id as lid,teacher_info.first_name,teacher_info.last_name,teacher_info.teacher_id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join teacher_info on tblleaves.empid=teacher_info.teacher_id order by lid desc";
+                $sql = "SELECT tblleaves.id as lid,common_info.first_name,common_info.last_name,common_info.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join common_info on tblleaves.empid=common_info.id order by lid desc";
                 $query = $dbh->prepare($sql);
                 $query->execute();
                 $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -48,7 +48,7 @@ include "../Common/admin-sidenav-header.php";
                                         <?php echo htmlentities($cnt); ?>
                                     </b></span></div>
                             <div class="product-cell"><span>
-                                 <?php echo htmlentities($result->teacher_id); ?> 
+                                 <?php echo htmlentities($result->id); ?> 
                                 </span></div>
                             <div class="product-cell"><span>
                                     <?php echo htmlentities($result->first_name . " " . $result->last_name); ?>

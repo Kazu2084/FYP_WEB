@@ -12,7 +12,6 @@
 	<div class="app-content-actions">
 		<div class="products-area-wrapper tableView">
 			<div class="products-header">
-
 				<div class="product-cell">Voucher No.</div>
 				<div class="product-cell">Roll No.</div>
 				<div class="product-cell">Student Name</div>

@@ -1,19 +1,19 @@
 <?php
-        error_reporting(0);
+error_reporting(0);
 
-    session_start();
-    include('../includes/connection.php');
-    if (isset($_SESSION["LoginTeacher"])) {
-        $current_session = $_SESSION['LoginTeacher'];
-        $eid =  $_SESSION['teacher_id'];
-      }elseif (isset($_SESSION["LoginStaff"])) {
-        $current_session = $_SESSION['LoginStaff'];
-        $eid =  $_SESSION['staff_id'];
-      }
-   
+session_start();
+include ('../includes/connection.php');
+if (isset($_SESSION["LoginTeacher"])) {
+    $current_session = $_SESSION['LoginTeacher'];
+    $eid = $_SESSION['teacher_id'];
+} elseif (isset($_SESSION["LoginStaff"])) {
+    $current_session = $_SESSION['LoginStaff'];
+    $eid = $_SESSION['staff_id'];
+}
 
- ?>
 
+?>
+<!-- 
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -29,198 +29,140 @@
     <link rel="stylesheet" href="../assets/css/metisMenu.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/css/slicknav.min.css">
-    <!-- amchart css -->
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <!-- Start datatable css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
-    <!-- others css -->
     <link rel="stylesheet" href="../assets/css/typography.css">
     <link rel="stylesheet" href="../assets/css/default-css.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <!-- modernizr css -->
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head> -->
+
+<!-- <body> -->
+
+
+<html lang="en">
+
+<head>
+    <title>Teacher</title>
 </head>
 
 <body>
-    
-    
-    <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
-        <!-- sidebar menu area start -->
-        <div class="sidebar-menu">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <a href="leave.php"><img src="../assets/images/icon/logo.png" alt="logo"></a>
-                </div>
-            </div>
-            <div class="main-menu">
-                <div class="menu-inner">
-                    <nav>
-                        <ul class="metismenu" id="menu">
-
-                            <li class="#">
-                                <a href="leave.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Leave
-                                    </span></a>
-                            </li>
-
-                            <li class="active">
-                                <a href="leave-history.php" aria-expanded="true"><i class="ti-agenda"></i><span>View My Leave History
-                                    </span></a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    <?php include ('../Common/user-sidenav-header.php') ?>
+    <div class="app-content">
+        <div class="app-content-header">
+            <h1 class="app-content-headerText">Leave History</h1>
         </div>
-        <!-- sidebar menu area end -->
-        <!-- main content area start -->
-        <div class="main-content">
-            <!-- header area start -->
-            <div class="header-area">
-                <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        
-                    </div>
-                    <!-- profile info & task notification -->
-                    <div class="col-md-6 col-sm-4 clearfix">
-                        <ul class="notification-area pull-right">
-                            <li id="full-view"><i class="ti-fullscreen"></i></li>
-                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                        <div style="left:250px;"><?php echo $current_session;?></div>
-                            <h4 class="page-title pull-left">My Leave History</h4>  
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-                         <?php include '../includes/employee-profile-section.php'?>
-                    </div>
-                </div>
-            </div>
-            <!-- page title area end -->
-            <div class="main-content-inner">
-                <div class="row">
-                    <!-- data table start -->
-                    <div class="col-12 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Leave History Table</h4>
-                                <!-- <?php //if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php// echo htmlentities($error); ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            
-                             </div><?php //} 
-                                 //else if($msg){?><div class="alert alert-success alert-dismissible fade show"><strong>Info: </strong><?php //echo htmlentities($msg); ?> 
-                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                 </div><?php// }?> -->
-                                <div class="data-tables">
-                                    <table id="dataTable" class="table table-hover progress-table text-center">
-                                        <thead class="bg-light text-capitalize">
-                                            <tr>
-                                                <div class="product-cell">#</div>
-                                                <th width="150">Type</div>
-                                                <div class="product-cell">Conditions</div>
-                                                <div class="product-cell">From</div>
-                                                <div class="product-cell">To</div>
-                                                <th width="150">Applied</div>
-                                                <th width="120">Admin's Remark</div>
-                                                <div class="product-cell">Status</div>
-                                            </div>
-                                        
-                                        <tbody>
-                                        <?php 
-                                     
-                                        $sql = "SELECT LeaveType,ToDate,FromDate,Description,PostingDate,AdminRemarkDate,AdminRemark,Status from tblleaves where empid=:eid";
-                                        $query = $dbh -> prepare($sql);
-                                        $query->bindParam(':eid',$eid,PDO::PARAM_STR);
-                                        $query->execute();
-                                        $results=$query->fetchAll(PDO::FETCH_OBJ);
-                                        $cnt=1;
-                                        if($query->rowCount() > 0){
-                                        foreach($results as $result)
-                                        {  ?> 
 
-                                            <tr>
-                                            <td> <?php echo htmlentities($cnt);?></span></div>
-                                            <td><?php echo htmlentities($result->LeaveType);?></span></div>
-                                            <td><?php echo htmlentities($result->Description);?></span></div>
-                                            <td><?php echo htmlentities($result->FromDate);?></span></div>
-                                            <td><?php echo htmlentities($result->ToDate);?></span></div>
-                                            <td><?php echo htmlentities($result->PostingDate);?></span></div>
-                                            <td><?php if($result->AdminRemark=="")
-                                            {
-                                            echo htmlentities('Pending');
-                                            } else {
+        <div class="app-content-actions">
 
-                                            echo htmlentities(($result->AdminRemark)." "."at"." ".$result->AdminRemarkDate);
-                                            }
 
-                                            ?>
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Leave History Table</h4>
+
+                    <div class="data-tables">
+                        <div class="products-area-wrapper tableView">
+                            <div class="products-header">
+                                <div class="product-cell">#</div>
+                                <div class="product-cell">Type</div>
+                                <div class="product-cell">Conditions</div>
+                                <div class="product-cell">From</div>
+                                <div class="product-cell">To</div>
+                                <div class="product-cell">Applied</div>
+                                <div class="product-cell">Admin's Remark</div>
+                                <div class="product-cell">Status</div>
+                            </div>
+
+
+                            <?php
+
+                            $sql = "SELECT LeaveType,ToDate,FromDate,Description,PostingDate,AdminRemarkDate,AdminRemark,Status from tblleaves where empid=:eid";
+                            $query = $dbh->prepare($sql);
+                            $query->bindParam(':eid', $eid, PDO::PARAM_STR);
+                            $query->execute();
+                            $results = $query->fetchAll(PDO::FETCH_OBJ);
+                            $cnt = 1;
+                            if ($query->rowCount() > 0) {
+                                foreach ($results as $result) { ?>
+
+                                    <div class="products-row">
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($cnt); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($result->LeaveType); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($result->Description); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($result->FromDate); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($result->ToDate); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php echo htmlentities($result->PostingDate); ?>
+                                            </span></div>
+                                        <div class="product-cell"><span>
+                                                <?php if ($result->AdminRemark == "") {
+                                                    echo htmlentities('Pending');
+                                                } else {
+
+                                                    echo htmlentities(($result->AdminRemark) . " " . "at" . " " . $result->AdminRemarkDate);
+                                                }
+
+                                                ?>
                                             </span></div>
 
-                                            <td> <?php $stats=$result->Status;
-                                                if($stats==1){
-                                             ?>
-                                                 <span style="color: green">Approved</span>
-                                                 <?php } if($stats==2)  { ?>
+                                        <div class="product-cell"><span>
+                                                <?php $stats = $result->Status;
+                                                if ($stats == 1) {
+                                                    ?>
+                                                    <span>Approved</span>
+                                                <?php }
+                                                if ($stats == 2) { ?>
 
-                                                <span style="color: red">Not Approved</span>
-                                                 <?php } if($stats==0)  { ?>
+                                                    <span>Not Approved</span>
+                                                <?php }
+                                                if ($stats == 0) { ?>
 
-                                                <span style="color: blue">Pending</span>
+                                                    <span>Pending</span>
                                                 <?php } ?>
 
-                                             </span></div>
-                                        </div>
+                                            </span></div>
+                                    </div>
 
-                                         <?php $cnt++;} }?>
-                                          
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                    <?php $cnt++;
+                                }
+                            } ?>
+
                         </div>
                     </div>
-                    <!-- data table end -->
                 </div>
             </div>
         </div>
-        
-        <!-- footer area start-->
-        
-        
+        <!-- data table end -->
+    </div>
+    </div>
+    </div>
+
+    <!-- footer area start-->
+
+
     </div>
     <!-- page container area end -->
     <!-- offset area start -->
     <div class="offset-area">
         <div class="offset-close"><i class="ti-close"></i></div>
-        
-        
+
+
     </div>
     <!-- offset area end -->
     <!-- jquery latest version -->

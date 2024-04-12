@@ -12,11 +12,11 @@ include('connection.php');
 	<div style="display: flex;">
         <div style="flex: 1;">
             <h3>No. of Copies</h3>
-            <canvas id="profitPieChart" width="600" height="500"></canvas>
+            <canvas id="profitPieChart" width="450" height="450"></canvas>
         </div>
         <div style="flex: 1;">
-            <h3>No. of Copies</h3>
-            <canvas id="profitBarChart" width="600" height="500"></canvas>
+            <h3>No. of times borrowed/Book</h3>
+            <canvas id="profitBarChart" width="450" height="400"></canvas>
         </div>
     </div>
     <script src="dashboard.js"></script>

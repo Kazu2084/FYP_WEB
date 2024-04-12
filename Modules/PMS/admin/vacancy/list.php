@@ -57,8 +57,8 @@ include('../../Common/header.php');
 						echo '<div class="product-cell"><span>' . $result->PREFEREDSEX . '</span></div>';
 						echo '<div class="product-cell"><span>' . $result->SECTOR_VACANCY . '</span></div>';
 						//echo '<div class="product-cell"><span>' . $result->JOBSTATUS . '</span></div>';
-						echo '<div class="product-cell"><span><a title="Edit" href="index.php?view=edit&id=' . $result->JOBID . '" class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></a>
-				  		     <br><a title="Delete" href="controller.php?action=delete&id=' . $result->JOBID . '" class="btn btn-danger btn-xs  ">  <span class="fa  fa-trash fw-fa "></a></span></div>';
+						echo '<div class="product-cell"><span><a title="Edit" href="index.php?view=edit&id=' . $result->JOBID . '" class="btn btn-primary btn-xs  ">  Edit</a>
+				  		     <br><a title="Delete" href="controller.php?action=delete&id=' . $result->JOBID . '" class="btn btn-danger btn-xs  "> Delete </a></span></div>';
 						// echo '<div class="product-cell"><span></span></div>';
 						echo '</div>';
 					}

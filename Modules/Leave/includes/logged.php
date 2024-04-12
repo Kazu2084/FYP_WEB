@@ -9,7 +9,7 @@
         $eid =  $_SESSION['staff_id'];
       }
     //$eid=$_SESSION['eid'];
-    $sql = "SELECT first_name,last_name, teacher_id from  teacher_info where teacher_id=:eid";
+    $sql = "SELECT first_name,last_name, id, email from common_info where id=:eid";
     $query = $dbh -> prepare($sql);
     $query->bindParam(':eid',$eid,PDO::PARAM_STR);
     $query->execute();
@@ -19,8 +19,7 @@
     if($query->rowCount() > 0){
         foreach($results as $result)
     {    ?>
-        <p style="color:white;"><?php echo htmlentities($result->first_name." ".$result->last_name);?></p>
-        <span><?php echo htmlentities($result->teacher_id)?></span>
+        <p><?php echo htmlentities($result->email);?></p>
 <?php }
     } 
 ?>

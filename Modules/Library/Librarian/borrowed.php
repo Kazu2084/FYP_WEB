@@ -6,9 +6,7 @@ include('../Common/librarian-sidenav-header.php');
 <div class="app-content">
 	<div class="app-content-header">
 		<h1 class="app-content-headerText">Borrowed Books</h1>
-		<a href="print_borrowed_books.php" target="_blank" style="background:none;">
-			<button class="btn btn-primary"><i class="fa fa-print"></i> Print</button>
-		</a>
+		
 	</div>
 	<div></div>
 	<br />
@@ -154,7 +152,7 @@ include('../Common/librarian-sidenav-header.php');
 				<!---	<div class='product-cell' style="text-transform: capitalize"><?php // echo $return_row['author']; ?> </span></div>
 								<div class="product-cell"><span><?php // echo $return_row['isbn']; ?> </span></div>	-->
 				<div class="product-cell"><span>
-						<?php echo "2023-12-06";
+						<?php echo "2024-2-06";
 						//date("M d, Y h:m:s a", strtotime($return_row['date_borrowed'])); 
 						?>
 					</span></div>

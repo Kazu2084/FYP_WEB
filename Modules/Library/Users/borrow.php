@@ -46,7 +46,7 @@ include('../Common/user-sidenav-header.php');
                                         <!-- <select name="school_number" class="select2_single form-control" required="required" tabindex="-1" >
 										<option value="0">Select College ID Number</option> -->
                                         <div class="form-group">
-                                    <label class="control-label col-md-10" name="school_number">Enter your College ID <span class="required" style="color:red;">*</span>
+                                    <label class="control-label col-md-10" name="school_number">Enter your UID <span class="required" style="color:red;">*</span>
                                     </label>
                                     <div class="col-md-15">
                                         <input type="text" name="school_number"  id="school_number" required="required" class="form-control col-md-7 col-xs-12">

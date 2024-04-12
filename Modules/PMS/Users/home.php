@@ -244,7 +244,7 @@
                <div class="job-post-item-header d-flex align-items-center">
                  <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
                  <div class="badge-wrap">
-                  <span class="bg-info text-white badge py-2 px-3">Freelance</span>
+                  <span class=" badge py-2 px-3">Freelance</span>
                  </div>
                </div>
                <div class="job-post-item-body d-block d-md-flex">
@@ -368,7 +368,7 @@
                <div class="job-post-item-header d-flex align-items-center">
                  <h2 class="mr-3 text-black h4">Open Source Interactive Developer</h2>
                  <div class="badge-wrap">
-                  <span class="bg-info text-white badge py-2 px-3">Freelance</span>
+                  <span class=" badge py-2 px-3">Freelance</span>
                  </div>
                </div>
                <div class="job-post-item-body d-block d-md-flex">

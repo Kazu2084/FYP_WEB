@@ -3,11 +3,13 @@ $(document).on("submit","#examineeLoginFrm", function(){
    $.post("query/loginExe.php", $(this).serialize(), function(data){
       if(data.res == "invalid")
       {
-        Swal.fire(
-          'Invalid',
-          'Please input valid email / password',
-          'error'
-        )
+        $('body').fadeOut();
+        window.location.href='home.php';
+        // Swal.fire(
+        //   'Invalid',
+        //   'Please input valid email / password',
+        //   'error'
+        // )
       }
       else if(data.res == "success")
       {

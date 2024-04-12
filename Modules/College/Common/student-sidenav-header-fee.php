@@ -63,6 +63,12 @@ if (isset($_SESSION["LoginStudent"])) {
           <div id="side-nav">
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
+            <li class="nav-item">
+                <a class="nav-link" href="../student/student-index.php">
+                  <i class="far fa-calendar-check" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Dashboard</span>
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="../student/student-fee.php">
                   <i class="far fa-calendar-check" style="font-size: 20px;"></i>

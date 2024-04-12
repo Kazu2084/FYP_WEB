@@ -116,7 +116,7 @@ if (isset($_POST['btn_save2'])) {
         <div class="modal fade bd-example-modal-lg" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header bg-info text-white">
+                    <div class="modal-header ">
                         <h4 class="modal-title text-center">Add New Student</h4>
                     </div>
                     <div class="modal-body">
@@ -274,7 +274,7 @@ if (isset($_POST['btn_save2'])) {
 
 
                             <div>
-                                <input type="hidden" name="password" value="student123*">
+                                <input type="hidden" name="password" value="pass">
                                 <input type="hidden" name="role" value="Student">
                             </div>
 
@@ -292,33 +292,19 @@ if (isset($_POST['btn_save2'])) {
         <div class="col-md-12 ml-2">
             <section>
                 <div class="row">
-                    <div class="col-md-6">
-                        <form action="search_student.php" method="post">
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">
-                                    <h5>Search:</h5>
-                                </label>
-                                <div class="d-flex">
-                                    <input type="text" name="search" id="search" class="form form-control"
-                                        placeholder="Enter Email Address">
-                                    <input class="btn btn-primary px-4 ml-4" type="submit" name="btnSearch"
-                                        value="Search">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                   
                     <div class="col-md-12 pt-2 mb-2">
 
-                        <button type="button" class="btn btn-outline-primary " data-toggle="modal"
+                        <button type="button" class="btn btn-primary " data-toggle="modal"
                             data-target=".bd-example-modal-lg">Add Student</button>
                         <button type="button" class="btn btn-primary ml-auto" data-toggle="modal"
                             data-target=".bd-example-modal-lg1">Assign Subjects</button>
-                        <a class="btn btn-success" href="assign-single-student-subjects.php"> Assign Single
+                        <a class="btn btn-primary" href="assign-single-student-subjects.php"> Assign Single
                             Student Subject</a>
                         <div class="modal fade bd-example-modal-lg1" tabindex="-1">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
-                                    <div class="modal-header bg-info text-white">
+                                    <div class="modal-header ">
                                         <h4 class="modal-title text-center">Assign Subjects To Student</h4>
                                     </div>
                                     <div class="modal-body">

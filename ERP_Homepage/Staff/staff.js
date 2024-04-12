@@ -393,36 +393,21 @@
       return [
         {
           id: 1,
-          name: "Complaint",
-          url: "#"
+          name: "Dashboard",
+          url: "http://localhost/FYP_ERP/Modules/College/staff-index.php"
         },
         {
           id: 2,
-          name: "Task Manager",
-          url: "#"
+          name: "Salary",
+          url: "http://localhost/FYP_ERP/Modules/College/staff-salary.php"
         },
         {
           id: 3,
-          name: "",
-          url: "#"
-        },
-        {
-          id: 4,
-          name: "Salary",
-          url: ""
-        },
-        {
-          id: 5,
           name: "Leave",
-          url: ""
+          url: "http://localhost/FYP_ERP/Modules/Leave/employees/leave.php"
         },
-        {
-          id: 6,
-          name: "Calendar",
-          url: "",
-          tag: "<br>"
-        },
-      
+       
+       
         
       ].map((day) => 
       {
@@ -480,7 +465,7 @@
           desc: "",
           id: 1,
           image:
-            "",
+            "../library.jpeg",
           title: "Library",
           url: "http://localhost/FYP_ERP/Modules/Library/Users/book.php"
         },
@@ -488,7 +473,7 @@
           desc: "",
           id: 2,
           image:
-            "",
+            "../merch.jpeg",
           title: "Merch",
           url: ""
         },
@@ -496,17 +481,9 @@
           desc: "",
           id: 3,
           image:
-            "",
+            "../cafe.jpeg",
           title: "Cafe",
           url: "http://localhost/FYP_ERP/Modules/Cafe/index.php"
-        },
-        {
-          desc: "",
-          id: 4,
-          image:
-            "",
-          title: "Health",
-          url: "#"
         }
 
       ].map((restaurant) => {

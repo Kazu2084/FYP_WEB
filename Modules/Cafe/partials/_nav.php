@@ -72,13 +72,11 @@ if (isset($_SESSION["LoginStudent"])) {
     </button>
 
     <div class="input-wrapper">
-      <form method="get" action="/Cafe/search.php" class="form-inline my-2 my-lg-0 mx-3">
-        <input type="search" name="search" id="search" placeholder="Search" class="search-field" aria-label="Search"
+      <form method="get" action="../search.php" class="form-inline my-2 my-lg-0 mx-3">
+        <input type="hidden" name="search" id="search" placeholder="Search" class="search-field" aria-label="Search"
           required>
 
-        <button class="search-submit" type="submit" aria-label="search">
-          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-        </button>
+      
       </form>
     </div>
 
@@ -127,7 +125,7 @@ if (isset($_SESSION["LoginStudent"])) {
         </li>
 
         <li>
-          <a href="#home" class="navbar-link has-after">Home</a>
+          <a href="http://localhost/FYP_ERP/Modules/Cafe/index.php#home" class="navbar-link has-after">Home</a>
         </li>
 
       

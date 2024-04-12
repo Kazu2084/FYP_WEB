@@ -3,7 +3,7 @@
  include("../conn.php");
  extract($_POST);
 
- $exmne_id = $_SESSION['examineeSession']['exmne_id'];
+ $exmne_id = 8;
 
 
 

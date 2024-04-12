@@ -23,7 +23,7 @@ if (isset($_POST['sub'])) {
 			<?php
 		}	
 		else{
-			echo " Insert Not Successfully";
+			//echo " Insert Not Successfully";
 		}
 	}
 ?>
@@ -77,7 +77,7 @@ if (isset($_POST['sub'])) {
 								</tr>
 								<?php  
 								$i=1;
-									$conn=mysqli_connect("localhost","root","","college");
+									$conn=mysqli_connect("localhost","root","","fyp");
 
 									if (isset($_POST['submit'])) {
 										$teacher_id=$_POST['teacher_id'];

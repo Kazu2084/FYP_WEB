@@ -1,7 +1,7 @@
 <?php 
-	$con=mysqli_connect("localhost","root","","college");
+	$con=mysqli_connect("localhost","root","","fyp");
 	if(!$con)
 	{
-		echo "Connection is not Successfully";
+		//echo "Connection is not Successfully";
 	}
 ?>

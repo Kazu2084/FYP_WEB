@@ -14,7 +14,7 @@ if ($resultPie->num_rows > 0) {
 }
 
 // Fetch data for bar graph
-$sqlBar = "select book_title, book_copies FROM book GROUP BY book_title";
+$sqlBar = "select  COUNT(*) as total, book.book_id from borrow_book join book on borrow_book.book_id  = book.book_id GROUP BY book.book_id";
 $resultBar = $conn->query($sqlBar);
 
 $dataBar = array();

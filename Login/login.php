@@ -28,6 +28,7 @@ session_start();
                 {
                     $_SESSION['LoginStudent']=$row['username'];
                     $_SESSION['student_id']=$row['ID'];
+                    
                     header('Location: ../ERP_Homepage/Student/homepage.php');
                 }
                 else if ($row["role"]=="staff")

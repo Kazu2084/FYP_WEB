@@ -12,8 +12,8 @@
     <div class="app-content">
         <div class="app-content-header">
             <h1 class="app-content-headerText">Manage Orders</h1>
-            <a href="#" onclick="window.print()" class="btn btn-sm btn-success" data-toggle="modal"
-                data-target="#modalForExam">Print</a>
+            <!-- <a href="#" onclick="window.print()" class="btn btn-sm btn-success" data-toggle="modal"
+                data-target="#modalForExam">Print</a> -->
         </div>
 
         <div class="app-content-actions">
@@ -21,8 +21,6 @@
                 <div class="products-header">
                     <div class="product-cell">Order ID</div>
                     <div class="product-cell">User ID</div>
-                    <div class="product-cell">Address</div>
-                    <div class="product-cell">Phone No</div>
                     <div class="product-cell">Amount</div>
                     <div class="product-cell">Payment Mode</div>
                     <div class="product-cell">Order Date</div>
@@ -39,15 +37,13 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     $Id = $row['userId'];
                     $orderId = $row['orderId'];
-                    $address = $row['address'];
                     $zipCode = $row['zipCode'];
-                    $phoneNo = $row['phoneNo'];
                     $amount = $row['amount'];
                     $orderDate = $row['orderDate'];
                     $paymentMode = $row['paymentMode'];
 
                     if ($paymentMode == 0) {
-                        $paymentMode = "Cash on Delivery";
+                        $paymentMode = "Cash";
                     } else {
                         $paymentMode = "Online";
                     }
@@ -57,8 +53,6 @@
                     echo '<div class="products-row">
                                 <div class="product-cell"><span>' . $orderId . '</span></div>
                                 <div class="product-cell"><span>' . $Id . '</span></div>
-                                <div class="product-cell"' . $address . '"><span>' . substr($address, 0, 20) . '...</span></div>
-                                <div class="product-cell"><span>' . $phoneNo . '</span></div>
                                 <div class="product-cell"><span>' . $amount . '</span></div>
                                 <div class="product-cell"><span>' . $paymentMode . '</span></div>
                                 <div class="product-cell"><span>' . $orderDate . '</span></div>

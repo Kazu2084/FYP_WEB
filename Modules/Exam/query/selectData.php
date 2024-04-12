@@ -1,12 +1,9 @@
 <?php 
-include("../../Connection/connection.php");
+$exmneId = 8;
+//$_SESSION['examineeSession']['exmne_id'];
 
-$current = $_SESSION['LoginStudent'];
-$id_query = $conn->query("select roll_no from student_info WHERE email = '$current' ")->fetch(PDO::FETCH_ASSOC);
-$exmneId = $id_query['roll_no'];
-
-$selExmneeData = $conn->query("SELECT * FROM student_info WHERE roll_no='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
-$exmneCourse =  $selExmneeData['course_code'];
+$selExmneeData = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
+$exmneCourse =  $selExmneeData['exmne_course'];
 
 $selExam = $conn->query("SELECT * FROM exam_tbl WHERE cou_id='$exmneCourse' ORDER BY ex_id DESC ");
  ?>

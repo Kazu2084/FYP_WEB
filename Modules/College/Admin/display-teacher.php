@@ -10,9 +10,7 @@
 		$teacher_email=$_SESSION['LoginTeacher'];
 		$teacher_id="";
 	}
-	else{ ?>
-		<script> alert("Your Are Not Autorize Person For This link");</script>
-	<?php
+	else{ 
 		header('location:../../../Login/index.html');
 	}
 	require_once "../../../Connection/connection.php";
@@ -23,10 +21,10 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Admin - Teacher Information</title>
+		<title>Teacher Profile</title>
 	</head>
 	<body>
-		<?php include('../common/common-header.php') ?>
+	<?php include ('../Common/admin-sidenav-header.php') ?>
 	<?php
 		if($teacher_id){
 			$query="select * from teacher_info where teacher_id='$teacher_id'";
@@ -34,18 +32,23 @@
 		else{
 			$query="select * from teacher_info where email='$teacher_email'";
 		}
-		
+?>
+		<div class="app-content">
+	<div class="app-content-header">
+		<h1 class="app-content-headerText">Teacher Profile</h1>
+		<!-- <button type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target=".bd-example-modal-lg">Add Teacher</button> -->
+	</div>
+
+	<div class="app-content-actions">
+		<?php
 		$run=mysqli_query($con,$query);
 		while ($row=mysqli_fetch_array($run)) {
 	?>
-		<div class="container  mt-1 border border-secondary mb-1">
-			<div class="row text-white bg-primary pt-5">
-				<div class="col-md-4">
-					<?php  $profile_image= $row["profile_image"] ?>
-					<img class="ml-5 mb-5" height='270px' width='250px' src=<?php echo "images/$profile_image"  ?> >
-				</div>
+		<div class="container  mt-1  mb-1">
+			<div class="row pt-5">
+				
 				<div class="col-md-8">
-					<h3 class="ml-5"><?php echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'] ?></h3><br>
+					<h3 class="ml-5">Name - <?php echo $row['first_name']." ".$row['middle_name']." ".$row['last_name'] ?></h3><br>
 					<div class="row">
 						<div class="col-md-6">
 							<h5>Father Name:</h5> <?php echo $row['father_name']  ?><br><br>
@@ -54,7 +57,7 @@
 						</div>
 						<div class="col-md-6">
 							<h5>Address:</h5> <?php echo $row['permanent_address']  ?><br><br>
-							<h5>CNIC:</h5> <?php echo $row['cnic']  ?><br><br>
+						
 							<h5>Teacher ID:</h5> <?php echo $row['teacher_id']  ?><br><br>
 						</div>		
 					</div>
@@ -76,26 +79,7 @@
 				<div class="col-md-4"><h5>Current Address:</h5> <?php echo $row['current_address']  ?></div>
 				<div class="col-md-4"><h5>Place of Birth:</h5> <?php echo $row['place_of_birth']  ?></div>
 			</div>
-			<div class="row pt-3">
-				<div class="col-md-4"><h5>Matric Complition Date:</h5> <?php echo $row['matric_complition_date']  ?></div>
-				<div class="col-md-4"><h5>Matric Awarded Date:</h5> <?php echo $row['matric_awarded_date']  ?></div>
-				<div class="col-md-4"><h5>Matric Certificate:</h5> <?php echo $row['matric_certificate']  ?></div>
-			</div>
-			<div class="row pt-3">
-				<div class="col-md-4"><h5>Fa Complition Date:</h5> <?php echo $row['fa_complition_date']  ?></div>
-				<div class="col-md-4"><h5>Fa Awarded Date:</h5> <?php echo $row['fa_awarded_date']  ?></div>
-				<div class="col-md-4"><h5>Fa Certificate:</h5> <?php echo $row['fa_certificate']  ?></div>
-			</div>
-			<div class="row pt-3">
-				<div class="col-md-4"><h5>BA Complition Date:</h5> <?php echo $row['ba_complition_date']  ?></div>
-				<div class="col-md-4"><h5>BA Awarded Date:</h5> <?php echo $row['ba_awarded_date']  ?></div>
-				<div class="col-md-4"><h5>BA Certificate:</h5> <?php echo $row['ba_certificate']  ?></div>
-			</div>
-			<div class="row pt-3">
-				<div class="col-md-4"><h5>MA Complition Date:</h5> <?php echo $row['ma_complition_date']  ?></div>
-				<div class="col-md-4"><h5>MA Awarded Date:</h5> <?php echo $row['ma_awarded_date']  ?></div>
-				<div class="col-md-4"><h5>MA Certificate:</h5> <?php echo $row['ma_certificate']  ?></div>
-			</div>
+			
 		</div>
 	<?php } ?>
 </body>

@@ -15,7 +15,7 @@ require_once "../../../Connection/connection.php";
 			header('Location: student.php');
 		}
 		else{
-			echo "Record not deleted";
+			//echo "Record not deleted";
 			header('Refresh: 5; url=student.php');
 		}
 	}
@@ -30,7 +30,7 @@ require_once "../../../Connection/connection.php";
 			header('Location: courses.php');
 		}
 		else{
-			echo "Record not deleted";
+			//echo "Record not deleted";
 		}
 	}
 ?>
@@ -44,7 +44,7 @@ require_once "../../../Connection/connection.php";
 			header('Location: subjects.php');
 		}
 		else{
-			echo "Record not deleted";
+			//echo "Record not deleted";
 		}
 	}
 ?>
@@ -58,7 +58,21 @@ require_once "../../../Connection/connection.php";
 			header('Location: teacher.php');
 		}
 		else{
-			echo "Record not deleted";
+			//echo "Record not deleted";
+		}
+	}
+?>
+
+<?php 
+	if (isset($_GET['staff_id'])) {
+		$staff_id=$_GET['staff_id'];
+		$query3="delete from staff_info where staff_id='$staff_id'";
+		$run3=mysqli_query($con,$query3);
+		if ($run3) {
+			header('Location: staff.php');
+		}
+		else{
+			//echo "Record not deleted";
 		}
 	}
 ?>

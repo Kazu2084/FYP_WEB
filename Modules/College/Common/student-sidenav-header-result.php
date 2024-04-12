@@ -65,9 +65,35 @@ if (isset($_SESSION["LoginStudent"])) {
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
               <li class="nav-item">
-                <a class="nav-link" href="../student/student-result.php">
+                <a class="nav-link" href="../student/student-result1.php">
                   <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Result</span>
+                  <span style="font-size: 18px;" class="ms-2">Semester 1</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../student/student-result2.php">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Semester 2</span>
+                </a>
+              </li> <li class="nav-item">
+                <a class="nav-link" href="../student/student-result3.php">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Semester 3</span>
+                </a>
+              </li> <li class="nav-item">
+                <a class="nav-link" href="../student/student-result4.php">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Semester 4</span>
+                </a>
+              </li> <li class="nav-item">
+                <a class="nav-link" href="../student/student-result5.php">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Semester 5</span>
+                </a>
+              </li> <li class="nav-item">
+                <a class="nav-link" href="../student/student-result6.php">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Semester 6</span>
                 </a>
               </li>
              

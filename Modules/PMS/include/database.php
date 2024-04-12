@@ -23,7 +23,7 @@ class Database {
 		$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//echo "Connected successfully";
 		}catch(PDOException $e){
-			echo "Problem in database connection! Contact administrator!". $e->getMessage();
+			//echo "Problem in database connection! Contact administrator!". $e->getMessage();
 		
 		}
 
@@ -47,7 +47,7 @@ class Database {
 			$this->query->execute();
 
 		  } catch (PDOException $e) {
-		    echo "Failed to get query handle: " . $e->getMessage() . "\n";
+		    //echo "Failed to get query handle: " . $e->getMessage() . "\n";
 		    exit;
 		  }
 		
@@ -57,7 +57,7 @@ class Database {
 			$this->query->execute();
 
 		 } catch (PDOException $e) {
-		    echo "Failed to get query handle: " . $e->getMessage() . "\n";
+		  //  echo "Failed to get query handle: " . $e->getMessage() . "\n";
 		    exit;
 		  }	
 	}

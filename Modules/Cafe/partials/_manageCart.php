@@ -59,20 +59,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>";
     }
     if(isset($_POST['checkout'])) {
-        $amount = $_POST["amount"];
-        $address1 = $_POST["address"];
-        $address2 = $_POST["address1"];
-        $phone = $_POST["phone"];
-        $zipcode = $_POST["zipcode"];
-        $password = "pass";
-        $address = $address1.", ".$address2;
+         $amount = $_POST["amount"];
+        // $address1 = $_POST["address"];
+        // $address2 = $_POST["address1"];
+        //$phone = $_POST["phone"];
+        // $zipcode = $_POST["zipcode"];
+      
+        // $address = $address1.", ".$address2;
         
-        $passSql = "SELECT * FROM common_info WHERE id=1"; 
-        $passResult = mysqli_query($conn, $passSql);
-        $passRow=mysqli_fetch_assoc($passResult);
-        $userName = $passRow['username'];
-        if (password_verify($password, "pass")){ 
-            $sql = "INSERT INTO `cafe_orders` (`userId`, `address`, `zipCode`, `phoneNo`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$address', '$zipcode', '$phone', '$amount', '0', '0', current_timestamp())";
+        
+        // $passSql = "SELECT * FROM common_info WHERE id=$userId"; 
+        // $passResult = mysqli_query($conn, $passSql);
+        // $passRow=mysqli_fetch_assoc($passResult);
+        // $userName = $passRow['first_name'];
+        if (true){ 
+            $sql = "INSERT INTO `cafe_orders` (`userId`, `amount`, `paymentMode`, `orderStatus`, `orderDate`) VALUES ('$userId', '$amount', '0', '0', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             $orderId = $conn->insert_id;
             if ($result){
@@ -87,16 +88,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $deletesql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";   
                 $deleteresult = mysqli_query($conn, $deletesql);
                 echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
-                    window.location.href="http://localhost/Cafe/index.php";  
+                    window.location.href="http://localhost/FYP_ERP/Modules/Cafe/index.php";  
                     </script>';
                     exit();
             }
         } 
         else{
-            echo '<script>alert("Incorrect Password! Please enter correct Password.");
-                    window.history.back(1);
+            echo '<script>alert("Cannot place the order.");
+             window.history.back(1);
                     </script>';
-                    exit();
+                     exit();
         }    
     }
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')

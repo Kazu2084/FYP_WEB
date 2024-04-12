@@ -98,7 +98,7 @@ $exDisplayLimit = $selExam['ex_questlimit_display'];
           ?>
     <tr>
       <td style="padding: 20px;">
-        <button type="button" class="btn btn-warning" id="resetExamFrm">Reset</button>
+        <button type="button" class="btn btn-primary" id="resetExamFrm">Reset</button>
         <input name="submit" type="submit" value="Submit" class="btn btn-primary float-right"
           id="submitAnswerFrmBtn">
       </td>

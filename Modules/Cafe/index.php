@@ -68,12 +68,10 @@ if (isset($_SESSION["LoginStudent"])) {
 
         <div class="input-wrapper">
           <form method="get" action="/Cafe/search.php" class="form-inline my-2 my-lg-0 mx-3">
-            <input type="search" name="search" id="search" placeholder="Search" class="search-field" aria-label="Search"
+            <input type="hidden" name="search" id="search" placeholder="Search" class="search-field" aria-label="Search"
               required>
 
-            <button class="search-submit" type="submit" aria-label="search">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-            </button>
+
           </form>
         </div>
 
@@ -106,10 +104,10 @@ if (isset($_SESSION["LoginStudent"])) {
               </span>
             </button></a>
 
-            <a href="../../Login/logout.php"><button title="Logout" class="header-action-btn" aria-label="logout">
-            <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
+          <a href="../../Login/logout.php"><button title="Logout" class="header-action-btn" aria-label="logout">
+              <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
 
-            
+
             </button></a>
 
         </div>
@@ -125,7 +123,7 @@ if (isset($_SESSION["LoginStudent"])) {
               <a href="#home" class="navbar-link has-after">Home</a>
             </li>
 
-          
+
 
             <?php
             $sql = "SELECT categorieName, categorieId FROM `cafe_categories`";
@@ -180,13 +178,6 @@ if (isset($_SESSION["LoginStudent"])) {
           <a href="#shop" class="navbar-link" data-nav-link>Shop</a>
         </li>
 
-        <li>
-          <a href="#offer" class="navbar-link" data-nav-link>Offer</a>
-        </li>
-
-        <li>
-          <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-        </li>
 
       </ul>
 
@@ -217,13 +208,16 @@ if (isset($_SESSION["LoginStudent"])) {
                 <div class="card-content">
 
                   <h1 class="h1 hero-title">
-                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                   </h1>
 
                   <p class="hero-text">
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                   </p>
 
+                  <p class="price"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                  <p class="price"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                  <p class="price"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                   <p class="price"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 
                   <a href="#" class=""> &nbsp; &nbsp; &nbsp;</a>
@@ -233,51 +227,7 @@ if (isset($_SESSION["LoginStudent"])) {
               </div>
             </li>
 
-            <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="background-image: url('./assets1/images/hero-banner-2.jpg')">
 
-                <div class="card-content">
-
-                  <h1 class="h1 hero-title">
-                    Reveal The <br>
-                    Beauty of Skin
-                  </h1>
-
-                  <p class="hero-text">
-                    Made using clean, non-toxic ingredients, our products are designed for everyone.
-                  </p>
-
-                  <p class="price">Starting at $7.99</p>
-
-                  <a href="#" class="btn btn-primary">Shop Now</a>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="hero-card has-bg-image" style="background-image: url('./assets1/images/hero-banner-3.jpg')">
-
-                <div class="card-content">
-
-                  <h1 class="h1 hero-title">
-                    Reveal The <br>
-                    Beauty of Skin
-                  </h1>
-
-                  <p class="hero-text">
-                    Made using clean, non-toxic ingredients, our products are designed for everyone.
-                  </p>
-
-                  <p class="price">Starting at $7.99</p>
-
-                  <a href="#" class="btn btn-primary">Shop Now</a>
-
-                </div>
-
-              </div>
-            </li>
 
           </ul>
 
@@ -287,74 +237,6 @@ if (isset($_SESSION["LoginStudent"])) {
 
 
 
-
-      <!-- 
-        - #COLLECTION
-      -->
-
-      <section class="section collection" id="collection" aria-label="collection" data-section>
-        <div class="container">
-
-          <ul class="collection-list">
-
-            <li>
-              <div class="collection-card has-before hover:shine">
-
-                <h2 class="h2 card-title">Summer Collection</h2>
-
-                <p class="card-text">Starting at $17.99</p>
-
-                <a href="#" class="btn-link">
-                  <span class="span">Shop Now</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-                <div class="has-bg-image" style="background-image: url('./assets1/images/collection-1.jpg')"></div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="collection-card has-before hover:shine">
-
-                <h2 class="h2 card-title">What’s New?</h2>
-
-                <p class="card-text">Get the glow</p>
-
-                <a href="#" class="btn-link">
-                  <span class="span">Discover Now</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-                <div class="has-bg-image" style="background-image: url('./assets1/images/collection-2.jpg')"></div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="collection-card has-before hover:shine">
-
-                <h2 class="h2 card-title">Buy 1 Get 1</h2>
-
-                <p class="card-text">Starting at $7.99</p>
-
-                <a href="#" class="btn-link">
-                  <span class="span">Discover Now</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-                <div class="has-bg-image" style="background-image: url('./assets1/images/collection-3.jpg')"></div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
 
 
 
@@ -364,90 +246,9 @@ if (isset($_SESSION["LoginStudent"])) {
         - #SHOP
       -->
 
-      <section class="section shop" id="shop" aria-label="shop" data-section>
-        <div class="container">
-          <div class="title-wrapper">
-            <h2 class="h2 section-title">All Our Products</h2>
-          </div>
-
-          <?php
-          $con = mysqli_connect("localhost", "root", "", "fyp");
-
-          // Check connection
-          if (!$con) {
-            die("Connection failed: " . mysqli_connect_error());
-          }
-
-          $sql = "SELECT * FROM cafe_product";
-          $result = mysqli_query($con, $sql);
-
-          $counter = 0; // Initialize counter
-          
-          if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              if ($counter % 5 == 0) {
-                // Start a new section after every 5 iterations
-                echo '<section class="section shop" id="shop' . ($counter / 5) . '" aria-label="shop" data-section>';
-                echo '<div class="container">';
-                echo '<ul class="has-scrollbar">';
-              }
-
-              $productName = $row['productName'];
-              $productPrice = $row['productPrice'];
-              $productImage = $row['productCategorieId'];
-              ?>
-              <li class="scrollbar-item">
-                <div class="shop-card">
-                  <div class="card-banner img-holder">
-<img src="assets1/card-<?php echo $productImage; ?>.jpg" width="249px" height="262px">
-                    <div class="card-actions">
-                      <button class="action-btn" aria-label="add to cart">
-                        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                      </button>
-                      <!-- Other action buttons -->
-                    </div>
-                  </div>
-                  <div class="card-content">
-                    <div class="price">	<b>&#8377</b>
-                      <span class="span">
-                        <?php echo $productPrice; ?>
-                      </span>
-                    </div>
-                    <h3>
-                      <a href="#" class="card-title">
-                        <?php echo $productName; ?>
-                      </a>
-                    </h3>
-                    <!-- Other card content -->
-                  </div>
-                </div>
-              </li>
-              <?php
-              $counter++;
-
-              if ($counter % 5 == 0) {
-                // Close the ul and div tags for the section after every 5 iterations
-                echo '</ul>';
-                echo '</div>';
-                echo '</section>';
-              }
-            }
-
-            // Close the ul and div tags for the last section if there are remaining items
-            if ($counter % 5 != 0) {
-              echo '</ul>';
-              echo '</div>';
-              echo '</section>';
-            }
-          } else {
-            echo "0 results";
-          }
-          mysqli_close($con);
-          ?>
-        </div>
-      </section>
+      
     </article>
-    
+
     <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
       <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
     </a>

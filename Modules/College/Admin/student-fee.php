@@ -16,9 +16,9 @@ if (isset($_POST['sub'])) {
 	$que = "insert into student_fee(roll_no,amount,status)values('$roll_no','$amount','$status')";
 	$run = mysqli_query($con, $que);
 	if ($run) {
-		echo "Insert Successfully";
+		?><script>alert("Insert Successfully");</script><?php
 	} else {
-		echo " Insert Not Successfully";
+		?><script>alert("Not successfull");</script><?php
 	}
 }
 

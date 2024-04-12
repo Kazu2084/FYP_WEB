@@ -25,17 +25,17 @@ if (isset($_SESSION["LoginStudent"])) {
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../Styles/script.js"></script>
-  <script src="../../../Styles/body.js"></script>
-  <script src="../../../Styles/table1.js"></script>
+  <script src="../Style/script.js"></script>
+  <script src="../Style/Styles/body.js"></script>
+  <script src="../Style/Styles/table1.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../Styles/style1.css">
-  <link rel="stylesheet" href="../../../Styles/style.css">
-  <link rel="stylesheet" href="../../../Styles/style2.css">
+  <link rel="stylesheet" href="../Style/style1.css">
+  <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/style2.css">
 
 </head>
 
@@ -64,14 +64,6 @@ if (isset($_SESSION["LoginStudent"])) {
           
           
         </div>
-        <button class="messages-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-message-circle">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-          </svg>
-        </button>
       </div>
     </div>
     <div style="padding-top: 1rem;width: 100%;float:right">

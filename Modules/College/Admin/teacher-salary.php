@@ -26,9 +26,9 @@ if (isset($_POST['btn_save'])) {
 	$query = "insert into teacher_salary_allowances(teacher_id,basic_salary,medical_allowance,hr_allowance,scale)values('$teacher_id','$basic_salary','$medical_allowance','$hr_allowance','$scale')";
 	$run = mysqli_query($con, $query);
 	if ($run) {
-		echo "Your Data has been submitted";
+		//echo "Your Data has been submitted";
 	} else {
-		echo "Your Data has not been submitted";
+		//echo "Your Data has not been submitted";
 	}
 }
 
@@ -148,7 +148,7 @@ if (isset($_POST['btn_sub'])) {
 						aria-hidden="true">
 						<div class="modal-dialog modal-lg">
 							<div class="modal-content">
-								<div class="modal-header bg-info text-white">
+								<div class="modal-header ">
 									<h4 class="modal-title text-center">Add Salary</h4>
 								</div>
 								<div class="modal-body">

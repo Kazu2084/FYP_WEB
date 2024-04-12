@@ -79,13 +79,13 @@ while ($row = mysqli_fetch_array($result1)) {
                             <?php echo $row['classname']; ?>
                         </div>
                         <div>
-                            <a class="btn btn-warning col-3 m-2" for="ViewAdmin"
+                            <a class="btn btn-primary col-3 m-2" for="ViewAdmin"
                                 href="edit_book.php<?php echo '?book_id=' . $id; ?>">
-                                <i class="fa fa-edit"></i>
+                               Edit
                             </a>
                             <a class="btn btn-danger col-3 m-2" for="DeleteAdmin" href="#delete<?php echo $id; ?>"
                                 data-toggle="modal" data-target="#delete<?php echo $id; ?>">
-                                <i class="far fa-trash-alt"></i>
+                                Delete
                             </a>
                             <div class="modal fade" id="delete<?php echo $id; ?>" tabindex="-1" role="dialog"
                                 aria-labelledby="myModalLabel" aria-hidden="true">

@@ -1,7 +1,7 @@
 <?php 
  session_start();
  include("../conn.php");
-$exmneId = $_SESSION['examineeSession']['exmne_id'];
+$exmneId = 8;
  
 
 extract($_POST);

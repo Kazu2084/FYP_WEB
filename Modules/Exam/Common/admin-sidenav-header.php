@@ -1,6 +1,5 @@
 <?php
-require_once "../../../../Connection/connection.php";
-
+require_once('../../conn.php');
 session_start();
 if (isset($_SESSION["LoginAdmin"])) {
   $current_session = $_SESSION['LoginAdmin'];
@@ -9,6 +8,7 @@ if (isset($_SESSION["LoginAdmin"])) {
 }   
 	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +43,7 @@ if (isset($_SESSION["LoginAdmin"])) {
           
         </div>
         <div class="app-header-right">
-        <div><?php echo $current_session; ?></div>
+          <div><?php echo $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme" id="color-scheme-selector">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -51,7 +51,6 @@ if (isset($_SESSION["LoginAdmin"])) {
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
             </svg>
           </button>
-          
           
 
 
@@ -83,14 +82,7 @@ if (isset($_SESSION["LoginAdmin"])) {
 
           </button>
         </div>
-        <button class="messages-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-message-circle">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-          </svg>
-        </button>
+        
       </div>
     </div>
     <div style="padding-top: 1rem;width: 100%;float:right">
@@ -102,9 +94,8 @@ if (isset($_SESSION["LoginAdmin"])) {
           <div id="side-nav">
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="../Teacher/Dashboard.php">
-                  <!-- svg -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-sliders align-middle">
@@ -118,17 +109,21 @@ if (isset($_SESSION["LoginAdmin"])) {
                     <line x1="9" y1="8" x2="15" y2="8"></line>
                     <line x1="17" y1="16" x2="23" y2="16"></line>
                   </svg>
-                  <!-- /svg -->
                   <span style="font-size: 18px;" class="ms-2">Dashboard</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="home.php?page=manage-exam">
                   <i class="far fa-calendar-check" style="font-size: 20px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Exam</span>
                 </a>
               </li>
-             
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="home.php?page=manage-examinee">
+                  <i class="far fa-calendar-minus" style="font-size: 20px;"></i>
+                  <span style="font-size: 18px;" class="ms-2">Examinee</span>
+                </a>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="home.php?page=ranking-exam">
                   <i class="far fa-file-alt" style="font-size: 20px;"></i>
@@ -141,12 +136,12 @@ if (isset($_SESSION["LoginAdmin"])) {
                   <span style="font-size: 18px;" class="ms-2">Report</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="home.php?page=feedbacks">
                   <i class="far fa-comment-alt" style="font-size: 19px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Feedback</span>
                 </a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link" href="../../../../Login/logout.php">

@@ -51,9 +51,8 @@
     }
     ?>
 
-<!doctype html>
-<html class="no-js" lang="en">
 
+<!-- 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -66,101 +65,47 @@
     <link rel="stylesheet" href="../assets/css/metisMenu.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/css/slicknav.min.css">
-    <!-- amchart css -->
+    
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <!-- others css -->
+ 
     <link rel="stylesheet" href="../assets/css/typography.css">
     <link rel="stylesheet" href="../assets/css/default-css.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <!-- modernizr css -->
+    
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head> -->
+
+
+    
+    
+<html lang="en">
+
+<head>
+	<title>Leave</title>
 </head>
 
 <body>
+	<?php include ('../Common/user-sidenav-header.php') ?>
+	<div class="app-content">
+		<div class="app-content-header">
+			<h1 class="app-content-headerText">Apply For Leave</h1>
+		</div>
+
+		<div class="app-content-actions">
     
-    
-    <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
-        <!-- sidebar menu area start -->
-        <div class="sidebar-menu">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <a href="leave.php"><img src="../assets/images/icon/logo.png" alt="logo"></a>
-                </div>
-            </div>
-            <div class="main-menu">
-                <div class="menu-inner">
-                    <nav>
-                        <ul class="metismenu" id="menu">
-
-                            <li class="active">
-                                <a href="leave.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Leave
-                                    </span></a>
-                            </li>
-
-                            <li class="#">
-                                <a href="leave-history.php" aria-expanded="true"><i class="ti-agenda"></i><span>View My Leave History
-                                    </span></a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- sidebar menu area end -->
-        <!-- main content area start -->
-        <div class="main-content">
-            <!-- header area start -->
-            <div class="header-area">
-                <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        
-                    </div>
-                    <!-- profile info & task notification -->
-                    <div class="col-md-6 col-sm-4 clearfix">
-                        <ul class="notification-area pull-right">
-                            <li id="full-view"><i class="ti-fullscreen"></i></li>
-                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Apply For Leave Days</h4>
-                            <ul class="breadcrumbs pull-left">
-                                
-                                <li><span>Leave Form</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-                            <div style="left:250px;"><?php echo $current_session;?></div>
-                            <?php include '../includes/employee-profile-section.php'?>
-
-                    </div>
-                </div>
-            </div>
+     
+          
+                
+                           
+                    
+                   
             <!-- page title area end -->
-            <div class="main-content-inner">
-                <div class="row">
-                    <div class="col-lg-6 col-ml-12">
-                        <div class="row">
+            <!-- <div class="main-content-inner">
+                <div class="row"> -->
+                   
                             <!-- Textual inputs start -->
-                            <div class="col-12 mt-5">
+                           
                             <!-- <?php ///if($error){?><div class="alert alert-danger alert-dismissible fade show"><strong>Info: </strong><?php //echo htmlentities($error); ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -171,26 +116,26 @@
                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                 </div><?php/// }?> -->
-                                <div class="card">
+                                 </div>-->
+                                <div class="card" >
                                 <form name="addemp" method="POST">
 
                                     <div class="card-body">
-                                        <h4 class="header-title">Employee Leave Form</h4>
+                                        <h4 class="header-title">Leave Form</h4>
                                         <p class="text-muted font-14 mb-4">Please fill up the form below.</p>
 
                                         <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">Starting Date</label>
-                                            <input class="form-control" type="date" value="2020-03-05" data-inputmask="'alias': 'date'" required id="example-date-input" name="fromdate">
+                                            <input class="form-control" type="date" value="2024-04-12" data-inputmask="'alias': 'date'" required id="example-date-input" name="fromdate">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="example-date-input" class="col-form-label">End Date</label>
-                                            <input class="form-control" type="date" value="2020-03-05" data-inputmask="'alias': 'date'" required id="example-date-input" name="todate">
+                                            <input class="form-control" type="date" value="2024-04-12" data-inputmask="'alias': 'date'" required id="example-date-input" name="todate">
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-form-label">Your Leave Type</label>
+                                            <label class="col-form-label">Leave Type</label>
                                             <select class="custom-select" name="leavetype" autocomplete="off">
                                                 <option value="">Click here to select any ...</option>
 

@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Extract data for bar graph
-            const barLabels = data.bar_chart_data.map(item => item.book_title);
-            const barValues = data.bar_chart_data.map(item => item.book_copies);
+            const barLabels = data.bar_chart_data.map(item => item.total);
+            const barValues = data.bar_chart_data.map(item => item.book_id);
 
             // Generate bar graph
             const barCtx = document.getElementById('profitBarChart').getContext('2d');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: {
                     labels: barLabels,
                     datasets: [{
-                        label: 'No. of copies',
+                        label: 'No. of times borrowed',
                         data: barValues,
                         backgroundColor: 'rgba(54, 162, 235, 0.5)',
                         borderColor: 'rgba(54, 162, 235, 1)',

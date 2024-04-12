@@ -1,7 +1,7 @@
 <?php 
-// session_start();
+session_start();
 
-// if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("location:../index.php");
+if(!isset($_SESSION['examineeSession']['examineenakalogin']) == false) header("location:../index.php");
 
  ?>
  <?php include("conn.php"); ?>

@@ -41,7 +41,7 @@
 
 <head>
     
-    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- <link href="../dist/css/style.min.css" rel="stylesheet"> -->
 
     <script>
     function getSeater(val) {
@@ -73,27 +73,23 @@
     
     
     
-    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        
-        <header class="topbar" data-navbarbg="skin6">
-            <?php include '../includes/student-navigation.php'?>
-        </header>
-        
-        <aside class="left-sidebar" data-sidebarbg="skin6">
+   
+               
+                <?php include '../Common/student-sidenav-header.php';?>
             
-            <div class="scroll-sidebar" data-sidebarbg="skin6">
-                <?php include '../includes/student-sidebar.php'?>
-            </div>
-            
-        </aside>
+                <div class="app-content">
+		<div class="app-content-header">
+			<h1 class="app-content-headerText">Hostel Booking</h1>
+		</div>
+
+		<div class="app-content-actions">
         
-        <div class="page-wrapper">
+       
             
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
+         
                 
                 <form method="POST">
                 
@@ -121,9 +117,7 @@
 				?>	
 
 
-                <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Hostel Bookings</h4>
-                    </div>
+                
 
                 
                 <div class="row">

@@ -5,10 +5,9 @@ session_start();
 
 extract($_POST);
 
-$selAcc = $con->query("SELECT * FROM student_info WHERE exmne_email='$username' AND exmne_password='$pass'  ");
+$selAcc = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_email='$username' AND exmne_password='$pass'  ");
 $selAccRow = $selAcc->fetch(PDO::FETCH_ASSOC);
 
-$_SESSION['examineeSession']['examineenakalogin'] = true;
 
 if($selAcc->rowCount() > 0)
 {

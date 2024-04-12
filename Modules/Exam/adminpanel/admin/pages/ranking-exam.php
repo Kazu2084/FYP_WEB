@@ -24,7 +24,7 @@
 
 
 
-    $selExmne = $conn->query("SELECT * FROM student_info et  WHERE course_code='$exam_course'  ");
+    $selExmne = $conn->query("SELECT * FROM examinee_tbl et  WHERE exmne_course='$exam_course'  ");
 
 
     ?>
@@ -154,7 +154,7 @@
                     <div class="product-cell"><span>
                       <?php
                       $courseId = $selExamRow['cou_id'];
-                      $selCourse = $conn->query("SELECT * FROM courses WHERE course_code='$courseId' ");
+                      $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$courseId' ");
                       while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) {
                         echo $selCourseRow['cou_name'];
                       }

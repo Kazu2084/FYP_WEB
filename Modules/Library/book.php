@@ -162,17 +162,17 @@ include('Connection/connection.php');
                                         </td> -->
                 <button class="btn">
                     <a class="btn btn-primary" for="ViewAdmin" href="view_book.php<?php echo '?book_id=' . $id; ?>">
-                        <i class="fa fa-search"></i>
+                        View
                     </a>
-                    <a class="btn btn-warning" for="ViewAdmin" href="edit_book.php<?php echo '?book_id=' . $id; ?>">
-                        <i class="fa fa-edit"></i>
+                    <a class="btn btn-primary" for="ViewAdmin" href="edit_book.php<?php echo '?book_id=' . $id; ?>">
+                       Edit
                     </a>
                     <a class="btn btn-danger" for="DeleteAdmin" href="#delete<?php echo $id; ?>" data-toggle="modal"
                         data-target="#delete<?php echo $id; ?>">
-                        <i class="far fa-trash-alt"></i>
+                        Delete
                     </a>
                     <!-- <a class="btn btn-danger" for="DeleteAdmin" href="#delete<?php //echo $id;?>" data-toggle="modal" data-target="#delete<?php //echo $id;?>">
-                                        <i class="far fa-trash-alt"></i>
+                                        Delete
                                 </a> -->
                 </button>
             </div>

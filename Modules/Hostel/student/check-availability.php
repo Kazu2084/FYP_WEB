@@ -49,6 +49,6 @@
     if($count>0)
     echo "<span style='color:red'>$count. seats are already full.</span>";
     else
-        echo "<span style='color:red'>All Seats are Available</span>";
+        echo "<span style=''>All Seats are Available</span>";
     }
 ?>

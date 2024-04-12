@@ -7,9 +7,7 @@ include('../Common/librarian-sidenav-header.php');
 <div class="app-content">
 	<div class="app-content-header">
 		<h1 class="app-content-headerText">Returned Books</h1>
-		<a href="print_returned_book.php" target="_blank" style="background:none;">
-			<button class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
-		</a>
+		
 	</div>
 	<div></div>
 	<br/>
@@ -117,14 +115,14 @@ include('../Common/librarian-sidenav-header.php');
 		?>
 		
 
-			<div class="pull-left">
+			<!-- <div class="pull-left">
 				<div class="span">
 					<div class="alert alert-info"><i class="icon-credit-card icon-large"></i>&nbsp;Total Amount of
 						Penalty:&nbsp;
-						<?php echo $count_penalty_row['sum(book_penalty)'] . ".00"; ?>
+						<?php //echo $count_penalty_row['sum(book_penalty)'] . ".00"; ?>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 		
 			<div class="products-header">
@@ -136,7 +134,6 @@ include('../Common/librarian-sidenav-header.php');
 					<!-- <div class="product-cell">Date Borrowed</div>
 					<div class="product-cell">Due Date</div>
 					<div class="product-cell">Date Returned</div> -->
-					<div class="product-cell">Penalty</div>
 					
 			</div>
 			
@@ -156,9 +153,7 @@ include('../Common/librarian-sidenav-header.php');
 						 </span></div>
 						<!---	<div class="product-cell" style="text-transform: capitalize"><?php // echo $return_row['author']; ?> </span></div>
 								<div class="product-cell"><span><?php // echo $return_row['isbn']; ?> </span></div>	-->
-						<div class="product-cell"><span>
 							<?php //echo date("M d, Y h:m:s a", strtotime($return_row['date_borrowed'])); ?>
-						 </span></div>
 						<?php
 						// if ($return_row['book_penalty'] != 'No Penalty') {
 						// 	echo "<div class='product-cell' class='' style='width:100px;'>" . date("M d, Y h:m:s a", strtotime($return_row['due_date'])) . " </span></div>";

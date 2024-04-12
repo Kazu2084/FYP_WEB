@@ -16,11 +16,11 @@ include('../Common/librarian-sidenav-header.php');
     <div class="app-content">
         <div class="app-content-header">
             <h1 class="app-content-headerText">Books</h1>
-            <a href="add_book.php" style="background:none; position:relative; left:480px">
+            <a href="add_book.php" style="background:none; position:right; left:480px">
                 <button class="btn btn-primary"> Add Book</button>
             </a>
             <a href="book_print.php" target="_blank" style="background:none;">
-                <button class="btn btn-danger pull-right"> Print Books List</button>
+                <button class="btn btn-primary pull-right"> Print Books List</button>
             </a>
         </div>
 
@@ -91,14 +91,14 @@ include('../Common/librarian-sidenav-header.php');
                     <div class="product-cell sales">
                         <a class="btn btn-primary col-3 m-2" for="ViewAdmin"
                             href="view.php<?php echo '?book_id=' . $id; ?>">
-                            <i class="fa fa-search"></i>
+                            View
                         </a>
-                        <a class="btn btn-warning col-3 m-2" for="ViewAdmin" href="edit_book.php<?php echo '?book_id=' . $id; ?>">
-                            <i class="fa fa-edit"></i>
+                        <a class="btn btn-primary col-3 m-2" for="ViewAdmin" href="edit_book.php<?php echo '?book_id=' . $id; ?>">
+                           Edit
                         </a>
-                        <a class="btn btn-danger col-3 m-2" for="DeleteAdmin" href="#delete<?php echo $id; ?>" data-toggle="modal"
+                        <a class="btn btn-danger col-4 m-2" for="DeleteAdmin" href="#delete<?php echo $id; ?>" data-toggle="modal"
                             data-target="#delete<?php echo $id; ?>">
-                            <i class="far fa-trash-alt"></i>
+                            Delete
                         </a>
                         
                     </div>
@@ -106,10 +106,6 @@ include('../Common/librarian-sidenav-header.php');
                             aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <!-- <div class="modal-header">
-                                                            <h4 class="modal-title" id="myModalLabel"><i
-                                                                    class="glyphicon glyphicon-user"></i> User</h4>
-                                                        </div> -->
                                     <div class="modal-body">
                                         <div class="alert alert-danger">
                                             Are you sure you want to delete?

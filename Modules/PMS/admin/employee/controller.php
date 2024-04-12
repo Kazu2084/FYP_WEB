@@ -244,11 +244,11 @@ switch ($action) {
 				 if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
 					return  date("dmYhis") . basename($_FILES["picture"]["name"]);
 				}else{
-					echo "Error Uploading File";
+					//echo "Error Uploading File";
 					exit;
 				}
 			}else{
-					echo "File Not Supported";
+					//echo "File Not Supported";
 					exit;
 				}
 } 

@@ -1,14 +1,9 @@
 
-<?php
-session_start();
-if (!$_SESSION["LoginTeacher"]) {
-	header('location:../login/login.php');
-}
-require_once "../connection/connection.php";
-?>
+
 
 
 <?php
+require_once("../../../Connection/connection.php");
 if (isset($_POST['sub'])) {
 	$count = $_POST['count'];
 	for ($i = 0; $i < $count; $i++) {
@@ -49,7 +44,13 @@ if (isset($_POST['sub'])) {
 								<select class="browser-default custom-select" name="course_code">
 									<option>Select Course</option>
 									<?php
-									$teacher_id = $_SESSION['teacher_id'];
+									// $current = $_SESSION['LoginTeacher'];
+									// $id_query = "select teacher_id from teacher_info WHERE email = '$current' ";
+									// $id_run = mysqli_query($con, $id_query);
+									// $id_row = mysqli_fetch_array($id_run);
+									// $teacher_id = $id_row['teacher_id'];
+
+									 $teacher_id = $_SESSION['teacher_id'];
 									$query = "select distinct(course_code) from teacher_courses where teacher_id='$teacher_id'";
 									$run = mysqli_query($con, $query);
 									while ($row = mysqli_fetch_array($run)) {
@@ -102,7 +103,7 @@ if (isset($_POST['sub'])) {
 			<?php
 			$i = 1;
 			$count = 0;
-			$conn = mysqli_connect("localhost", "root", "", "college");
+			$conn = mysqli_connect("localhost", "root", "", "fyp");
 
 			if (isset($_POST['submit'])) {
 				$course_code = $_POST['course_code'];

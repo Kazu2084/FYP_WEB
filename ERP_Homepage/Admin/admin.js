@@ -352,6 +352,7 @@
     );
   };
   const QuickNav = () => {
+    
     const getItems = () => {
       return [
         {
@@ -393,23 +394,23 @@
       return [
         {
           id: 1,
-          name: "Complaint",
-          url: "#"
+          name: "Student",
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/student.php"
         },
         {
           id: 2,
-          name: "Task Manager",
-          url: "#"
+          name: "Teacher",
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/teacher.php"
         },
         {
           id: 3,
-          name: "Attendance",
-          url: "http://localhost/FYP_ERP/Modules/College/Admin/student-attendance.php"
+          name: "Staff",
+          url: "http://localhost/FYP_ERP/Modules/College/Admin/staff.php"
         },
         {
           id: 4,
           name: "Examination",
-          url: "http://localhost/FYP_ERP/Modules/Exam/adminpanel/admin/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Exam/adminpanel/admin/home.php?page=manage-exam"
         },
         {
           id: 5,
@@ -471,13 +472,13 @@
         },
         {
           id: 9,
-          name: "Counseling",
-          url: "#"
+          name: "Leave",
+          url: "http://localhost/FYP_ERP/Modules/Leave/admin/leave-section.php"
         },
         {
           id: 10,
-          name: "Feedback",
-          url: "#"
+          name: "Salary",
+          url: "http://localhost/FYP_ERP/Modules/College/admin/teacher-salary.php"
         },
         {
           id: 11,
@@ -486,7 +487,7 @@
         },
         {
           id: 12,
-          name: "Notices",
+          name: "",
           url: "#"
         }
       
@@ -522,72 +523,6 @@
   
   };
 
-  const Row2 = () => {
-    const getCards2 = () => {
-      return [
-        {
-          id: 13,
-          name: "Roles",
-          url: "#"
-        },
-        {
-          id: 14,
-          name: "Student",
-          url: "http://localhost/FYP_ERP/Modules/College/Admin/student.php"
-        },
-        {
-          id: 15,
-          name: "Teacher",
-          url: "http://localhost/FYP_ERP/Modules/College/Admin/teacher.php"
-        },
-        {
-          id: 16,
-          name: "Staff",
-          url: "#"
-        },
-        {
-          id: 17,
-          name: "Calendar",
-          url: "#"
-        },
-        {
-          id: 18,
-          name: "Leave",
-          url: "http://localhost/FYP_ERP/Modules/Leave/admin/dashboard.php"
-        }
-      
-        
-      ].map((day) => 
-      {
-        return React.createElement(
-          "a",
-          { key: day.id, className: "day-card", href: day.url, },
-          React.createElement(
-            "div",
-            { className: "day-card-content" },
-            
-            
-            React.createElement("span", { className: "day-name" }, day.name),
-            
-          )
-          
-        );
-      }
-      );
-    };
-    return React.createElement(
-      MenuSection,
-      {
-        icon: "fa-solid fa-sun",
-        id: "weather-section",
-        scrollable: true,
-      },
-      getCards2(),
-    
-    );
-  
-  };
-
   const Tools = () => {
     return React.createElement(
       MenuSection,
@@ -608,15 +543,15 @@
           desc: "",
           id: 1,
           image:
-            "",
+            "../library.jpeg",
           title: "Library",
-          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/book.php"
+          url: "http://localhost/FYP_ERP/Modules/Library/Librarian/dashboard.php"
         },
         {
           desc: "",
           id: 2,
           image:
-            "",
+            "../w.jpeg",
           title: "Hostel",
           url: "http://localhost/FYP_ERP/Modules/Hostel/admin/dashboard.php"
         },
@@ -624,17 +559,17 @@
           desc: "",
           id: 3,
           image:
-            "",
+            "../cafe.jpeg",
           title: "Cafe",
-          url: "http://localhost/FYP_ERP/Modules/Cafe/admin/home.php"
+          url: "http://localhost/FYP_ERP/Modules/Cafe/admin/dashboard.php"
         },
         {
           desc: "",
           id: 4,
           image:
-            "",
-          title: "Health",
-          url: "#"
+            "../merch.jpeg",
+          title: "Merch",
+          url: "http://localhost/FYP_ERP/Modules/Merch/admin/home.php"
         }
 
       ].map((restaurant) => {
@@ -804,16 +739,16 @@
               "div",
               { className: "app-menu-content-header-section" },
               React.createElement(UserStatusButton, {
-                icon: "fa-solid fa-arrow-right-from-arc",
+                icon: '<ion-icon name="log-out-outline"></ion-icon>',
                 id: "sign-out-button",
-                userStatus: UserStatus.LoggedIn
+                userStatus: UserStatus.LoggedIn,
+                label : "Logout"
               })
             )
           ),
           React.createElement(QuickNav, null),
           React.createElement(Row, null),
           React.createElement(Row1, null),
-          React.createElement(Row2, null),
           React.createElement(Restaurants, null),
           React.createElement(Tools, null),
           React.createElement(Movies, null)
@@ -864,7 +799,7 @@
           "div",
           { id: "sign-in-button-wrapper" },
           React.createElement(UserStatusButton, {
-            icon: "fa-solid fa-arrow-right-to-arc",
+            icon: '<ion-icon name="log-out-outline"></ion-icon>',
             id: "sign-in-button",
             userStatus: UserStatus.LoggingIn
           })

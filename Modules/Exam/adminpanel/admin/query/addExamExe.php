@@ -1,9 +1,9 @@
 <?php 
- include("../../../../../Connection/connection.php");
+ include("../../../../conn.php");
 
  extract($_POST);
 
- $selCourse = $con->query("SELECT * FROM exam_tbl WHERE ex_title='$examTitle' ");
+ $selCourse = $conn->query("SELECT * FROM exam_tbl WHERE ex_title='$examTitle' ");
 
  if($courseSelected == "0")
  {
@@ -24,10 +24,11 @@
  else
  {
     
-	$insExam = $con->query("INSERT INTO exam_tbl(cou_id,ex_title,ex_time_limit,ex_questlimit_display,ex_description) VALUES('$courseSelected','$examTitle','$timeLimit','$examQuestDipLimit','$examDesc') ");
+	$insExam = $conn->query("INSERT INTO exam_tbl(cou_id,ex_title,ex_time_limit,ex_questlimit_display,ex_description) VALUES('$courseSelected','$examTitle','$timeLimit','$examQuestDipLimit','$examDesc') ");
 	if($insExam)
 	{
 		$res = array("res" => "success", "examTitle" => $examTitle);
+		?><script>alert("success");</script><?php
 	}
 	else
 	{

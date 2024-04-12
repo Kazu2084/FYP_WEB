@@ -1,12 +1,10 @@
 <?php
-require_once "../../../Connection/connection.php";
+require_once "../../../../Connection/connection.php";
 
 session_start();
-if (isset($_SESSION["Loginstudent"])) {
+if (isset($_SESSION["LoginStudent"])) {
   $current_session = $_SESSION['LoginStudent'];
-} 
-	
-?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +18,15 @@ if (isset($_SESSION["Loginstudent"])) {
   <!-- SCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../../Styles/script.js"></script>
-  <script src="../../../Styles/body.js"></script>
+  <script src="Style/script.js"></script>
+  <script src="Style/body.js"></script>
 
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../Styles/style1.css">
-  <link rel="stylesheet" href="../../../Styles/style.css">
+  <link rel="stylesheet" href="Style/style1.css">
+  <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
@@ -42,7 +40,7 @@ if (isset($_SESSION["Loginstudent"])) {
           
         </div>
         <div class="app-header-right">
-        <div><?php echo $current_session; ?></div>
+          <div><?php echo $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -52,16 +50,8 @@ if (isset($_SESSION["Loginstudent"])) {
           </button>
           
           
-          
         </div>
-        <button class="messages-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-message-circle">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-          </svg>
-        </button>
+        
       </div>
     </div>
     <div style="padding-top: 1rem;width: 100%;float:right">
@@ -74,7 +64,7 @@ if (isset($_SESSION["Loginstudent"])) {
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
               <li class="nav-item">
-                <a class="nav-link" href="../dashboard.php">
+                <a class="nav-link" href="http://localhost/FYP_ERP/Modules/Exam/adminpanel/admin/pages/dashboard.php">
                   <!-- svg -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -136,7 +126,7 @@ if (isset($_SESSION["Loginstudent"])) {
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../../../../Login/logout.php">
+                <a class="nav-link" href="../Logout/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>

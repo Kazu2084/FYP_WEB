@@ -1,13 +1,7 @@
 <?php
-include("../../Connection/connection.php");
-
-session_start();
-if (isset($_SESSION["LoginStudent"])) {
-  $current_session = $_SESSION['LoginStudent'];
-  $student_id =  $_SESSION['student_id'];
-} 
-
+include("conn.php");
 include("query/selectData.php");
+
 
 ?>
 
@@ -22,13 +16,13 @@ include("query/selectData.php");
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../../Styles/script.js"></script>
-  <script src="../../Styles/body.js"></script>
+  <script src="Style/script.js"></script>
+  <script src="Style/body.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../Styles/style1.css">
-  <link rel="stylesheet" href="../../Styles/style.css">
+  <link rel="stylesheet" href="Style/style1.css">
+  <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
@@ -39,10 +33,10 @@ include("query/selectData.php");
           <div class="p app-icon" id="aside-toggle-btn">
           </div>
           <p class="app-name">Student Dashboard</p>
-          
+         
         </div>
         <div class="app-header-right">
-          <div><?php echo $current_session ?></div>
+          <div>  <?php echo $selExmneeData['exmne_email'];?></div>
           <button class="mode-switch" title="Switch Theme">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -50,18 +44,10 @@ include("query/selectData.php");
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
             </svg>
           </button>
-          
-          
+         
 
         </div>
-        <button class="messages-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-message-circle">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-          </svg>
-        </button>
+        
         <!-- <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
@@ -95,9 +81,8 @@ include("query/selectData.php");
           <div id="side-nav">
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="home.php">
-                  <!-- svg -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-sliders align-middle">
@@ -114,7 +99,7 @@ include("query/selectData.php");
 
                   <span style="font-size: 18px;" class="ms-2">Dashboard</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item aside-dropdown">
                 <a class="nav-link position-relative" data-bs-toggle="collapse" href="#collapsePricing" role="button"
                   aria-expanded="false" aria-controls="collapseExample">
@@ -136,14 +121,14 @@ include("query/selectData.php");
                   <li><a style="font-size: 16px;" class="nav-link" href="notAttemptedExams.php">All Exams</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#feedbacksModal">
                 
                 <i class="fas fa-comments" style="font-size: 16px;"></i>
                 <span style="font-size: 18px;" class="ms-2">Feedback</span> 
                 </a>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>

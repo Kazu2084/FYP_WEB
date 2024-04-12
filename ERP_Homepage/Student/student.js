@@ -393,23 +393,23 @@
       return [
         {
           id: 1,
-          name: "Complaint",
-          url: "#"
+          name: "Result",
+          url: "http://localhost/FYP_ERP/Modules/College/Student/student-result1.php"
         },
         {
           id: 2,
-          name: "Task Manager",
+          name: "Timetable",
           url: "#"
         },
         {
           id: 3,
           name: "Attendance",
-          url: "#"
+          url: "http://localhost/FYP_ERP/Modules/College/Student/student-index.php"
         },
         {
           id: 4,
           name: "Examination",
-          url: "http://localhost/FYP_ERP/Modules/Exam/dashboard.php"
+          url: "http://localhost/FYP_ERP/Modules/Exam/attemptedExams.php"
         },
         {
           id: 5,
@@ -420,7 +420,7 @@
         {
           id: 6,
           name: "Student",
-          url: "#",
+          url: "http://localhost/FYP_ERP/Modules/College/Student/student-index.php",
           tag: "<br>"
         },
       
@@ -467,29 +467,10 @@
         },
         {
           id: 8,
-          name: "Result",
-          url: "http://localhost/FYP_ERP/Modules/College/Student/student-result.php"
+          name: "Calendar",
+          url: ""
         },
-        {
-          id: 9,
-          name: "Counseling",
-          url: "http://localhost/FYP_ERP/Modules/College/Student/student-result.php"
-        },
-        {
-          id: 10,
-          name: "Feedback",
-          url: "#"
-        },
-        {
-          id: 11,
-          name: "Timetable",
-          url: "#"
-        },
-        {
-          id: 12,
-          name: "Notices",
-          url: "#"
-        }
+        
       
         
       ].map((day) => 
@@ -523,46 +504,7 @@
   
   };
 
-  const Row2 = () => {
-    const getCards2 = () => {
-      return [
-        {
-          id: 13,
-          name: "Calendar",
-          url: "#"
-        },
-      
-        
-      ].map((day) => 
-      {
-        return React.createElement(
-          "a",
-          { key: day.id, className: "day-card", href: day.url, },
-          React.createElement(
-            "div",
-            { className: "day-card-content" },
-            
-            
-            React.createElement("span", { className: "day-name" }, day.name),
-            
-          )
-          
-        );
-      }
-      );
-    };
-    return React.createElement(
-      MenuSection,
-      {
-        icon: "fa-solid fa-sun",
-        id: "weather-section",
-        scrollable: true,
-      },
-      getCards2(),
-    
-    );
   
-  };
 
   const Tools = () => {
     return React.createElement(
@@ -584,15 +526,14 @@
           desc: "",
           id: 1,
           image:
-            "",
+            "../library.jpeg",
           title: "Library",
           url: "http://localhost/FYP_ERP/Modules/Library/Users/book.php"
         },
         {
           desc: "",
           id: 2,
-          image:
-            "",
+          image:"../w.jpeg",
           title: "Hostel",
           url: "http://localhost/FYP_ERP/Modules/Hostel/student/book-hostel.php"
         },
@@ -600,7 +541,7 @@
           desc: "",
           id: 3,
           image:
-            "",
+            "../cafe.jpeg",
           title: "Cafe",
           url: "http://localhost/FYP_ERP/Modules/Cafe/index.php"
         },
@@ -609,7 +550,7 @@
           id: 4,
           image:
             "",
-          title: "Health",
+          title: "",
           url: "#"
         }
 
@@ -788,7 +729,6 @@
           React.createElement(QuickNav, null),
           React.createElement(Row, null),
           React.createElement(Row1, null),
-          React.createElement(Row2, null),
           React.createElement(Restaurants, null),
           React.createElement(Tools, null),
           React.createElement(Movies, null)

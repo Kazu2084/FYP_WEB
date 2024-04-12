@@ -10,7 +10,7 @@
 
 <head>
     
-    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- <link href="../dist/css/style.min.css" rel="stylesheet"> -->
     
 </head>
 
@@ -18,35 +18,18 @@
     
     
     
-    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        
-        <header class="topbar" data-navbarbg="skin6">
-             <?php include '../includes/student-navigation.php'?>
-        </header>
-        
-        <aside class="left-sidebar" data-sidebarbg="skin6">
+   
+ 
+<?php include '../Common/student-sidenav-header.php';?>
             
-            <div class="scroll-sidebar" data-sidebarbg="skin6">
-                <?php include '../includes/student-sidebar.php'?>
-            </div>
-            
-        </aside>
-        
-        <div class="page-wrapper">
-            
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                
-                <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Details About My Booked Room</h4>
-                </div>
+            <div class="app-content">
+    <div class="app-content-header">
+        <h1 class="app-content-headerText">My Room Details</h1>
+    </div>
 
+    <div class="app-content-actions">
 
-
-                <!--Table Column -->
+               
                 
                  <div class="card">
                  
@@ -60,7 +43,7 @@
                                         <tbody>
 
                                         <?php	
-                                        $aid=$_SESSION['student_id'];
+                                        $aid=$student_id;
                                         $ret="SELECT * from roomregistration where ID=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('s',$aid);
@@ -105,7 +88,7 @@
                                             ;?> </td>
 
                                             <td><b>Fees Per Month :</b></td>
-                                            <td>$<?php echo $fpm=$row->feespm;?></td>
+                                            <td>&#8377;<?php echo $fpm=$row->feespm;?></td>
 
                                             
 
@@ -115,7 +98,7 @@
                                             <td colspan="6"><b>Total Fees (<?php echo ($dr).' months'?>) : 
                                             <?php if($row->foodstatus==1){ 
                                             $fd=211; 
-                                            echo '$'.(($fd+$fpm)*$dr);
+                                            echo '&#8377;'.(($fd+$fpm)*$dr);
                                             } else {
                                             echo '$'.$dr*$fpm;
                                             }

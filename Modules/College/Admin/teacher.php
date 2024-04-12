@@ -4,6 +4,8 @@ if (!$_SESSION["LoginAdmin"]) {
 	header('location:../../../Login/index.html');
 }
 require_once "../../../Connection/connection.php";
+
+
 $_SESSION['LoginTeacher'] = "";
 ?>
 
@@ -97,7 +99,9 @@ if (isset($_POST['btn_save2'])) {
 <div class="app-content">
 	<div class="app-content-header">
 		<h1 class="app-content-headerText">Teacher</h1>
-		<button type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target=".bd-example-modal-lg">Add Teacher</button>
+		<button style="float:right" type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target=".bd-example-modal-lg">Add Teacher</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal"
+								data-target=".bd-example-modal-lg1">Assign Subjects</button>
 	</div>
 
 	<div class="app-content-actions">
@@ -107,7 +111,7 @@ if (isset($_POST['btn_save2'])) {
 					aria-labelledby="myLargeModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
-							<div class="modal-header bg-info text-white">
+							<div class="modal-header ">
 								<h4 class="modal-title text-center">Add New Teacher</h4>
 							</div>
 							<div class="modal-body">
@@ -225,7 +229,7 @@ if (isset($_POST['btn_save2'])) {
 									</div>
 									
 									<div>
-										<input type="hidden" name="password" value="teacher123*">
+										<input type="hidden" name="password" value="pass">
 										<input type="hidden" name="role" value="Teacher">
 									</div>
 								
@@ -246,13 +250,13 @@ if (isset($_POST['btn_save2'])) {
 					<div class="row">
 						<div class="col-md-3 offset-9 pt-5 mb-2">
 							<!-- Large modal -->
-							<button type="button" class="btn btn-primary" data-toggle="modal"
-								data-target=".bd-example-modal-lg1">Assign Subjects</button>
+							<!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+								data-target=".bd-example-modal-lg1">Assign Subjects</button> -->
 							<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog"
 								aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-lg">
 									<div class="modal-content">
-										<div class="modal-header bg-info text-white">
+										<div class="modal-header ">
 											<h4 class="modal-title text-center">Assign Subjects To Teachers</h4>
 										</div>
 										<div class="modal-body">

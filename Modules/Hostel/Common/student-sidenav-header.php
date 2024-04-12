@@ -1,3 +1,9 @@
+<?php
+if (isset($_SESSION["LoginStudent"])) {
+  $current_session = $_SESSION['LoginStudent'];
+  $student_id =  $_SESSION['student_id'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +38,7 @@
           
         </div>
         <div class="app-header-right">
+          <div><?php echo $current_session; ?></div>
           <button class="mode-switch" title="Switch Theme">
             <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
@@ -54,68 +61,28 @@
           <div id="side-nav">
           
             <ul class="nav flex-column" id="aside-nav-ul">
-              <li class="nav-item">
-                <a class="nav-link" href="http://localhost/CMS/Dashboard/index.php#">
               
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-sliders align-middle">
-                    <line x1="4" y1="21" x2="4" y2="14"></line>
-                    <line x1="4" y1="10" x2="4" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12" y2="3"></line>
-                    <line x1="20" y1="21" x2="20" y2="16"></line>
-                    <line x1="20" y1="12" x2="20" y2="3"></line>
-                    <line x1="1" y1="14" x2="7" y2="14"></line>
-                    <line x1="9" y1="8" x2="15" y2="8"></line>
-                    <line x1="17" y1="16" x2="23" y2="16"></line>
-                  </svg>
-                 
-                  <span style="font-size: 18px;" class="ms-2">Dashboard</span>
-                </a>
-              </li>
-              <li class="nav-item aside-dropdown">
-                <a class="nav-link position-relative" data-bs-toggle="collapse" href="#collapsePricing" role="button"
-                  aria-expanded="false" aria-controls="collapseExample">
-                  <i class="far fa-money-bill-alt" style="font-size: 16px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Exam</span>
-                  <span class="dropdown-caret-svg">
-                   
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" fit="" height="100%"
-                      width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
-                      <path fill-rule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                    
-                  </span>
-                </a>
-                <ul class="collapse list-unstyled aside-dropdown-menu" id="collapsePricing">
-                  <li><a style="font-size: 16px;" class="nav-link" href="attemptedExams.php">Attempted</a></li>
-                  <li><a style="font-size: 16px;" class="nav-link" href="notAttemptedExams.php">Not Attempted</a></li>
-                </ul>
-              </li>
+              
 
               <li class="nav-item">
-                <a class="nav-link" href="result.php">
+                <a class="nav-link" href="book-hostel.php">
                   <i class="far fa-comment-alt" style="font-size: 19px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Result</span>
+                  <span style="font-size: 18px;" class="ms-2">Book Hostel</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Student/feedback.php" class="ms-2" style="font-size: 18px;"
-                  data-toggle="modal" data-target="#feedbacksModal">
+                <a class="nav-link" href="room-details.php" class="ms-2" style="font-size: 18px;">
                   <i class="far fa-comment-alt" style="font-size: 19px;"></i>
-                  <span style="font-size: 18px;" class="ms-2">Feedback</span>
+                  <span style="font-size: 18px;" class="ms-2">Room Details</span>
                 </a>
               </li>
 
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="../Logout/logout.php">
+              <li class="nav-item">
+                <a class="nav-link" href="../../../Login/logout.php">
                   <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Logout</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </div>
         </aside>

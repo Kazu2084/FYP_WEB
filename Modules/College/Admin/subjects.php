@@ -19,10 +19,10 @@ require_once "../../../Connection/connection.php";
 		$query="insert into course_subjects(subject_code,subject_name,course_code,semester,credit_hours)values('$subject_code','$subject_name','$course_code','$semester','$credit_hours')";
 		$run=mysqli_query($con,$query);
 		if ($run) {
-			echo "successfully";
+			//echo "successfully";
 		}
 		else{
-			echo "not";
+			//echo "not";
 		}
 	}
 ?>

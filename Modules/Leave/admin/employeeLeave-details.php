@@ -60,7 +60,7 @@
 
                                             <?php 
                                             $lid=intval($_GET['leaveid']);
-                                            $sql = "SELECT tblleaves.id as lid,teacher_info.first_name,teacher_info.last_name,teacher_info.teacher_id,teacher_info.gender,teacher_info.phone_no,teacher_info.email,tblleaves.LeaveType,tblleaves.ToDate,tblleaves.FromDate,tblleaves.Description,tblleaves.PostingDate,tblleaves.Status,tblleaves.AdminRemark,tblleaves.AdminRemarkDate from tblleaves join teacher_info on tblleaves.empid=teacher_info.teacher_id where tblleaves.id=:lid";
+                                            $sql = "SELECT tblleaves.id as lid,common_info.first_name,common_info.last_name,common_info.id,common_info.gender,common_info.email,tblleaves.LeaveType,tblleaves.ToDate,tblleaves.FromDate,tblleaves.Description,tblleaves.PostingDate,tblleaves.Status,tblleaves.AdminRemark,tblleaves.AdminRemarkDate from tblleaves join common_info on tblleaves.empid=common_info.id where tblleaves.id=:lid";
                                             $query = $dbh -> prepare($sql);
                                             $query->bindParam(':lid',$lid,PDO::PARAM_STR);
                                             $query->execute();
@@ -75,7 +75,7 @@
                                                 <tr>
 
                                                 <td ><b>Staff ID:</b></span></div>
-                                              <td colspan="1"><?php echo htmlentities($result->teacher_id);?></span></div>
+                                              <td colspan="1"><?php echo htmlentities($result->id);?></span></div>
                                             <div class="product-cell"><span> <b>Staff Name:</b></span></div>
                                               <td colspan="1"><a href="update-employee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank">
                                                 <?php echo htmlentities($result->first_name." ".$result->last_name);?></a></span></div>
@@ -87,8 +87,7 @@
                                           <tr>
                                              <td ><b>Staff Email:</b></span></div>
                                             <td colspan="1"><?php echo htmlentities($result->email);?></span></div>
-                                             <td ><b>Staff Contact:</b></span></div>
-                                            <td colspan="1"><?php echo htmlentities($result->phone_no);?></span></div>
+                                             
 
                                             <td ><b>Leave Type:</b></span></div>
                                             <td colspan="1"><?php echo htmlentities($result->LeaveType);?></span></div>
@@ -99,7 +98,7 @@
                                              
                                              <td ><b>Leave From:</b></span></div>
                                             <td colspan="1"><?php echo htmlentities($result->FromDate);?></span></div>
-                                            <div class="product-cell"><span><b>Leave Upto:</b></span></div>
+                                            <td><b>Leave Upto:</b></span></div>
                                             <td colspan="1"><?php echo htmlentities($result->ToDate);?></span></div>
                                             
                                         </div>

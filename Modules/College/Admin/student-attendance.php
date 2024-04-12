@@ -1,12 +1,18 @@
 
 <?php
-session_start();
-if (!$_SESSION["LoginAdmin"]) {
-	header('location:../../../Login/index.html');
-}
-require_once "../../../Connection/connection.php";
-?>
+// session_start();
+// if (!$_SESSION["LoginAdmin"]) {
+// 	header('location:../../../Login/index.html');
+// }
+// require_once "../../../Connection/connection.php";
 
+session_start();
+if (isset($_SESSION["LoginAdmin"])) {
+  $current_session = $_SESSION['LoginAdmin'];
+} elseif (isset($_SESSION["LoginTeacher"])) {
+  $current_session = $_SESSION['LoginTeacher'];
+}
+?>
 
 <?php
 if (isset($_POST['sub'])) {
@@ -16,9 +22,9 @@ if (isset($_POST['sub'])) {
 		$que = "insert into student_attendance(course_code,subject_code,semester,student_id,attendance,attendance_date)values('" . $_POST['course_code'][$i] . "','" . $_POST['subject_code'][$i] . "','" . $_POST['semester'][$i] . "','" . $_POST['roll_no'][$i] . "','" . $_POST['attendance'][$i] . "','$date')";
 		$run = mysqli_query($con, $que);
 		if ($run) {
-			echo "Insert Successfully";
+			//echo "Insert Successfully";
 		} else {
-			echo " Insert Not Successfully";
+			//echo " Insert Not Successfully";
 		}
 	}
 }
@@ -107,7 +113,7 @@ if (isset($_POST['sub'])) {
 				<?php
 				$i = 1;
 				$count = 0;
-				$conn = mysqli_connect("localhost", "root", "", "college");
+				$conn = mysqli_connect("localhost", "root", "", "fyp");
 
 				if (isset($_POST['submit'])) {
 					$course_code = $_POST['course_code'];

@@ -58,8 +58,8 @@ if (isset($_POST['sub'])) {
 <div class="app-content">
 	<div class="app-content-header">
 		<h1 class="app-content-headerText">Result</h1>
-		<a class="btn btn-primary" href="add-single-student-results.php">Single Student
-			Result</a>
+		<!-- <a class="btn btn-primary" href="add-single-student-results.php">Single Student
+			Result</a> -->
 	</div>
 
 	<div class="app-content-actions">

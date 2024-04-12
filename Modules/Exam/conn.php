@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "fyp";
+$db   = "cee_db";
 $conn = null;
 
 try {

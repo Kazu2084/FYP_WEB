@@ -35,8 +35,8 @@ include('../../Common/header.php');
 						//      <input type="checkbox" name="selector[]" id="selector[]" value="'.$result->CATEGORYID. '"/>
 						// 		' . $result->CATEGORIES.'</a></td>';
 						echo '<div class="product-cell" style="align:center" ><span>' . $result->CATEGORY . '</span></div>';
-						echo '<div class="product-cell"><span><a title="Edit" href="index.php?view=edit&id=' . $result->CATEGORYID . '" class="btn btn-primary btn-xs  ">  <span class="fa fa-edit fw-fa"></a>
-				  		     <a title="Delete" href="controller.php?action=delete&id=' . $result->CATEGORYID . '" class="btn btn-danger btn-xs  ">  <span class="fa  fa-trash fw-fa "></a></span></div>';
+						echo '<div class="product-cell"><span><a title="Edit" href="index.php?view=edit&id=' . $result->CATEGORYID . '" class="btn btn-primary btn-xs  "> Edit </a>
+				  		     <a title="Delete" href="controller.php?action=delete&id=' . $result->CATEGORYID . '" class="btn btn-danger btn-xs  "> Delete</a></span></div>';
 						// echo '<td></td>';
 						echo '</div>';
 					}

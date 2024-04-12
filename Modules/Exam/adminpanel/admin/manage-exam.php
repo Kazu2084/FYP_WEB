@@ -68,8 +68,8 @@
           //   $query_fn="select first_name from college.teacher_info where teacher_info.email='$username'";
           //   $query_ln="select last_name from college.teacher_info where email='$username'";
           
-          //   $result1=mysqli_query($con,$query_fn);
-          //   $result2=mysqli_query($con,$query_ln);
+          //   $result1=mysqli_query($conn,$query_fn);
+          //   $result2=mysqli_query($conn,$query_ln);
           
           // //   $sql_total_marks = "SELECT percentage, marks_obtained, total_marks FROM dbms1.exam_result t1 JOIN dbms.student t2 
           // // WHERE t2.stud_id = '$stud_id'";
@@ -110,9 +110,8 @@
           <div id="side-nav">
             <!-- aside nav ul list -->
             <ul class="nav flex-column" id="aside-nav-ul">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="../Teacher/Dashboard.php">
-                  <!-- svg -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="feather feather-sliders align-middle">
@@ -126,10 +125,9 @@
                     <line x1="9" y1="8" x2="15" y2="8"></line>
                     <line x1="17" y1="16" x2="23" y2="16"></line>
                   </svg>
-                  <!-- /svg -->
                   <span style="font-size: 18px;" class="ms-2">Dashboard</span>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="home.php?page=manage-exam">
                   <i class="far fa-calendar-check" style="font-size: 20px;"></i>
@@ -149,12 +147,12 @@
                   <span style="font-size: 18px;" class="ms-2">Report</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="home.php?page=feedbacks">
                   <i class="far fa-comment-alt" style="font-size: 19px;"></i>
                   <span style="font-size: 18px;" class="ms-2">Feedback</span>
                 </a>
-              </li>
+              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link" href="../../../../Login/logout.php">
@@ -169,14 +167,14 @@
         <main class="w-100 d-flex flex-column" id="main">
           <section class="container-fluid">
             <?php
-            require_once "../../../../Connection/connection.php";
+            require_once "../../conn.php";
             $exId = $_GET['id'];
 
-            $selExam = $con->query("SELECT * FROM exam_tbl WHERE ex_id='$exId' ");
-            $selExamRow = $selExam->fetch_assoc(); 
+            $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$exId' ");
+            $selExamRow = $selExam->fetch(PDO::FETCH_ASSOC);
             
             $courseId = $selExamRow['cou_id'];
-            $selCourse = $con->query("SELECT course_name FROM courses WHERE course_code='$courseId'")->fetch_assoc(); // Using fetch_assoc() here too
+            $selCourse = $conn->query("SELECT cou_name FROM course_tbl WHERE cou_id='$courseId'")->fetch(PDO::FETCH_ASSOC); // Using fetch_assoc() here too
             ?>
 
             <!-- 
@@ -209,18 +207,17 @@
                                 <label>Course</label>
                                 <select class="form-control" name="courseId" required="">
                                   <option value="<?php echo $selExamRow['cou_id']; ?>">
-                                    <?php echo $selCourse['courseName']; ?>
+                                    <?php echo $selCourse['cou_name']; ?>
                                   </option>
                                   <?php
-                                  $selAllCourse = $con->query("SELECT * FROM courses ORDER BY course_code DESC");
+                                  $selAllCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC");
                                   while ($selAllCourseRow = $selAllCourse->fetch_assoc()) { ?>
-                                    <option value="<?php echo $selAllCourseRow['course_code']; ?>">
-                                      <?php echo $selAllCourseRow['course_name']; ?>
+                                    <option value="<?php echo $selAllCourseRow['cou_id']; ?>">
+                                      <?php echo $selAllCourseRow['cou_name']; ?>
                                     </option>
                                   <?php }
                                   ?>
                                 </select>
-                              </div>
 
                               <div class="form-group">
                                 <label>Exam Title</label>
@@ -266,7 +263,7 @@
                       </div>
                       <div class="col-md-6">
                         <?php
-                        $selQuest = $con->query("SELECT * FROM exam_question_tbl WHERE exam_id='$exId' ORDER BY eqt_id desc");
+                        $selQuest = $conn->query("SELECT * FROM exam_question_tbl WHERE exam_id='$exId' ORDER BY eqt_id desc");
                         ?>
                         <div class="main-card mb-3 card">
                           <div class="card-header"><i class="header-icon lnr-license icon-gradient bg-plum-plate">
@@ -355,9 +352,9 @@
 
                                               </td>
                                               <td class="text-center">
-                                                <a rel="facebox"
-                                                  href="facebox_modal/updateQuestion.php?id=<?php echo $selQuestionRow['eqt_id']; ?>"
-                                                  class="btn btn-sm btn-primary">Update</a>
+                                                <!-- <a rel="facebox"
+                                                  href="facebox_modal/updateQuestion.php?id=<?php //echo $selQuestionRow['eqt_id']; ?>"
+                                                  class="btn btn-sm btn-primary">Update</a> -->
                                                 <button type="button" id="deleteQuestion"
                                                   data-id='<?php echo $selQuestionRow['eqt_id']; ?>'
                                                   class="btn btn-danger btn-sm">Delete</button>

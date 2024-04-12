@@ -128,16 +128,16 @@ include('../Common/librarian-sidenav-header.php');
 						<div class="product-cell"><span>
 								<a class="btn btn-primary" for="ViewAdmin"
 									href="view_user.php<?php echo '?user_id=' . $id; ?>">
-									<i class="fa fa-search"></i>
+									View
 								</a>
-								<a class="btn btn-warning" for="ViewAdmin"
+								<a class="btn btn-primary" for="ViewAdmin"
 									href="edit_user.php<?php echo '?user_id=' . $id; ?>">
 									<i class="fas fa-edit"></i>
 
 								</a>
 								<a class="btn btn-danger" for="DeleteAdmin" href="user.php#delete<?php echo $id; ?>"
 									data-toggle="modal" data-target="#delete<?php echo $id; ?>">
-									<i class="far fa-trash-alt"></i>
+									Delete
 								</a>
 
 								<!-- delete modal user -->

@@ -1,10 +1,10 @@
 
 <?php
-session_start();
-if (!$_SESSION["LoginTeacher"]) {
-	header('location:../login/login.php');
-}
-require_once "../connection/connection.php";
+// session_start();
+// if (!$_SESSION["LoginTeacher"]) {
+// 	header('location:../login/login.php');
+// }
+ require_once "../../../Connection/connection.php";
 ?>
 
 
@@ -16,9 +16,9 @@ if (isset($_POST['sub'])) {
 		$que = "insert into class_result(roll_no,course_code,subject_code,semester,total_marks,obtain_marks,result_date)values('" . $_POST['roll_no'][$i] . "','" . $_POST['course_code'][$i] . "','" . $_POST['subject_code'][$i] . "','" . $_POST['semester'][$i] . "','" . $_POST['total_marks'][$i] . "','" . $_POST['obtain_marks'][$i] . "','$date')";
 		$run = mysqli_query($con, $que);
 		if ($run) {
-			echo "Insert Successfully";
+			//echo "Insert Successfully";
 		} else {
-			echo " Insert Not Successfully";
+			//echo " Insert Not Successfully";
 		}
 	}
 }
